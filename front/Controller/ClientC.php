@@ -5,8 +5,8 @@
 	class ClientC {
 		
 		function ajouterclient($client){
-			$sql="INSERT INTO client (nom_client, prenom_client, date_naissance, telephone_client, email_client,login_client,mot_passe,id_admin) 
-			VALUES (:nom_client, :prenom_client, :date_naissance, :telephone_client, :email_client, :login_client, :mot_passe, :id_admin)";
+			$sql="INSERT INTO client (nom_client, prenom_client, date_naissance, telephone_client, email_client,login_client,mot_passe) 
+			VALUES (:nom_client, :prenom_client, :date_naissance, :telephone_client, :email_client, :login_client, :mot_passe)";
 			$db = config::getConnexion();
 			try{
 				$query = $db->prepare($sql);
@@ -18,7 +18,7 @@
 					'email_client' => $client->getemailclient(),
 					'login_client' => $client->getloginclient(),
 					'mot_passe' => $client->getmotpasseclient(),
-                    'id_admin'=> $client->getidadmin()
+                    'id_admin'=> '1'
 				]);			
 			}
 			catch (Exception $e){
@@ -68,16 +68,30 @@
 				);
 				$query->execute([
 					'nom_client' => $client->getnomclient(),
-					'prenom_client' => $client->$client->getprenomclient(),
-					'date_naissance' => $client->getDateNaissance(),
+					'prenom_client' => $client->getprenomclient(),
+					'date_naissance' => $client->getdatenaissance(),
 					'telephone_client' => $client->gettelephoneclient(),
 					'email_client' => $client->getemailclient(),
 					'login_client' => $client->getloginclient(),
 					'mot_passe' => $client->getmotpasseclient(),
-                    'id_admin'=> $client->getidadmin(),                 
+                    'id_admin'=>'1',                 
 					'id_client' => $id_client
 				]);
 				echo $query->rowCount() . " records UPDATED successfully <br>";
+			} catch (PDOException $e) {
+				$e->getMessage();
+			}
+		} 
+		 function getClientById($id_client) {
+			try {
+				$db = config::getConnexion();
+				$query = $db->prepare(
+					'SELECT * FROM client WHERE id_client = :id_client'
+				);
+				$query->execute([
+					'id_client' => $id_client
+				]);
+				return $query->fetch();
 			} catch (PDOException $e) {
 				$e->getMessage();
 			}

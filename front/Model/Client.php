@@ -9,8 +9,8 @@ class Client
     private string $email_client;
     private string $login_client;
     private string $mot_passe;
-    private ?int $id_admin = null;
-    public function __construct($nom_client,$prenom_client, $date_naissance,$telephone_client,$email_client,$login_client,$mot_passe,$id_admin)
+
+    public function __construct($nom_client,$prenom_client, $date_naissance,$telephone_client,$email_client,$login_client,$mot_passe)
     {
         $this->nom_client =$nom_client;
         $this->prenom_client = $prenom_client;
@@ -19,7 +19,6 @@ class Client
         $this->email_client=$email_client;
         $this->login_client=$login_client;
         $this->mot_passe=$mot_passe;
-        $this->id_admin=$id_admin;
 
     }
     public function getidClient () {
@@ -49,9 +48,7 @@ class Client
     public function getmotpasseclient(){
         return $this->mot_passe;
     }
-    public function getidadmin(){
-        return $this->id_admin;
-    }
+  
 
 
     public function setnomclient ($nom_client){
