@@ -4,7 +4,7 @@
 
 	class AdminC {
 		
-		function ajouterclient($administrateur){
+		function ajouteradministrateur($administrateur){
 			$sql="INSERT INTO administrateur (nom_administrateur, mot_passe)
 			VALUES (:nom_administrateur, :mot_passe)";
 			$db = config::getConnexion();
@@ -12,8 +12,8 @@
 				$query = $db->prepare($sql);
 			
 				$query->execute([
-					'nom_administrateur' => $administrateur->getnomclient(),
-					'mot_passe' => $administrateur->getprenomclient()
+					'nom_administrateur' => $administrateur->getnomadmin(),
+					'mot_passe' => $administrateur->getmotpasseadmin()
 				]);			
 			}
 			catch (Exception $e){
@@ -46,7 +46,7 @@
 				die('Erreur: '.$e->getMessage());
 			}
 		}
-		function modifieradministrateur($client, $id_client){
+		function modifieradministrateur($administrateur, $id_admin){
 			try {
 				$db = config::getConnexion();
 				$query = $db->prepare(
@@ -56,9 +56,9 @@
 					WHERE id_admin = :id_admin'
 				);
 				$query->execute([
-					'nom_administrateur' => $administrateur->getnomclient(),
-					'mot_passe' => $administrateur->getprenomclient(),    
-					'id_client' => $id_client
+					'nom_administrateur' => $administrateur->getnomadmin(),
+					'mot_passe' => $administrateur->getmotpasseadmin(),    
+					'id_admin' => $id_admin
 				]);
 				echo $query->rowCount() . " records UPDATED successfully <br>";
 			} catch (PDOException $e) {
@@ -80,7 +80,7 @@
 			}
 		}
 
-		function recupererClient1($id_admin){
+		function recupererAdmin1($id_admin){
 			$sql="SELECT * from administrateur where id_admin=$id_admin";
 			$db = config::getConnexion();
 			try{

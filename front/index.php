@@ -1,15 +1,12 @@
 <?php
-session_start();
-
-	if(!isset($_SESSION["id_client"])){
-    var_dump($_SESSION);
-	header("Location:../front/Views/login_client.php");
+    
+    session_start();
+    if(!isset($_SESSION["id_client"])){
+        var_dump($_SESSION);
+		header("Location:Views/login_client.php");
 		exit(); 
-  }
-
+    }
 ?>
-
-
 <!DOCTYPE html>
 <html class="no-js" lang="fr">
 <head>
@@ -33,8 +30,8 @@ session_start();
 
         <header class="header--style-1">
 <div class="container d-flex align-items-center">
-  <h5>Bienvenue <?php echo $_SESSION['login_client']; ?></h5>
-  <a href="../front/views/modifierClient.php?id=<?PHP echo $_SESSION['id_client']; ?>" class="appointment-btn scrollto"> Modifier </a>
+<h5>Bienvenue <?php echo $_SESSION['login_client']; ?></h5>
+  <a href="../front/views/modifierClient.php?id_client=<?PHP echo $_SESSION['id_client']; ?>" > Modifier </a>
     <a href="../front/Views/logout.php">Déconnexion</a>
 </div>
     

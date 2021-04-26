@@ -244,6 +244,7 @@
                             <div class="col-lg-6 col-md-8 u-s-m-b-30">
                                 <div class="l-f-o">
 
+                                <div id="erreur"></div>
                                     <div class="l-f-o__pad-box"> 
                                         <h1 class="gl-h1">Nouveau Client</h1>
                                         <span class="gl-text u-s-m-b-30">En créant un compte dans notre boutique, vous serez en mesure de parcourir le processus de commande plus rapidement, de stocker les adresses de livraison, de consulter et de suivre vos commandes dans votre compte et plus encore..</span>
@@ -260,15 +261,15 @@
                                                 <br>
                                                 <label class="gl-label" for="email_client">E-mail</label><br>
 
-                                                <input class="input-text input-text--primary-style" type="text" name=email_client id="email_client" placeholder="Entrer E-mail"></div>
+                                                <input class="input-text input-text--primary-style" type="text" name="email_client" id="email_client" pattern=".+@gmail.com|.+@esprit.tn|.+@yahoo.com|.+@yahoo.fr" placeholder="Entrer E-mail"  required ></div>
                                             <div class="u-s-m-b-30">
                                                 <br>
-                                                <label class="gl-label" for="login-password">Mot de passe</label><br>
-                                                <input class="input-text input-text--primary-style" type="password" name=mot_passe id="mot_passe" placeholder="Entrer mot de passe"></div>
+                                                <label class="gl-label" for="mot_passe">Mot de passe</label><br>
+                                                <input class="input-text input-text--primary-style" type="password" name= "mot_passe" id="mot_passe" placeholder="Entrer mot de passe" ></div>
                                             <div class="gl-inline">
                                                 <div class="u-s-m-b-30">
 
-                                                    <button class="btn btn--e-transparent-brand-b-2" type="submit">connecter</button></div>
+                                                    <button class="btn btn--e-transparent-brand-b-2" type="submit"  onclick="verif();" >connecter</button></div>
                                                 <div class="u-s-m-b-30">
 
                                                     <a class="gl-link" href="lost-password.html">mot de passe oublié ?</a></div>
@@ -461,6 +462,8 @@
 
     <!--====== App ======-->
     <script src="../assets/js/app.js"></script>
+
+    <script src="../assets/js/script3.js"></script>
 
         </body>
 </html>

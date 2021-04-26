@@ -4,12 +4,12 @@
 
 	$ClientC = new ClientC();
 
-	if (isset($_POST["nom_client"]) &&  isset($_POST["prenom_client"]) && isset($_POST["date_naissance"]) && isset($_POST["type_client"]) && isset($_POST["email_client"]) && isset($_POST["login_client"]) &&  isset($_POST["mot_passe"])){
+	if (isset($_POST["nom_client"]) &&  isset($_POST["prenom_client"]) && isset($_POST["date_naissance"]) && isset($_POST["telephone_client"]) && isset($_POST["email_client"]) && isset($_POST["login_client"]) &&  isset($_POST["mot_passe"])){
 		
-        if (!empty($_POST["nom_client"]) && !empty($_POST["prenom_client"]) &&!empty($_POST["date_naissance"]) && !empty($_POST["type_client"]) &&  !empty($_POST["email_client"]) && !empty($_POST["login_client"]) && !empty($_POST["mot_passe"])){
+        if (!empty($_POST["nom_client"]) && !empty($_POST["prenom_client"]) &&!empty($_POST["date_naissance"]) && !empty($_POST["telephone_client"]) &&  !empty($_POST["email_client"]) && !empty($_POST["login_client"]) && !empty($_POST["mot_passe"])){
          
-            $user = new Client($_POST['nom_client'],$_POST['prenom_client'],$_POST['date_naissance'],$_POST['type_client'],$_POST['email_client'],$_POST['login_client'],$_POST['mot_passe']);
-            $ClientC->modifierClient($user, $_GET['id_client']);
+            $user = new client($_POST['nom_client'],$_POST['prenom_client'],$_POST['date_naissance'],$_POST['telephone_client'],$_POST['email_client'],$_POST['login_client'],$_POST['mot_passe'],'1');
+            $ClientC->modifierClient($user, $_GET['id']);
             header('Location:../index.php');
       }
      
@@ -21,9 +21,9 @@
 	session_start();
 	if(!isset($_SESSION["id_client"])){
     var_dump($_SESSION);
-	exit(); 
+		exit(); 
 	}
-?>
+?>  
 
 
 <!DOCTYPE html>
@@ -42,15 +42,16 @@
 
     <body>   
          <header id="header" class="fixed-top">
-                <div class="container d-flex align-items-center">
-                    <h5>Bienvenue <?php echo $_SESSION['login_client']; ?></h5> 
-                   <a href="logout.php" class="connexion-btn scr ollto">Déconnexion</a>
+                <div class="container d-flex align-items-center"> 
+                <h5>Bienvenue <?php echo $_SESSION['login_client']; ?></h5>
+                <a href="logout.php" class="connexion-btn scr ollto">Déconnexion</a>
             </div>
 
         </header>
+
 <?php
-			if (isset($_GET['id_client'])){
-				$user = $ClientC->recupererClient1($_GET['id_client']);	
+	if (isset($_GET['id'])){
+		$user = $ClientC->recupererClient1($_GET['id']);	
 ?> 
 
         <nav class="primary-nav primary-nav-wrapper">
@@ -244,11 +245,10 @@
                                 <div class="l-f-o">
                                     <div class="l-f-o__pad-box">
                                         <h1 class="gl-h1">Modification du profil</h1>
-                                        <div id="erreur"></div>
-                                        <form class="l-f-o__form" action="" method="POST" >
+                                        <form class="l-f-o__form" action="" method="POST">
                                             <div class="gl-s-api">
                                             <div class="u-s-m-b-30">
-                                            
+
                                                 <label class="gl-label" for="nom_client">Nom*</label>
 
                                                 <input class="input-text input-text--primary-style" type="text" id="nom_client" name="nom_client" value = "<?php echo $user->nom_client; ?>"></div>
@@ -261,39 +261,38 @@
                                                 <div class="u-s-m-b-30">
                                                
                                                     <label class="gl-label" for="date_naissance">Date de naissance*</label>
-                                                       
-                                                    <input class="input-text input-text--primary-style" type="date" id="date_naissance"name="date_naissance"  value = "<?php echo $user->date_naissance; ?>"></div>
-                                                                               
-                                                    <div class="u-s-m-b-30">
+                                                        <input class="input-text input-text--primary-style" type="date" name="date_naissance"  value = "<?php echo $user->date_naissance; ?>"></div>
+                                             
+                                    
+                                        
+                                            <div class="u-s-m-b-30">
 
-                                                    <span class="gl-label">Est ce que vous voulez étre un client ou vendeur*</span>
-                                                     <select class="select-box select-box--primary-style"  id="type_client" name="type_client"  size="1">
-                                                     <option value="Client">Client</option>
-                                                     <option value="Vendeur">Vendeur</option> </select> 
-                                                    </div>
+                                            <label class="gl-label" for="telephone_client">Téléphone*</label>
+
+                                            <input class="input-text input-text--primary-style" type="text" name="telephone_client"  value = "<?php echo $user->telephone_client; ?>"></div>
 
                                             <div class="u-s-m-b-30">
 
                                                 <label class="gl-label" for="email_client">E-MAIL*</label>
 
-                                                <input class="input-text input-text--primary-style" type="email" id="email_client" name="email_client" pattern=".+@gmail.com|.+@esprit.tn|.+@yahoo.com|.+@yahoo.fr|.+@outlook.fr"  value = "<?php echo $user->email_client; ?>"></div>
+                                                <input class="input-text input-text--primary-style" type="email" name="email_client" pattern=".+@gmail.com|.+@esprit.tn|.+@yahoo.com|.+@yahoo.fr|.+@outlook.fr"  value = "<?php echo $user->email_client; ?>"></div>
                                             
                                                 <div class="u-s-m-b-30">
 
                                                 <label class="gl-label" for="login_client">Login*</label>
 
-                                                <input class="input-text input-text--primary-style" type="text" id="login_client" name="login_client" value = "<?php echo $user->login_client; ?>"></div>             
+                                                <input class="input-text input-text--primary-style" type="text" name="login_client" value = "<?php echo $user->login_client; ?>"></div>             
                                             
                                         <div class="u-s-m-b-30">
 
                                                 <label class="gl-label" for="mot_passe">Mot de passe*</label>
 
-                                                <input class="input-text input-text--primary-style" type="password" id="mot_passe"name="mot_passe" value = "<?php echo $user->mot_passe; ?>"></div>  
+                                                <input class="input-text input-text--primary-style" type="password" name="mot_passe" value = "<?php echo $user->mot_passe; ?>"></div>  
                                                 
 
                                             <div class="u-s-m-b-15">
 
-                                                <button class="btn btn--e-transparent-brand-b-2" type="submit" onclick="verif();">Envoyer</button></div>
+                                                <button class="btn btn--e-transparent-brand-b-2" type="submit">Envoyer</button></div>
 
                                         </form>
                                     </div>
@@ -306,9 +305,9 @@
          
         </div>
 
-	<?php
-    }
-    ?>
+<?php
+	}
+?>
 
 
 <footer>
@@ -492,5 +491,3 @@
 
     <!--====== App ======-->
     <script src="../assets/js/app.js"></script> 
-    
-    <script src="../assets/js/script.js"></script>

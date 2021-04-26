@@ -1,23 +1,26 @@
 <?PHP
 	include '../config.php';
-	include '../Model/client.php';
+	include_once '../Model/client.php';
 
 	class ClientC {
 		
 		function ajouterclient($client){
-			$sql="INSERT INTO client (nom_client, prenom_client, date_naissance, telephone_client, email_client,login_client,mot_passe) 
-			VALUES (:nom_client, :prenom_client, :date_naissance, :telephone_client, :email_client, :login_client, :mot_passe)";
+			
 			$db = config::getConnexion();
+			$query = $db->prepare('INSERT INTO client(nom_client, prenom_client, date_naissance,type_client,email_client,login_client,mot_passe,id_admin) 
+			VALUES (:nom_client, :prenom_client, :date_naissance, :type_client, :email_client, :login_client, :mot_passe,:id_admin)'
+		);
+		
 			try{
-				$query = $db->prepare($sql);
-				$query->execute([
+			
+				$query->execute([  
 					'nom_client' => $client->getnomclient(),
 					'prenom_client' => $client->getprenomclient(),
-					'date_naissance' => $client->getdatenaissance(),
-					'telephone_client' => $client->gettelephoneclient(),
+					'date_naissance' => $client->getdatenaissance(), 
+					'type_client' => $client->gettypeclient(),
 					'email_client' => $client->getemailclient(),
 					'login_client' => $client->getloginclient(),
-					'mot_passe' => $client->getmotpasseclient(),
+					'mot_passe' => $client->getmotpasseclient(), 
                     'id_admin'=> '1'
 				]);			
 			}
@@ -59,7 +62,7 @@
 						nom_client = :nom_client, 
 						prenom_client = :prenom_client,
 						date_naissance = :date_naissance,
-						telephone_client = :telephone_client,
+						type_client = :type_client,
 						email_client = :email_client,
 						login_client= :login_client,
 						mot_passe = :mot_passe,
@@ -69,8 +72,8 @@
 				$query->execute([
 					'nom_client' => $client->getnomclient(),
 					'prenom_client' => $client->getprenomclient(),
-					'date_naissance' => $client->getdatenaissance(),
-					'telephone_client' => $client->gettelephoneclient(),
+					'date_naissance' => $client->getdatenaissance(), 
+					'type_client' => $client->gettypeclient(),
 					'email_client' => $client->getemailclient(),
 					'login_client' => $client->getloginclient(),
 					'mot_passe' => $client->getmotpasseclient(),

@@ -1,30 +1,14 @@
 <?php
 
-include_once '../Controller/ClientC.php';
-include_once '../Model/Client.php';
-session_start();
-if(!empty($_POST['nom_client']) && !empty($_POST['prenom_client']) && !empty($_POST['date_naissance']) && !empty($_POST['telephone_client']) && !empty($_POST['email_client']) && !empty($_POST['login_client']) && !empty($_POST['mot_passe'])){
-
-$nom_client = $_POST['nom_client'];
-$prenom_client = $_POST['prenom_client'];
-$date_naissance = $_POST['date_naissance'];
-$telephone_client = $_POST['telephone_client'];
-$email_client = $_POST['email_client'];
-$login_client = $_POST['login_client'];
-$mot_passe = $_POST['mot_passe'];
-$mdp_verif= $_POST['mdp_verif'];
+require_once '../Model/Client.php';
+require '../Controller/ClientC.php';
 
 
-if(strcmp($mot_passe,$mdp_verif)!=0){
-    echo"<script language=\"javascript\">";
-    echo"alert('Les mots de passes ne sont pas identiques');";
-    echo"</script>";
-    exit;
-    
-}
+if(!empty($_POST['nom_client']) && !empty($_POST['prenom_client']) && !empty($_POST['date_naissance']) && !empty($_POST['type_client']) && !empty($_POST['email_client']) && !empty($_POST['login_client']) && !empty($_POST['mot_passe']) && !empty($_POST['mdp_verif']))
+{
 
 $userC = new ClientC();
-$user=new Client ($nom_client, $prenom_client, $date_naissance, $telephone_client,$email_client,$login_client,$mot_passe);
+$user=new Client($_POST['nom_client'], $_POST['prenom_client'], $_POST['date_naissance'],$_POST['type_client'],$_POST['email_client'],$_POST['login_client'],$_POST['mot_passe']);
 try{
     $userC->ajouterclient($user);
     header('Location:../index.php');
@@ -32,14 +16,13 @@ try{
     echo "ERREUR connexion.php : ".$e->getMessage();
     exit;
 }
-echo"<script language=\"javascript\">";
-echo"alert('Inscription compléte !')";
-echo"</script>";
+
 
 }
 
-
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -52,10 +35,14 @@ echo"</script>";
     
         <link rel="stylesheet" href="../assets/css/vendor.css">
         <link rel="stylesheet" href="../assets/css/utility.css">
-        <link rel="stylesheet" href="../assets/css/app.css">
+        <link rel="stylesheet" href="../assets/css/app.css"> 
+    
+      
   </head>
 
     <body> 
+
+
     <nav class="primary-nav primary-nav-wrapper">
                 <div class="container">
                     <div class="primary-nav">
@@ -63,7 +50,7 @@ echo"</script>";
 
                             <img src="../assets/images/logo/logo.png" alt="logo animliaplus"></a>
                             <br>
-                        <form class="main-form">
+                        <form class="main-form" >
 
                             <label for="main-search"></label>
 
@@ -140,7 +127,7 @@ echo"</script>";
             </nav>
 
             <br>
-      
+</form>
             <nav class="secondary-nav-wrapper">
                 <div class="container">
                     <div class="secondary-nav">
@@ -165,8 +152,7 @@ echo"</script>";
                                         <a href="#aboutus">À propos</a>
                                         <a href="#contact">Contact</a>
                                         <a href="#reclamation"> Réclamations et Avis</a>
-                                    
-                                    
+                                
                                     
                                     </li> 
 
@@ -256,60 +242,64 @@ echo"</script>";
                             <div class="col-lg-9 col-md-8 u-s-m-b-30">
                                 <div class="l-f-o">
                                     <div class="l-f-o__pad-box">
-                                        <h1 class="gl-h1">Inscription</h1>
-                                        <form class="l-f-o__form" action="" method="POST">
+                                        <h1 class="gl-h1">Inscription</h1>   
+                                            <div id="erreur"></div>
+                                        <form class="l-f-o__form" action="" method="POST" >
                                             <div class="gl-s-api">
                                             <div class="u-s-m-b-30">
 
                                                 <label class="gl-label" for="nom_client">Nom*</label>
 
-                                                <input class="input-text input-text--primary-style" type="text" id="nom_client" name="nom_client" placeholder="Entrez votre nom"></div>
+                                                <input class="input-text input-text--primary-style" type="text" id="nom_client" name="nom_client" placeholder="Entrez votre nom" required></div>
                                             <div class="u-s-m-b-30">
 
                                                 <label class="gl-label" for="prenom_client">Prenom*</label>
 
-                                                <input class="input-text input-text--primary-style" type="text"  id="prenom_client" name="prenom_client" placeholder="Entrez votre prenom"></div>
+                                                <input class="input-text input-text--primary-style" type="text"  id="prenom_client" name="prenom_client" placeholder="Entrez votre prenom" required ></div>
                                           
                                                 <div class="u-s-m-b-30">
                                                
                                                     <label class="gl-label" for="date_naissance">Date de naissance*</label>
                                                     
-                                                    <input class="input-text input-text--primary-style" type="date" name="date_naissance"  placeholder="Enter votre date de naissance"></div>
+                                                    <input class="input-text input-text--primary-style" type="date" id="date_naissance" name="date_naissance"  placeholder="Enter votre date de naissance" required ></div>
                                                                                 
                                             <div class="u-s-m-b-30">
 
-                                            <label class="gl-label" for="telephone_client">Téléphone*</label>
-
-                                            <input class="input-text input-text--primary-style" type="text" name="telephone_client"  placeholder="Enter votre numéro de telephone"></div>
+                                            <span class="gl-label">Est ce que vous voulez étre un client ou vendeur*</span>
+                                            
+                                               <select class="select-box select-box--primary-style" id="type_client" name="type_client" size="1">
+                                               <option value="Client">Client</option>
+                                               <option value="Vendeur">Vendeur</option> </select> 
+                                          </div>
 
                                             <div class="u-s-m-b-30">
 
                                                 <label class="gl-label" for="email_client">E-MAIL*</label>
 
-                                                <input class="input-text input-text--primary-style" type="email" name="email_client" pattern=".+@gmail.com|.+@esprit.tn|.+@yahoo.com|.+@yahoo.fr" placeholder="Enter votre adresse e-mail"></div>
+                                                <input class="input-text input-text--primary-style" type="email" id="email_client" name="email_client" pattern=".+@gmail.com|.+@esprit.tn|.+@yahoo.com|.+@yahoo.fr" placeholder="Enter votre adresse e-mail " required ></div>
                                             
                                                 <div class="u-s-m-b-30">
 
                                                 <label class="gl-label" for="login_client">Login*</label>
 
-                                                <input class="input-text input-text--primary-style" type="text" name="login_client" placeholder="Enter votre login"></div>             
+                                                <input class="input-text input-text--primary-style" type="text" id ="login_client" name="login_client" placeholder="Enter votre login" required ></div>             
                                             
                                         <div class="u-s-m-b-30">
 
                                                 <label class="gl-label" for="mot_passe">Mot de passe*</label>
 
-                                                <input class="input-text input-text--primary-style" type="password" name="mot_passe" placeholder="Enter votre mot de passe"></div>  
+                                                <input class="input-text input-text--primary-style" type="password" id="mot_passe" name="mot_passe" placeholder="Enter votre mot de passe" required ></div>  
                                                 
 
                                                 <div class="u-s-m-b-30">
 
                                                 <label class="gl-label" for="mdp_verif">Vérification du mot de passe*</label>
 
-                                                <input class="input-text input-text--primary-style" type="password" name="mdp_verif" placeholder="Confirmer votre mot de passe"></div>
+                                                <input class="input-text input-text--primary-style" type="password" id="mdp_verif" name="mdp_verif" placeholder="Confirmer votre mot de passe" required ></div>
 
                                             <div class="u-s-m-b-15">
 
-                                                <button class="btn btn--e-transparent-brand-b-2" type="submit">Envoyer</button></div>
+                                                <button class="btn btn--e-transparent-brand-b-2" type="submit" onclick="verif();" >Envoyer</button></div>
 
                                         </form>
                                     </div>
@@ -320,164 +310,8 @@ echo"</script>";
             
             </div>        
         </div>
-
-        <footer>
-            <div class="outer-footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6">
-                            <div class="outer-footer__content u-s-m-b-40">
-
-                                <span class="outer-footer__content-title">Contact Us</span>
-                                <div class="outer-footer__text-wrap"><i class="fas fa-home"></i>
-
-                                    <span>4247 Ashford Drive Virginia VA-20006 USA</span></div>
-                                <div class="outer-footer__text-wrap"><i class="fas fa-phone-volume"></i>
-
-                                    <span>(+0) 900 901 904</span></div>
-                                <div class="outer-footer__text-wrap"><i class="far fa-envelope"></i>
-
-                                    <span>contact@domain.com</span></div>
-                                <div class="outer-footer__social">
-                                    <ul>
-                                        <li>
-
-                                            <a class="s-fb--color-hover" href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li>
-
-                                            <a class="s-tw--color-hover" href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li>
-
-                                            <a class="s-youtube--color-hover" href="#"><i class="fab fa-youtube"></i></a></li>
-                                        <li>
-
-                                            <a class="s-insta--color-hover" href="#"><i class="fab fa-instagram"></i></a></li>
-                                        <li>
-
-                                            <a class="s-gplus--color-hover" href="#"><i class="fab fa-google-plus-g"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="outer-footer__content u-s-m-b-40">
-
-                                        <span class="outer-footer__content-title">Information</span>
-                                        <div class="outer-footer__list-wrap">
-                                            <ul>
-                                                <li>
-
-                                                    <a href="cart.html">Cart</a></li>
-                                                <li>
-
-                                                    <a href="dashboard.html">Account</a></li>
-                                                <li>
-
-                                                    <a href="shop-side-version-2.html">Manufacturer</a></li>
-                                                <li>
-
-                                                    <a href="dash-payment-option.html">Finance</a></li>
-                                                <li>
-
-                                                    <a href="shop-side-version-2.html">Shop</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="outer-footer__content u-s-m-b-40">
-                                        <div class="outer-footer__list-wrap">
-
-                                            <span class="outer-footer__content-title">Our Company</span>
-                                            <ul>
-                                                <li>
-
-                                                    <a href="about.html">About us</a></li>
-                                                <li>
-
-                                                    <a href="contact.html">Contact Us</a></li>
-                                                <li>
-
-                                                    <a href="index.html">Sitemap</a></li>
-                                                <li>
-
-                                                    <a href="dash-my-order.html">Delivery</a></li>
-                                                <li>
-
-                                                    <a href="shop-side-version-2.html">Store</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-12">
-                            <div class="outer-footer__content">
-
-                                <span class="outer-footer__content-title">Join our Newsletter</span>
-                                <form class="newsletter">
-                                    <div class="u-s-m-b-15">
-                                        <div class="radio-box newsletter__radio">
-
-                                            <input type="radio" id="male" name="gender">
-                                            <div class="radio-box__state radio-box__state--primary">
-
-                                                <label class="radio-box__label" for="male">Male</label></div>
-                                        </div>
-                                        <div class="radio-box newsletter__radio">
-
-                                            <input type="radio" id="female" name="gender">
-                                            <div class="radio-box__state radio-box__state--primary">
-
-                                                <label class="radio-box__label" for="female">Female</label></div>
-                                        </div>
-                                    </div>
-                                    <div class="newsletter__group">
-
-                                        <label for="newsletter"></label>
-
-                                        <input class="input-text input-text--only-white" type="text" id="newsletter" placeholder="Enter your Email">
-
-                                        <button class="btn btn--e-brand newsletter__btn" type="submit">SUBSCRIBE</button></div>
-
-                                    <span class="newsletter__text">Subscribe to the mailing list to receive updates on promotions, new arrivals, discount and coupons.</span>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="lower-footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="lower-footer__content">
-                                <div class="lower-footer__copyright">
-
-                                    <span>Copyright © 2021</span>
-
-                                    <a href="index.html">Reshop</a>
-
-                                    <span>All Right Reserved</span></div>
-                                <div class="lower-footer__payment">
-                                    <ul>
-                                        <li><i class="fab fa-cc-stripe"></i></li>
-                                        <li><i class="fab fa-cc-paypal"></i></li>
-                                        <li><i class="fab fa-cc-mastercard"></i></li>
-                                        <li><i class="fab fa-cc-visa"></i></li>
-                                        <li><i class="fab fa-cc-discover"></i></li>
-                                        <li><i class="fab fa-cc-amex"></i></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
+</form>
+      
 
         <script>
         window.ga = function() {
@@ -497,9 +331,11 @@ echo"</script>";
     <script src="../assets/js/jquery.shopnav.js"></script>
 
     <!--====== App ======-->
-    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/app.js"></script> 
 
-    </body>
+    <script src="../assets/js/script1.js"></script>
+    
+        </body>
 </html>
 
 
@@ -507,8 +343,3 @@ echo"</script>";
 
 
 
-
-
-
-
- 

@@ -15,7 +15,7 @@
                 $user=$query->fetch(); 
                 $_SESSION['nom_administrateur'] = $user['nom_administrateur'];
                 $_SESSION['mot_passe'] = $user['mot_passe'];
-                header('Location:../admin/index.html');
+                header('Location:../admin/index.php');
             }
         }
         catch (Exception $e){

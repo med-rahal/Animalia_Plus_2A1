@@ -6,8 +6,8 @@ class Admin
     private string $mot_passe;
     public function __construct($nom_administrateur,$mot_passe)
     {
-        $this->nom_client =$nom_client;
-        $this->prenom_client = $prenom_client;
+        $this->nom_administrateur =$nom_administrateur;
+        $this->mot_passe = $mot_passe;
 
     }
     public function getidadmin () {
@@ -24,7 +24,7 @@ class Admin
     public function setnomadmin ($nom_administrateur){
         $this->nom_admin = $nom_administrateur;
     }
-    public function setmotpasseclient($mot_passe){
+    public function setmotpasseadmin($mot_passe){
         $this->mot_passe=$mot_passe;
     }
 }
