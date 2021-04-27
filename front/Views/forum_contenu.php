@@ -1,30 +1,13 @@
 <?php
-     include "../Controller/ClientC.php";
-     include_once '../Model/Client.php';
 
-	$ClientC = new ClientC();
-
-	if (isset($_POST["nom_client"]) &&  isset($_POST["prenom_client"]) && isset($_POST["date_naissance"]) && isset($_POST["type_client"]) && isset($_POST["email_client"]) && isset($_POST["login_client"]) &&  isset($_POST["mot_passe"])){
-		
-        if (!empty($_POST["nom_client"]) && !empty($_POST["prenom_client"]) &&!empty($_POST["date_naissance"]) && !empty($_POST["type_client"]) &&  !empty($_POST["email_client"]) && !empty($_POST["login_client"]) && !empty($_POST["mot_passe"])){
-         
-            $user = new Client($_POST['nom_client'],$_POST['prenom_client'],$_POST['date_naissance'],$_POST['type_client'],$_POST['email_client'],$_POST['login_client'],$_POST['mot_passe']);
-            $ClientC->modifierClient($user, $_GET['id_client']);
-            header('Location:../index.php');
-      }
-     
-	}
-
-?>
-
-<?php
 	session_start();
+
 	if(!isset($_SESSION["id_client"])){
     var_dump($_SESSION);
-	exit(); 
+		//header("Location: views/login.php");
+		exit(); 
 	}
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,28 +15,16 @@
   <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <title>Modification du compte client</title> 
-        <link rel="stylesheet" type="text/css" href="../assets/css/main.css">  
+        <title>Connexion</title> 
+        <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
         <link rel="stylesheet" href="../assets/css/vendor.css">
         <link rel="stylesheet" href="../assets/css/utility.css">
         <link rel="stylesheet" href="../assets/css/app.css"> 
-       
+        <link href="../assets/css/style1.css" rel="stylesheet">
   </head>
 
-    <body>   
-         <header id="header" class="fixed-top">
-                <div class="container d-flex align-items-center">
-                    <h5>Bienvenue <?php echo $_SESSION['login_client']; ?></h5> 
-                   <a href="logout.php" class="connexion-btn scr ollto">Déconnexion</a>
-            </div>
-
-        </header>
-<?php
-			if (isset($_GET['id_client'])){
-				$user = $ClientC->recupererClient1($_GET['id_client']);	
-?> 
-
-        <nav class="primary-nav primary-nav-wrapper">
+    <body> 
+    <nav class="primary-nav primary-nav-wrapper">
                 <div class="container">
                     <div class="primary-nav">
                         <a class="main-logo" href="../index.php">
@@ -79,18 +50,18 @@
 
                                         <span class="js-menu-toggle"></span>
                                         <ul style="width:200px">
-                                           
+                                          
                                             <li>
 
-                                               <a href="Views/login_client.php"><i class="fas fa-user-friends"></i></i>
+                                                <a href="Views/login_client.php"><i class="fas fa-user-friends"></i></i>
 
                                                     <span>Espace client</span></a></li>
                                             <li>
 
-                                                <a href="Views/login_vendeur.php"><i class="fas fa-store"></i>
+                                                <a href="index.html"><i class="fas fa-store"></i>
 
                                                     <span>Espace vendeur</span></a></li>
-                                     </ul>
+                                        </ul>
                         
                                     </li>
                                     <li class="has-dropdown" data-tooltip="tooltip" data-placement="left" title="Settings">
@@ -101,7 +72,7 @@
                                         <ul style="width:120px">
                                             <li class="has-dropdown has-dropdown--ul-right-100">
 
-                                                <a>Language<i class="fas fa-angle-down u-s-m-l-6"></i></a>     
+                                                <a>Language<i class="fas fa-angle-down u-s-m-l-6"></i></a>
 
                                                 <span class="js-menu-toggle"></span>
                                                 <ul style="width:100px">
@@ -135,16 +106,23 @@
             </nav>
 
             <br>
-        
+           
             <nav class="secondary-nav-wrapper">
                 <div class="container">
+
+        
                     <div class="secondary-nav">
                         <div class="menu-init" id="navigation2">
+
                             <button class="btn btn--icon toggle-button toggle-button--secondary fas fa-cog" type="button"></button>
-                                 <div class="ah-lg-mode">
-                                     <span class="ah-close">✕ Close</span>
+
+               
+                            <div class="ah-lg-mode">
+
+                                <span class="ah-close">✕ Close</span>
+
+       
                                 <ul class="ah-list ah-list--design2 ah-list--link-color-secondary">
-                                    
                                     <li>
 
                                         <a href="test.html">Nouveaux Produits</a>
@@ -154,164 +132,173 @@
                                         <a href="#panier">Panier</a>       
                                         <a href="#aboutus">À propos</a>
                                         <a href="#contact">Contact</a>
-                                        <a href="#reclamation"> Réclamations et Avis</a>                                    
+                                        <a href="#reclamation"> Réclamations et Avis</a>
+                                    
+                                    
                                     
                                     </li> 
 
-                                </ul>                          
+                                </ul>
+                                    
+                                          
                               
                             </div>
                          
                         </div>
                 </div>
          </div>
-    </div>
-</nav>
-  
-
-        <div class="app-content">
-            <div class="s-skeleton s-skeleton--h-600 s-skeleton--bg-grey">
-                <div class="owl-carousel primary-style-1" id="hero-slider">
-                    <div class="hero-slide hero-slide--1">
-                        <div class="container">
-                            <div class="row">
-                                 <div class="col-12">
-                                    <div class="slider-content slider-content--animation">
-
-                            <span class="content-span-1 u-c-secondary">Dernière mise à jour Stock</span>
-
-                            <span class="content-span-2 u-c-secondary">20% Off Pour Tous Nos Clients Fidéles !</span>
-
-                            <span class="content-span-3 u-c-secondary">Trouver des animaux de compagnie sur les meilleurs prix, Découvrez également les produits les plus vendus de plantes</span>
-
-                            <span class="content-span-4 u-c-secondary">À partir de
-
-                                <span class="u-c-brand">20 DT</span></span>
-
-                            <a class="shop-now-link btn--e-brand" href="shop-side-version-2.html">MAGASINEZ MAINTENANT</a></div>
-                </div>
-             </div>
-         </div>
-    </div>
-        <div class="hero-slide hero-slide--2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="slider-content slider-content--animation">
-
-                            <span class="content-span-1 u-c-white">Bonjour</span>
-
-                            <span class="content-span-2 u-c-white">10% remise sur les alimentations de votre chien</span>
-
-                            <span class="content-span-3 u-c-white">Animalia Plus.. Votre Store Préférer</span>
-
-                            <span class="content-span-4 u-c-white">A partir de
-
-                                <span class="u-c-brand">10 DT</span></span>
-
-                            <a class="shop-now-link btn--e-brand" href="shop-side-version-2.html">SHOP NOW</a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="hero-slide hero-slide--3">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="slider-content slider-content--animation">
-
-                            <span class="content-span-1 u-c-secondary">DES OFFRES</span>
-
-                            <span class="content-span-2 u-c-secondary">sur les plantes,animaux et alimentations</span>
-
-                            <span class="content-span-3 u-c-secondary">À Partir de 
-
-                                <span class="u-c-brand">20 DT</span></span>
-
-                            <a class="shop-now-link btn--e-brand" href="shop-side-version-2.html">ACHETEZ MAINTENANT</a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+    </div> 
 
 
- <div class="section__content">
-                    <div class="container">
-                        <div class="row row--center">
-                            <div class="col-lg-9 col-md-8 u-s-m-b-30">
-                                <div class="l-f-o">
-                                    <div class="l-f-o__pad-box">
-                                        <h1 class="gl-h1">Modification du profil</h1>
-                                        <div id="erreur"></div>
-                                        <form class="l-f-o__form" action="" method="POST" >
-                                            <div class="gl-s-api">
-                                            <div class="u-s-m-b-30">
-                                            
-                                                <label class="gl-label" for="nom_client">Nom*</label>
+    <div class="shop-main-area">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+							<!-- blog-details-area-start -->
+							<div class="blog-details-area mb-40-2">
+									<?php 
+											include_once '../Controller/ForumC.php';
+										
+											$pub=new ForumC();
+							    			$result=$pub->recupererPublication($_GET['id']);
+							    			$pubs=$pub->afficherPublication();
+							    			$max=$pub->maxPublication();
+							    			$min=$pub->minPublication();
+											$commentaire=$pub->recupererCommentaire($_GET['id']);
+											$number_of_rows = $commentaire->rowCount(); 
+											foreach ($max as $val1) {
+											$max1=$val1['max_publication'];
+											}
+											foreach ($min as $val1) {
+											$min1=$val1['min_publication'];
+                                            }
+											foreach ($result as $val) {?>
+								<h3><a href="#"><?php echo $val['categorie'];?></a></h3>
+								<div class="blog-info">
+									<h3><a href="#"><?php echo $val['titre'];?></a></h3>
+									<p><?php echo $val['publication'];?>
+									<p><?php echo $_SESSION['login_client']; ?>
+									<br />
+																
+									<div class="user-info">
+										<div class="row">
+											<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+												<div class="cats-tags-wrap mb-3">
+													<i class="fa fa-list-alt"></i>Categories: <a href="#"><?php echo $val['categorie'];?></a>
+												</div>
+											</div>
+											<?php } $id=$_GET['id'];?>		
+										</div>
+									</div>
+									<div class="next-prev-area">
+										<a href="<?php  if($id-1<$min1) {$id=$min1; echo "forum_contenu.php?id=".$id=$id;} else echo "forum_contenu.php?id=".$id=$id-1;  ?>" class="next"><i class="fa fa-angle-left"></i>publication précédente</a>
+										<a href="<?php echo "forum_contenu.php?id=".$id=$id+1; if($max1<$id) $id=$max1;?>" class="previews">publication suivante <i class="fa fa-angle-right"></i></a>
+									</div>
+								</div>
+							
+								<div class="comments-area mt-40">
+								
+									<?php 
+									
+									foreach ($commentaire as $val2) {
+										?>
+			
+									<div class="single-comments single-comments-2">
+										<div class="comment-img">
+											<img src="../assets/images/blog/avatar.jpg" width="40" alt="client" />
+										</div>
+										<div class="comment-text">
+											<a href="#"><?php echo $val2['nom']; ?></a>
+											<?php 
+											$timeadd=$val2['date_com'];
+                                            $date1 = date('Y-m-d',strtotime($timeadd));
+                                            $time1 = date('H:i',strtotime($timeadd));
+                                            $date1 = explode('-', $date1);
+                                            $year = $date1[0];
+                                            $month   = $date1[1];
+                                            $day  = $date1[2];
+                                            $monthName = date("F", mktime(0, 0, 0, $month, 10));?>
+											<span><?php echo $monthName." ".$day.", ".$year." at ".$time1; ?></span>
+											<p><?php echo $val2['commentaire']; ?></p>
+											
+								</div>
+									</div>
+									<?php } ?>
+								
+								</div>
+							
+							
+								<div class="comment-respond-area mb-3">
+									<h3>Entrez Votre Commentaire</h3>
+									<div class="single-form">
+										<form action="ajouter_commentaire.php" method="POST">
+											<textarea name="commentaire" id="commentaire" cols="30" rows="10" placeholder="Entrez votre commentaire *"></textarea>
+											<input name="id_client"  type="hidden" value="<?php echo $_SESSION['id_client']; ?>" />
+											<input name="id_publication"  type="hidden" value="<?php echo $_GET['id']; ?>" />
+											<input name="nom_client"  type="hidden" value="<?php echo $_SESSION['login_client']; ?>" />
 
-                                                <input class="input-text input-text--primary-style" type="text" id="nom_client" name="nom_client" value = "<?php echo $user->nom_client; ?>"></div>
-                                            <div class="u-s-m-b-30">
+									</div>
+									
+									<div class="single-register">
+									<input type="submit" class="confirmer" value="Comment">
+								</div>
+									</form>
+								</div>
+								
+							</div>
+							
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+						
+							<div class="blog-right-area">
+							
+								<div class="blog-right mb-50 mb-3">
+									<form action="#">
+										<input type="text" placeholder="Rechercher"/>
+										<button type="submit"><i class="fa fa-search"></i></button>
+									</form>
+								</div>
+							
+								<div class="blog-right mb-50 mb-3">
+									<h3>Publication Recente</h3>
+									<div class="sidebar-post">
+										
+		
+										<?php foreach ($pubs as $row) {?>
+									
+										<div class="single-post">
+											<div class="post-img">
+												<a href="#"><img width="40" src="<?php echo $row['image']; ?>" alt="post" /></a>
+											</div>
+											<div class="post-text">
+												<h4><a href="#"><?php echo $row['titre']; ?></a></h4>
+												<?php 
+											$timeadd=$row['date_publication'];
+                                            $date1 = date('Y-m-d',strtotime($timeadd));
+                                            $time1 = date('H:i',strtotime($timeadd));
+                                            $date1 = explode('-', $date1);
+                                            $year = $date1[0];
+                                            $month   = $date1[1];
+                                            $day  = $date1[2];
+                                            $monthName = date("F", mktime(0, 0, 0, $month, 10));?>
+											<span><?php echo $monthName." ".$day.", ".$year; ?></span>
+												
+											</div>
 
-                                                <label class="gl-label" for="prenom_client">Prenom*</label>
-
-                                                <input class="input-text input-text--primary-style" type="text"  id="prenom_client" name="prenom_client" value = "<?php echo $user->prenom_client; ?>"></div>
-                                          
-                                                <div class="u-s-m-b-30">
-                                               
-                                                    <label class="gl-label" for="date_naissance">Date de naissance*</label>
-                                                       
-                                                    <input class="input-text input-text--primary-style" type="date" id="date_naissance"name="date_naissance"  value = "<?php echo $user->date_naissance; ?>"></div>
-                                                                               
-                                                    <div class="u-s-m-b-30">
-
-                                                    <span class="gl-label">Est ce que vous voulez étre un client ou vendeur*</span>
-                                                     <select class="select-box select-box--primary-style"  id="type_client" name="type_client"  size="1">
-                                                     <option value="Client">Client</option>
-                                                     <option value="Vendeur">Vendeur</option> </select> 
-                                                    </div>
-
-                                            <div class="u-s-m-b-30">
-
-                                                <label class="gl-label" for="email_client">E-MAIL*</label>
-
-                                                <input class="input-text input-text--primary-style" type="email" id="email_client" name="email_client" pattern=".+@gmail.com|.+@esprit.tn|.+@yahoo.com|.+@yahoo.fr|.+@outlook.fr"  value = "<?php echo $user->email_client; ?>"></div>
-                                            
-                                                <div class="u-s-m-b-30">
-
-                                                <label class="gl-label" for="login_client">Login*</label>
-
-                                                <input class="input-text input-text--primary-style" type="text" id="login_client" name="login_client" value = "<?php echo $user->login_client; ?>"></div>             
-                                            
-                                        <div class="u-s-m-b-30">
-
-                                                <label class="gl-label" for="mot_passe">Mot de passe*</label>
-
-                                                <input class="input-text input-text--primary-style" type="password" id="mot_passe"name="mot_passe" value = "<?php echo $user->mot_passe; ?>"></div>  
-                                                
-
-                                            <div class="u-s-m-b-15">
-
-                                                <button class="btn btn--e-transparent-brand-b-2" type="submit" onclick="verif();">Envoyer</button></div>
-
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-            
-            </div>
-         
-        </div>
-
-	<?php
-    }
-    ?>
+										</div>
+										<?php } ?>
+										
+									</div>
+								</div>							
+							</div>
+						
+						</div>
+					</div>
+				</div>
+			</div>  
 
 
-<footer>
+            <footer>
             <div class="outer-footer">
                 <div class="container">
                     <div class="row">
@@ -468,12 +455,8 @@
             </div>
         </footer>
 
-  
-    </body>
-</html>
 
-
-<script>
+        <script>
         window.ga = function() {
             ga.q.push(arguments)
         };
@@ -491,6 +474,13 @@
     <script src="../assets/js/jquery.shopnav.js"></script>
 
     <!--====== App ======-->
-    <script src="../assets/js/app.js"></script> 
-    
-    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/app.js"></script>
+
+
+    </body> 
+
+</html>
+
+
+
+
