@@ -20,7 +20,7 @@
 <?php
 	session_start();
 	if(!isset($_SESSION["id_client"])){
-    var_dump($_SESSION);
+    var_dump($_SESSION);    
 	exit(); 
 	}
 ?>

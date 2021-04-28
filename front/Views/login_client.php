@@ -272,7 +272,7 @@
                                                     <button class="btn btn--e-transparent-brand-b-2" type="submit"  onclick="verif();" >connecter</button></div>
                                                 <div class="u-s-m-b-30">
 
-                                                    <a class="gl-link" href="lost-password.html">mot de passe oublié ?</a></div>
+                                                    <a class="gl-link" href="motdepasse.php">mot de passe oublié ?</a></div>
                                             </div>
                                           
 

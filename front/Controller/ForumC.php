@@ -1,9 +1,6 @@
 <?php 
  
- 
-
-
-    require_once "../Model/Forum.php";
+ include "../Model/Forum.php";
    
 
 class ForumC

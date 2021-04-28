@@ -73,11 +73,7 @@
                                                 <a href="Views/login_client.php"><i class="fas fa-user-friends"></i></i>
 
                                                     <span>Espace client</span></a></li>
-                                            <li>
-
-                                                <a href="index.html"><i class="fas fa-store"></i>
-
-                                                    <span>Espace vendeur</span></a></li>
+                                         
                                         </ul>
                         
                                     </li>
@@ -459,7 +455,7 @@
                                 <ul class="ah-list ah-list--design2 ah-list--link-color-secondary">
                                     <li>
 
-                                        <a href="test.html">Nouveaux Produits</a></li> 
+                                        <a href="../front/Views/forum.php">Forum</a></li> 
 
                                     <li class="has-dropdown">
 

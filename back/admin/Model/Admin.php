@@ -6,7 +6,7 @@ class Admin
     private string $mot_passe;
     public function __construct($nom_administrateur,$mot_passe)
     {
-        $this->nom_administrateur =$nom_administrateur;
+        $this->nom_administrateur=$nom_administrateur;
         $this->mot_passe = $mot_passe;
 
     }

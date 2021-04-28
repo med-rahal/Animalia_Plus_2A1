@@ -35,7 +35,12 @@ try{
     
         <link rel="stylesheet" href="../assets/css/vendor.css">
         <link rel="stylesheet" href="../assets/css/utility.css">
-        <link rel="stylesheet" href="../assets/css/app.css"> 
+        <link rel="stylesheet" href="../assets/css/app.css">  
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     
       
   </head>
@@ -244,24 +249,27 @@ try{
                                     <div class="l-f-o__pad-box">
                                         <h1 class="gl-h1">Inscription</h1>   
                                             <div id="erreur"></div>
-                                        <form class="l-f-o__form" action="" method="POST" >
+                                        <form class="l-f-o__form" action="" id="captcha_form" method="POST" >
                                             <div class="gl-s-api">
                                             <div class="u-s-m-b-30">
 
                                                 <label class="gl-label" for="nom_client">Nom*</label>
 
-                                                <input class="input-text input-text--primary-style" type="text" id="nom_client" name="nom_client" placeholder="Entrez votre nom" required></div>
+                                                <input class="input-text input-text--primary-style" type="text" id="nom_client" name="nom_client" placeholder="Entrez votre nom" ></div>
+                                                <span id="first_name_error" class="text-danger"></span>
                                             <div class="u-s-m-b-30">
 
                                                 <label class="gl-label" for="prenom_client">Prenom*</label>
 
-                                                <input class="input-text input-text--primary-style" type="text"  id="prenom_client" name="prenom_client" placeholder="Entrez votre prenom" required ></div>
+                                                <input class="input-text input-text--primary-style" type="text"  id="prenom_client" name="prenom_client" placeholder="Entrez votre prenom"></div>
+                                                <span id="last_name_error" class="text-danger"></span> 
+                                                
                                           
                                                 <div class="u-s-m-b-30">
                                                
                                                     <label class="gl-label" for="date_naissance">Date de naissance*</label>
                                                     
-                                                    <input class="input-text input-text--primary-style" type="date" id="date_naissance" name="date_naissance"  placeholder="Enter votre date de naissance" required ></div>
+                                                    <input class="input-text input-text--primary-style" type="date" id="date_naissance" name="date_naissance"  placeholder="Enter votre date de naissance"></div>
                                                                                 
                                             <div class="u-s-m-b-30">
 
@@ -276,30 +284,37 @@ try{
 
                                                 <label class="gl-label" for="email_client">E-MAIL*</label>
 
-                                                <input class="input-text input-text--primary-style" type="email" id="email_client" name="email_client" pattern=".+@gmail.com|.+@esprit.tn|.+@yahoo.com|.+@yahoo.fr" placeholder="Enter votre adresse e-mail " required ></div>
+                                                <input class="input-text input-text--primary-style" type="email" id="email_client" name="email_client" pattern=".+@gmail.com|.+@esprit.tn|.+@yahoo.com|.+@yahoo.fr" placeholder="Enter votre adresse e-mail " ></div>
+                                                <span id="email_error" class="text-danger"></span>
                                             
                                                 <div class="u-s-m-b-30">
 
                                                 <label class="gl-label" for="login_client">Login*</label>
 
-                                                <input class="input-text input-text--primary-style" type="text" id ="login_client" name="login_client" placeholder="Enter votre login" required ></div>             
+                                                <input class="input-text input-text--primary-style" type="text" id ="login_client" name="login_client" placeholder="Enter votre login" ></div> 
+                                                           
                                             
                                         <div class="u-s-m-b-30">
 
                                                 <label class="gl-label" for="mot_passe">Mot de passe*</label>
 
-                                                <input class="input-text input-text--primary-style" type="password" id="mot_passe" name="mot_passe" placeholder="Enter votre mot de passe" required ></div>  
+                                                <input class="input-text input-text--primary-style" type="password" id="mot_passe" name="mot_passe" placeholder="Enter votre mot de passe"></div>
+                                                <span id="password_error" class="text-danger"></span>  
                                                 
 
                                                 <div class="u-s-m-b-30">
 
                                                 <label class="gl-label" for="mdp_verif">Vérification du mot de passe*</label>
 
-                                                <input class="input-text input-text--primary-style" type="password" id="mdp_verif" name="mdp_verif" placeholder="Confirmer votre mot de passe" required ></div>
+                                                <input class="input-text input-text--primary-style" type="password" id="mdp_verif" name="mdp_verif" placeholder="Confirmer votre mot de passe" ></div> 
+                                               
+                                                <div class="u-s-m-b-30">
+                                                <div class="g-recaptcha" data-sitekey="6LclEbwaAAAAAAaMEO376tKw5iF9soiq6JdHJti8"></div>
+                                                 <span id="captcha_error" class="text-danger"></span>
 
                                             <div class="u-s-m-b-15">
 
-                                                <button class="btn btn--e-transparent-brand-b-2" type="submit" onclick="verif();" >Envoyer</button></div>
+                                                <button class="btn btn--e-transparent-brand-b-2" name="envoyer" id="envoyer" type="submit" onclick="verif();" >Envoyer</button></div>
 
                                         </form>
                                     </div>
@@ -336,7 +351,9 @@ try{
     <script src="../assets/js/script1.js"></script>
     
         </body>
-</html>
+</html> 
+
+
 
 
 

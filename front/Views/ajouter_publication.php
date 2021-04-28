@@ -1,9 +1,6 @@
 <?php
+
 include '../Controller/ForumC.php'; 
-include '../Model/Forum.php';
-
-
-
 
 $image="../assets/img/blog/avatar.jpg";
 if ($_POST['categorie']=="General")

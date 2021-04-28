@@ -1,7 +1,17 @@
-<?php
+<?php 
+
+//config.php
+
+//Include Google Client Library for PHP autoload file
+require_once 'vendor/autoload.php';
+
+
+
+
+
   class config 
   {
-    private static $pdo = NULL;
+    private static $pdo = NULL; 
 
     public static function getConnexion() 
     {

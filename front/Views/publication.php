@@ -31,7 +31,7 @@
 <div class="container d-flex align-items-center">
 <h5>Bienvenue <?php echo $_SESSION['login_client']; ?></h5>
 <a href="../views/modifierClient.php?id_client=<?PHP echo $_SESSION['id_client']; ?>" > Modifier </a>
-<a href="../front/Views/logout.php">Déconnexion</a>
+<a href="../Views/logout.php">Déconnexion</a>
 
 </div>
     <nav class="primary-nav primary-nav-wrapper">
@@ -161,7 +161,7 @@
 							<div class="col-lg-10">
 								<div class="contact-form">
 									<h3><i class="fa fa-envelope-o"></i>Publication</h3>
-									<form name="formulaire" action="ajouter_publication.php" onsubmit="verif()" method="POST">
+									<form name="formulaire" action="ajouter_publication.php" method="POST">
 									<div class="row">
 										<div class="col-lg-12">
 												<div class="checkout-form-list">

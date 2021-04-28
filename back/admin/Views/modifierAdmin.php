@@ -1,6 +1,7 @@
 <?php
-require '../Controller/AdminC.php';
-require_once '../Model/Admin.php';
+
+include '../Controller/AdminC.php';
+include_once '../Model/Admin.php';
 
 $adminC = new AdminC();
 
@@ -10,7 +11,7 @@ if (isset($_POST['nom_administrateur']) && isset($_POST['mot_passe']) ) {
     
     $admin = new Admin($_POST['nom_administrateur'],$_POST['mot_passe']);
     $adminC->modifieradministrateur($admin,$_GET['id_admin']);
-    header('Location:../index.php');
+   # header('Location:../index.php');
 
 } 
 
@@ -64,11 +65,6 @@ if (isset($_POST['nom_administrateur']) && isset($_POST['mot_passe']) ) {
 
 </head>
 
-
-
-
-
-
 <body>
 
 <header id="header" class="fixed-top">
@@ -96,17 +92,18 @@ if (isset($_POST['nom_administrateur']) && isset($_POST['mot_passe']) ) {
                             </a>
                         </div>
                         <div class="login-form">
-                            <form action="" method="post">
+                            <form action="" method="POST"> 
+                            <div id="erreur"></div>
                                 <div class="form-group">
                                     <label>Nom administrateur</label>
-                                    <input class="au-input au-input--full" type="text" name="nom_administrateur" value = "<?php echo $user->nom_administrateur; ?>">
+                                    <input class="au-input au-input--full" type="text" id="nom_administrateur" name="nom_administrateur" value = "<?php echo $user->nom_administrateur; ?>">
                                 </div>
                                 <div class="form-group">
                                     <label>mot de passe</label>
-                                    <input class="au-input au-input--full" type="password" name="mot_passe"   value = "<?php echo $user->mot_passe; ?>">
+                                    <input class="au-input au-input--full" type="password" id="mot_passe" name="mot_passe"  value = "<?php echo $user->mot_passe; ?>">
                                 </div>
                                
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">confirmer</button>
+                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit"  onclick="verif();">confirmer</button>
                             </form>
                               
                             
@@ -124,5 +121,31 @@ if (isset($_POST['nom_administrateur']) && isset($_POST['mot_passe']) ) {
     ?>
 
 </body>
-
+ 
 </html>
+
+ <!-- Jquery JS-->
+ <script src="assets/vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="assets/vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="assets/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="assets/vendor/slick/slick.min.js">
+    </script>
+    <script src="assets/vendor/wow/wow.min.js"></script>
+    <script src="assets/vendor/animsition/animsition.min.js"></script>
+    <script src="assets/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="assets/vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="assets/vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="assets/vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="assets/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="assets/vendor/chartjs/Chart.bundle.min.js"></script>-->
+    <script src="assets/vendor/select2/select2.min.js"> -->
+    </script>
+
+    <!-- Main JS-->
+  <script src="../assets/js/main.js"></script> 
+
+  <script src="../assets/js/script.js"></script> 
