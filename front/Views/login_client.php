@@ -21,7 +21,16 @@
         catch (Exception $e){
             die('Erreur: '.$e->getMessage());
         }
-  } 
+    }
+  
+    if(!empty($_POST["remember"])) {
+        setcookie ("email_client",$_POST["email_client"],time()+ 3600);
+        setcookie ("mot_passe",$_POST["mot_passe"],time()+ 3600);
+    } else {
+        setcookie("email_client","");
+        setcookie("mot_passe","");
+    }
+
 
 ?>
 
@@ -261,11 +270,15 @@
                                                 <br>
                                                 <label class="gl-label" for="email_client">E-mail</label><br>
 
-                                                <input class="input-text input-text--primary-style" type="text" name="email_client" id="email_client" pattern=".+@gmail.com|.+@esprit.tn|.+@yahoo.com|.+@yahoo.fr" placeholder="Entrer E-mail"  required ></div>
+                                                <input class="input-text input-text--primary-style" type="text" name="email_client" id="email_client" pattern=".+@gmail.com|.+@esprit.tn|.+@yahoo.com|.+@yahoo.fr" placeholder="Entrer E-mail"  value="<?php if(isset($_COOKIE["email_client"])) { echo $_COOKIE["email_client"]; } ?>" ></div>
                                             <div class="u-s-m-b-30">
                                                 <br>
                                                 <label class="gl-label" for="mot_passe">Mot de passe</label><br>
-                                                <input class="input-text input-text--primary-style" type="password" name= "mot_passe" id="mot_passe" placeholder="Entrer mot de passe" ></div>
+                                                <input class="input-text input-text--primary-style" type="password" name= "mot_passe" id="mot_passe" placeholder="Entrer mot de passe" value="<?php if(isset($_COOKIE["mot_passe"])) { echo $_COOKIE["mot_passe"]; } ?>" ></div>
+
+                                                <div class="u-s-m-b-30">
+                                                <p><input type="checkbox" name="remember" /> Se Souvenir de moi</div>
+
                                             <div class="gl-inline">
                                                 <div class="u-s-m-b-30">
 
