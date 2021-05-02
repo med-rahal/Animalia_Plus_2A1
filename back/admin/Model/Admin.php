@@ -22,7 +22,7 @@ class Admin
     }
   
     public function setnomadmin ($nom_administrateur){
-        $this->nom_admin = $nom_administrateur;
+        $this->nom_administrateur = $nom_administrateur;
     }
     public function setmotpasseadmin($mot_passe){
         $this->mot_passe=$mot_passe;

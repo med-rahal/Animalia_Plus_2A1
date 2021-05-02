@@ -11,12 +11,13 @@ if (isset($_POST['nom_administrateur']) && isset($_POST['mot_passe']) ) {
     
     $admin = new Admin($_POST['nom_administrateur'],$_POST['mot_passe']);
     $adminC->modifieradministrateur($admin,$_GET['id_admin']);
-   # header('Location:../index.php');
+    header('Location:../index.php');
 
 } 
 
 }
 ?> 
+
 
 <?php
 	session_start();
@@ -27,62 +28,341 @@ if (isset($_POST['nom_administrateur']) && isset($_POST['mot_passe']) ) {
 ?>
 
 
-
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
+    <!-- Required meta tags-->
     <meta charset="UTF-8">
-    <title>Modifier un administrateur</title>
-<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="au theme template">
     <meta name="author" content="Hau Nguyen">
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Connexion administrateur</title>
+    <title>Page Admin</title>
 
     <!-- Fontfaces CSS-->
-   <link href="assets/css/font-face.css" rel="stylesheet" media="all">
-    <link href="assets/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-   <link href="assets/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
-    <link href="assets/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+   
+    <link href="../assets/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="../assets/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="../assets/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
 
-    <!-- Bootstrap CSS-->
-   <link href="../assets/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+  
 
     <!-- Vendor CSS-->
-    <link href="assets/vendor/animsition/animsition.min.css" rel="stylesheet" media="all"> 
+    <link href="assets/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
     <link href="assets/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
-     <link href="assets/vendor/wow/animate.css" rel="stylesheet" media="all">
-     <link href="assets/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
-     <link href="assets/vendor/slick/slick.css" rel="stylesheet" media="all">
-     <link href="assets/vendor/select2/select2.min.css" rel="stylesheet" media="all">-->
-     <link href="assets/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
-   
-     <link href="../assets/css/theme.css" rel="stylesheet" media="all">
+    <link href="assets/vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="assets/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="assets/vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="assets/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="../assets/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all"> 
+
+
+	  <!-- Bootstrap CSS-->
+	  <link href="../assets/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="../assets/css/theme.css" rel="stylesheet" media="all"> 
+	<link href="../assets/css/font-face.css" rel="stylesheet" media="all">
 
 </head>
 
-<body>
+<body class="animsition"> 
 
-<header id="header" class="fixed-top">
-                <div class="container d-flex align-items-center">
-                   
-                    <h5>Bienvenue <?php  echo $_SESSION['nom_administrateur']; ?></h5> 
-                   <a href="logout.php" class="connexion-btn scr ollto">Déconnexion</a>
+    <div class="page-wrapper">
+        <!-- HEADER MOBILE-->
+        <header class="header-mobile d-block d-lg-none">
+            <div class="header-mobile__bar">
+                <div class="container-fluid">
+                    <div class="header-mobile-inner">
+                        <a class="logo" href="index.html">
+                            <img src="assets/images/icon/logo.png" alt="Animaliaplus" />
+                        </a>
+                        <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
             </div>
-</header> 
+            <nav class="navbar-mobile">
+                <div class="container-fluid">
+                    <ul class="navbar-mobile__list list-unstyled">
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                
+                                    <a href="index.html">Dashboard</a>
+                                
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="chart.html">
+                                <i class="fas fa-chart-bar"></i>Charts</a>
+                        </li>
+                        <li>
+                            <a href="table.html">
+                                <i class="fas fa-table"></i>Tables</a>
+                        </li>
+                        <li>
+                            <a href="form.html">
+                                <i class="far fa-check-square"></i>Forms</a>
+                        </li>
+                        <li>
+                            <a href="calendar.html">
+                                <i class="fas fa-calendar-alt"></i>Calendar</a>
+                        </li>
+                        <li>
+                            <a href="map.html">
+                                <i class="fas fa-map-marker-alt"></i>Maps</a>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-copy"></i>Pages</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="login.html">Login</a>
+                                </li>
+                                <li>
+                                    <a href="register.html">Register</a>
+                                </li>
+                                <li>
+                                    <a href="forget-pass.html">Forget Password</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-desktop"></i>UI Elements</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="button.html">Button</a>
+                                </li>
+                                <li>
+                                    <a href="badge.html">Badges</a>
+                                </li>
+                                <li>
+                                    <a href="tab.html">Tabs</a>
+                                </li>
+                                <li>
+                                    <a href="card.html">Cards</a>
+                                </li>
+                                <li>
+                                    <a href="alert.html">Alerts</a>
+                                </li>
+                                <li>
+                                    <a href="progress-bar.html">Progress Bars</a>
+                                </li>
+                                <li>
+                                    <a href="modal.html">Modals</a>
+                                </li>
+                                <li>
+                                    <a href="switch.html">Switchs</a>
+                                </li>
+                                <li>
+                                    <a href="grid.html">Grids</a>
+                                </li>
+                                <li>
+                                    <a href="fontawesome.html">Fontawesome Icon</a>
+                                </li>
+                                <li>
+                                    <a href="typo.html">Typography</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- END HEADER MOBILE-->
 
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo">
+                <a href="#">
+                    <img src="../assets/images/icon/logo.png" alt="Animaliaplus" />
+                </a>
+            </div>
+            <div class="menu-sidebar__content js-scrollbar1">
+                <nav class="navbar-sidebar">
+                    <ul class="list-unstyled navbar__list">
+                        <li class="active has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list"> 
+                                <li>
+                                    <a href="Views/showadmin.php">Gestion des administrateurs</a>
+                                </li>
+                                <li>
+                                    <a href="plante\plante.html">Gestion des vendeurs</a>
+                                </li>
+                                <li>
+                                    <a href="views/showClient.php">Gestion des clients</a>
+                                </li>
+                                <li>
+                                    <a href="index.html">Gestion des reclamations</a>
+                                </li>
+                                <li>
+                                    <a href="index.html">Gestion des avis</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="chart.html">
+                                <i class="fas fa-chart-bar"></i>Charts</a>
+                        </li>
+                        <li>
+                            <a href="table.html">
+                                <i class="fas fa-table"></i>Tables</a>
+                        </li>
+                        <li>
+                            <a href="form.html">
+                                <i class="far fa-check-square"></i>Forms</a>
+                        </li>
+                        <li>
+                            <a href="calendar.html">
+                                <i class="fas fa-calendar-alt"></i>Calendar</a>
+                        </li>
+                        <li>
+                            <a href="map.html">
+                                <i class="fas fa-map-marker-alt"></i>Maps</a>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-copy"></i>Pages</a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="login.html">Login</a>
+                                </li>
+                                <li>
+                                    <a href="register.html">Register</a>
+                                </li>
+                                <li>
+                                    <a href="forget-pass.html">Forget Password</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-desktop"></i>UI Elements</a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="button.html">Button</a>
+                                </li>
+                                <li>
+                                    <a href="badge.html">Badges</a>
+                                </li>
+                                <li>
+                                    <a href="tab.html">Tabs</a>
+                                </li>
+                                <li>
+                                    <a href="card.html">Cards</a>
+                                </li>
+                                <li>
+                                    <a href="alert.html">Alerts</a>
+                                </li>
+                                <li>
+                                    <a href="progress-bar.html">Progress Bars</a>
+                                </li>
+                                <li>
+                                    <a href="modal.html">Modals</a>
+                                </li>
+                                <li>
+                                    <a href="switch.html">Switchs</a>
+                                </li>
+                                <li>
+                                    <a href="grid.html">Grids</a>
+                                </li>
+                                <li>
+                                    <a href="fontawesome.html">Fontawesome Icon</a>
+                                </li>
+                                <li>
+                                    <a href="typo.html">Typography</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        
 
-<?php
+    
+		 <div class="page-container">
+        
+            <header class="header-desktop">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="header-wrap">
+                            <form class="form-header" action="" method="POST">
+                                <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
+                                <button class="au-btn--submit" type="submit" value="submit">
+                                    <i class="zmdi zmdi-search"></i>
+                                </button>
+                            </form>
+                                               
+                                <div class="account-wrap">
+                                    <div class="account-item clearfix js-item-menu">
+                                        <div class="image">
+                                            <img src="../assets/images/icon/avatar-01.jpg" alt="MohamedRahal" />
+                                        </div>
+                                        <div class="content">
+										<h5>Bienvenue <?php echo $_SESSION['nom_administrateur']; ?></h5> 
+										<a href="../admin/Views/logout.php">Déconnexion</a>
+										<a href="../Views/modifierAdmin.php?id_admin=<?PHP echo $_SESSION['id_admin']; ?>" > Modifier </a>
+                       					
+											
+										</div>
+                                        <div class="account-dropdown js-dropdown">
+                                            <div class="info clearfix">
+                                                <div class="image">
+                                                    <a href="#">
+                                                        <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                                    </a>
+                                                </div> 
+                                                <div class="content">
+                                                    <h5 class="name">
+                                                        <a href="#">Animaliaplus</a>
+                                                    </h5>
+                                                    <span class="email">contact@animaliplus.net</span>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__body">
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-account"></i>Account</a>
+                                                </div>
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-settings"></i>Settings</a>
+                                                </div>
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-money-box"></i>Billing</a>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__footer">
+                                                <a href="#">
+                                                    <i class="zmdi zmdi-power"></i>Logout</a>
+                                            </div>
+                                        </div>
+               					 </div>
+          			  </header>
+
+                        <?php
 			if (isset($_GET['id_admin'])){
 				$user = $adminC->recupererAdmin1($_GET['id_admin']);	
 ?> 
 
-<div class="page-wrapper">
-        <div class="page-content--bge5">
+
+	
+				 <div class="main-content">
+              
+                
             <div class="container">
                 <div class="login-wrap">
                     <div class="login-content">
@@ -92,7 +372,7 @@ if (isset($_POST['nom_administrateur']) && isset($_POST['mot_passe']) ) {
                             </a>
                         </div>
                         <div class="login-form">
-                            <form action="" method="POST"> 
+                            <form action="" onsubmit="return verif()" method="POST"> 
                             <div id="erreur"></div>
                                 <div class="form-group">
                                     <label>Nom administrateur</label>
@@ -103,7 +383,7 @@ if (isset($_POST['nom_administrateur']) && isset($_POST['mot_passe']) ) {
                                     <input class="au-input au-input--full" type="password" id="mot_passe" name="mot_passe"  value = "<?php echo $user->mot_passe; ?>">
                                 </div>
                                
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit"  onclick="verif();">confirmer</button>
+                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit" >confirmer</button>
                             </form>
                               
                             
@@ -111,9 +391,9 @@ if (isset($_POST['nom_administrateur']) && isset($_POST['mot_passe']) ) {
                     </div>
                 </div>
             </div>
-        </div>
+       
 
-    </div>
+ 
 
 
 	<?php
@@ -124,8 +404,15 @@ if (isset($_POST['nom_administrateur']) && isset($_POST['mot_passe']) ) {
  
 </html>
 
- <!-- Jquery JS-->
- <script src="assets/vendor/jquery-3.2.1.min.js"></script>
+
+            </div>
+
+                        
+
+                        
+
+    <!-- Jquery JS-->
+    <script src="assets/vendor/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->
     <script src="assets/vendor/bootstrap-4.1/popper.min.js"></script>
     <script src="assets/vendor/bootstrap-4.1/bootstrap.min.js"></script>
@@ -141,11 +428,48 @@ if (isset($_POST['nom_administrateur']) && isset($_POST['mot_passe']) ) {
     </script>
     <script src="assets/vendor/circle-progress/circle-progress.min.js"></script>
     <script src="assets/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="assets/vendor/chartjs/Chart.bundle.min.js"></script>-->
-    <script src="assets/vendor/select2/select2.min.js"> -->
+    <script src="assets/vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="assets/vendor/select2/select2.min.js">
     </script>
 
-    <!-- Main JS-->
-  <script src="../assets/js/main.js"></script> 
+    <script src="../assets/js/main.js"></script> 
+    <script src="../assets/js/script.js"></script> 
 
-  <script src="../assets/js/script.js"></script> 
+</body>
+
+</html>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+		

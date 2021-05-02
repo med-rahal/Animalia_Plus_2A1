@@ -1,7 +1,7 @@
 <?php
 
 	session_start();
-	if(!isset($_SESSION["id_client"])){
+	if(!isset($_SESSION["user"])){
         var_dump($_SESSION);
 		header("Location:../Views/login_client.php");
 		exit(); 
@@ -29,8 +29,7 @@
 
 
 <div class="container d-flex align-items-center">
-<h5>Bienvenue <?php echo $_SESSION['login_client']; ?></h5>
-<a href="../views/modifierClient.php?id_client=<?PHP echo $_SESSION['id_client']; ?>" > Modifier </a>
+<h5>Bienvenue <?php echo $_SESSION['user']['family_name'] ;echo $_SESSION['user']['given_name']; ?></h5>
 <a href="../Views/logout.php">Déconnexion</a>
 
 </div>

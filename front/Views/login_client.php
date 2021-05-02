@@ -1,7 +1,7 @@
 <?php
     require('../config.php');
-    session_start();
-
+    require_once('settings.php');
+    #session_start();
     if (isset($_POST['email_client'])){
         $email_client=$_POST['email_client'];
         $mot_passe=$_POST['mot_passe'];
@@ -260,10 +260,16 @@
                                         <div class="u-s-m-b-15">
 
                                             <a class="l-f-o__create-link btn--e-transparent-brand-b-2" href="connexion.php">Créer un compte </a></div>
+                                        
+                                            <div class="u-s-m-b-15">
+
+                                            <button class="gl-s-api__btn gl-s-api__btn--gplus"  onclick ="window.location ='<?php echo $login_url; ?>'" type="button"><i class="fab fa-google"></i>
+
+                                                        <span>Signin with Google</span></button></div>
                                         <h1 class="gl-h1">Connexion</h1>
 
                                         <span class="gl-text u-s-m-b-30">Si vous avez un compte chez nous, veuillez vous connecter.</span>
-                                        <form class="l-f-o__form" method ="POST">
+                                        <form class="l-f-o__form"   onsubmit="return verif()" method ="POST">
                                           
                                          
                                             <div class="u-s-m-b-30">
@@ -282,7 +288,7 @@
                                             <div class="gl-inline">
                                                 <div class="u-s-m-b-30">
 
-                                                    <button class="btn btn--e-transparent-brand-b-2" type="submit"  onclick="verif();" >connecter</button></div>
+                                                    <button class="btn btn--e-transparent-brand-b-2" type="submit" >connecter</button></div>
                                                 <div class="u-s-m-b-30">
 
                                                     <a class="gl-link" href="motdepasse.php">mot de passe oublié ?</a></div>

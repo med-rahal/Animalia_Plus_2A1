@@ -42,8 +42,6 @@
     <!-- Title Page-->
     <title>Connexion administrateur</title>
 
-    <!-- Fontfaces CSS-->
-
 
     <!-- Bootstrap CSS-->
    <link href="../assets/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
@@ -74,22 +72,22 @@
                             </a>
                         </div>
                         <div class="login-form">
-                            <form action="" method="post">
+                            <form action=""  onsubmit="return verif()" method="post">
                                 <div id="erreur"></div>
                                 <div class="form-group">
                                     <label>Nom administrateur</label>
-                                    <input class="au-input au-input--full" type="text"  id="nom_administrateur" name="nom_administrateur" placeholder="Entrer le nom administrateur" required>
+                                    <input class="au-input au-input--full" type="text"  id="nom_administrateur" name="nom_administrateur" placeholder="Entrer le nom administrateur">
                                 </div>
                                 <div class="form-group">
-                                    <label>mot de passe</label>
-                                    <input class="au-input au-input--full" type="password" id="mot_passe" name="mot_passe" placeholder="Entrer le mot de passe" required>
+                                    <label>Mot de passe</label>
+                                    <input class="au-input au-input--full" type="password" id="mot_passe" name="mot_passe" placeholder="Entrer le mot de passe" >
                                 </div>
                                 <div class="login-password_forgotten">
                                     <label>
                                         <a href="#motpasse_oublie">Vous avez oublié votre mot de passe?</a>
                                     </label>
                                 </div>
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit" onclick="verif();">connecter</button>
+                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">connecter</button>
                             </form>
                             
                         </div>

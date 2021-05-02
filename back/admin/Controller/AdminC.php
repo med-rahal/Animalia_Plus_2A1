@@ -46,13 +46,28 @@
 				die('Erreur: '.$e->getMessage());
 			}
 		}
+		public function getAdminByname($nom_administrateur) {
+			try {
+				$db = config::getConnexion();
+				$query = $db->prepare(
+					'SELECT * FROM administrateur WHERE nom_administrateur = :nom_administrateur'
+				);
+				$query->execute([
+					'nom_administrateur' => $nom_administrateur
+				]);
+				return $query->fetch();
+			} catch (PDOException $e) {
+				$e->getMessage();
+			}
+		}
+
 		function modifieradministrateur($administrateur, $id_admin){
 			try {
 				$db = config::getConnexion();
 				$query = $db->prepare(
 					'UPDATE administrateur SET 
 						nom_administrateur = :nom_administrateur, 
-						mot_passe = :mot_passe,
+						mot_passe = :mot_passe
 					WHERE id_admin = :id_admin'
 				);
 				$query->execute([

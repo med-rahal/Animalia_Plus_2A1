@@ -249,7 +249,7 @@ try{
                                     <div class="l-f-o__pad-box">
                                         <h1 class="gl-h1">Inscription</h1>   
                                             <div id="erreur"></div>
-                                        <form class="l-f-o__form" action="" id="captcha_form" method="POST" >
+                                        <form class="l-f-o__form" action="" id="captcha_form" onsubmit="return verif()" method="POST" >
                                             <div class="gl-s-api">
                                             <div class="u-s-m-b-30">
 
@@ -314,7 +314,7 @@ try{
 
                                             <div class="u-s-m-b-15">
 
-                                                <button class="btn btn--e-transparent-brand-b-2" name="envoyer" id="envoyer" type="submit" onclick="verif();" >Envoyer</button></div>
+                                                <button class="btn btn--e-transparent-brand-b-2" name="envoyer" id="envoyer" type="submit"  >Envoyer</button></div>
 
                                         </form>
                                     </div>

@@ -82,7 +82,54 @@
 			} catch (PDOException $e) {
 				$e->getMessage();
 			}
+		} 
+
+		public function getclientByname($nom_client) {
+			try {
+				$db = config::getConnexion();
+				$query = $db->prepare(
+					'SELECT * FROM client WHERE nom_client = :nom_client'
+				);
+				$query->execute([
+					'nom_client' => $nom_client
+				]);
+				return $query->fetch();
+			} catch (PDOException $e) {
+				$e->getMessage();
+			}
 		}
+
+				
+     
+
+		function trierclient(){
+			
+			$sql="SELECT * FROM client order by nom_client";
+			$db = config::getConnexion();
+			try{
+				$liste = $db->query($sql);
+				return $liste;
+			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}	
+		} 
+
+
+		function trierclientdesc(){
+			
+			$sql="SELECT * FROM client order by date_naissance desc";
+			$db = config::getConnexion();
+			try{
+				$liste = $db->query($sql);
+				return $liste;
+			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}	
+		}
+
+
 		function recupererClient($id_client){
 			$sql="SELECT * from client where id_client=$id_client";
 			$db = config::getConnexion();
