@@ -4,9 +4,11 @@ function verif() {
     var prenom = document.querySelector('#prenom_client').value;
     var dateNais = document.querySelector('#date_naissance').value;
     var type = document.querySelector('#type_client').value;
+    var email= document.querySelector('#email_client').value;
     var login= document.querySelector('#login_client').value;
     var pass = document.querySelector('#mot_passe').value;
     var pass1 = document.querySelector('#mdp_verif').value;
+    var emailregex=/^([a-zA-Z.a-zA-Z]+@gmail.com)*$/; 
 
 
     if (nom.charAt(0) < 'A' || nom.charAt(0) > 'Z') {
@@ -35,6 +37,8 @@ function verif() {
         errors += "<li>Veuillez indiquer votre type de compte </li>";
     }
 
+
+
     if (login.charAt(0) < 'A' ||login.charAt(0) > 'Z') {
         errors += "<li>Le login doit commencer par une lettre Majuscule </li>";
     }
@@ -45,6 +49,11 @@ function verif() {
         document.querySelector('#mdp_verif').value = "";
         document.querySelector('#pass').focus();
     }
+
+    if(email.match(emailregex) && pass.length >=8) 
+    {
+        return true; 
+     }
 
     if (errors !== "<ul>") {
         document.querySelector('#erreur').style.color = 'red';

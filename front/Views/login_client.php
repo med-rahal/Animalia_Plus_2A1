@@ -1,7 +1,8 @@
 <?php
     require('../config.php');
     require_once('settings.php');
-    #session_start();
+
+    # session_start();
     if (isset($_POST['email_client'])){
         $email_client=$_POST['email_client'];
         $mot_passe=$_POST['mot_passe'];
@@ -31,8 +32,11 @@
         setcookie("mot_passe","");
     }
 
+    $facebook_login_url="https://localhost/animalia+/front/views/facebook.php";
+?> 
 
-?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -265,7 +269,14 @@
 
                                             <button class="gl-s-api__btn gl-s-api__btn--gplus"  onclick ="window.location ='<?php echo $login_url; ?>'" type="button"><i class="fab fa-google"></i>
 
-                                                        <span>Signin with Google</span></button></div>
+                                                        <span>Se connecter avec Google</span></button></div>  
+
+                                            <div class="u-s-m-b-15">
+                                            <button class="gl-s-api__btn gl-s-api__btn--fb"  onclick ="window.location ='<?php echo $facebook_login_url;?>'" type="button"><i class="fab fa-facebook-f"></i>
+
+                                                            <span>Se connecter avec Facebook</span></button></div> 
+
+
                                         <h1 class="gl-h1">Connexion</h1>
 
                                         <span class="gl-text u-s-m-b-30">Si vous avez un compte chez nous, veuillez vous connecter.</span>

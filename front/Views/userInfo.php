@@ -6,26 +6,34 @@
 <html> 
 <head> 
 
- </head> 
- <body> 
-    <div class="container"> 
-        <div class="row" id="profile" style="background" > 
-            <div class="col-md-4 col-md-offset-2 vbottom"> 
-            <img id="pPicture" src="<?=$_SESSION['user']['picture'];?>" class="img-circle"> 
-            </div> 
-            <div class="col-md-5 vbottom"> 
-             <p><strong><?=$_SESSION['user']['family_name'];?></strong></p> 
-             <p><strong><?=$_SESSION['user']['given_name'];?></strong></p> 
-             <p><strong><?=$_SESSION['user']['email'];?></strong></p> 
-             </div> 
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-             <div class="col-md5"> 
-             <a href ="../Views/forum.php">Continue</a> 
-            </div>
-            <div class="col-md1"> 
-             <a href ="logout.php">Logout</a> 
-            </div> 
-         </div> 
-    </div> 
-</body> 
-</htm>   
+ </head> 
+ <body>  
+ <br><br>
+<div class="container-fluid well span6">
+	<div class="row-fluid">
+        <div class="span2" >
+		    <img src="<?=$_SESSION['user']['picture'];?>" class="img-circle">
+        </div>
+        
+        <div class="span8">
+            <h3><?=$_SESSION['user']['family_name'];?></h3>
+            <h6><?=$_SESSION['user']['given_name'];?></h6>
+            <h6><?=$_SESSION['user']['email'];?></h6>
+        </div>
+        
+        <div class="span2">
+               <a href ="../Views/forum.php">Continue</a>
+                 <a href ="logout.php">Deconnexion</a>
+             </div>
+        </div>
+</div>
+    </body> 
+</html>
+
+
+
+   

@@ -284,7 +284,7 @@ try{
 
                                                 <label class="gl-label" for="email_client">E-MAIL*</label>
 
-                                                <input class="input-text input-text--primary-style" type="email" id="email_client" name="email_client" pattern=".+@gmail.com|.+@esprit.tn|.+@yahoo.com|.+@yahoo.fr" placeholder="Enter votre adresse e-mail " ></div>
+                                                <input class="input-text input-text--primary-style" type="email" id="email_client" name="email_client"  placeholder="Enter votre adresse e-mail " ></div>
                                                 <span id="email_error" class="text-danger"></span>
                                             
                                                 <div class="u-s-m-b-30">
