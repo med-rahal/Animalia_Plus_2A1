@@ -226,7 +226,7 @@
                                                 <br>
                                                 <label class="gl-label" for="email_client">E-mail:</label>
 
-                                                <input class="input-text input-text--primary-style" type="email" name="email_client" id="email_client" pattern=".+@gmail.com|.+@esprit.tn|.+@yahoo.com|.+@yahoo.fr" placeholder="Entrer votre adresse e-mail"></div>
+                                                <input class="input-text input-text--primary-style" type="email" name="email_client" id="email_client" placeholder="Entrer votre adresse e-mail"></div>
                             
                                             <div class="gl-inline">
                                                 <div class="u-s-m-b-30">

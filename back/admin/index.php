@@ -177,9 +177,6 @@
                                     <a href="Views/showadmin.php">Gestion des administrateurs</a>
                                 </li>
                                 <li>
-                                    <a href="plante\plante.html">Gestion des vendeurs</a>
-                                </li>
-                                <li>
                                     <a href="views/showClient.php">Gestion des clients</a>
                                 </li>
                                 <li>

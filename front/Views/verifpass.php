@@ -74,7 +74,7 @@
 
 
       if (isset($_POST['mot_passe'])){
-        $email=$_SESSION['email_client'] ;
+        $email="rahalmed467@gmail.com" ;
         $password=$_POST['mot_passe'];
         if($_POST['confpassword']==$password){
             $sql="UPDATE client SET mot_passe= '" . $password . "' WHERE email_client='" . $email . "'";
@@ -82,7 +82,7 @@
             try{
                 $query=$db->prepare($sql);
                 $query->execute();
-               header("Location:../Views/login_client.php");
+                header("Location:../Views/login_client.php");
             }
             catch (Exception $e){
                 die('Erreur: '.$e->getMessage());
@@ -529,5 +529,3 @@
 
         </body>
 </html>
-
-
