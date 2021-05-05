@@ -177,7 +177,7 @@
                                     <a href="Views/showadmin.php">Gestion des administrateurs</a>
                                 </li>
                                 <li>
-                                    <a href="plante\plante.html">Gestion des vendeurs</a>
+                                    <a href="#">Gestion des vendeurs</a>
                                 </li>
                                 <li>
                                     <a href="views/showClient.php">Gestion des clients</a>
@@ -199,7 +199,7 @@
                                     <a href="#">Gestion des Animaux</a>
                                 </li>
                                 <li>
-                                    <a href="afficher_categorie_plante.php">Gestion des Plantes</a>
+                                    <a href="afficher_plante.php">Gestion des Plantes</a>
                                 </li>
                                 <li>
                                     <a href="#">Gestion des alimentation</a>
@@ -215,7 +215,7 @@
                                     <a href="#">Categorie Animaux</a>
                                 </li>
                                 <li>
-                                    <a href="#">Categorie Plantes</a>
+                                    <a href="afficher_categorie_plante.php">Categorie Plantes</a>
                                 </li>
                                 <li>
                                     <a href="#">Categorie alimentation</a>
@@ -344,8 +344,8 @@
                                 <th>duree_vie</th>
                             </tr>
 
-                            <?PHP
-				foreach($listeUsers as $user){
+            <?PHP
+			foreach($listeUsers as $user){
 			?>
                             <tr>
                                 <td>
