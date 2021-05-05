@@ -1,0 +1,36 @@
+body {
+  margin: 2rem;
+}
+
+.form-inline .form-group {
+  padding: 0.75rem 1.5rem;
+}
+.form-inline .form-control {
+  width: 100%;
+}
+
+.qr-out img {
+  margin: 2rem auto;
+  display: block;
+}
+
+.biscard-out {
+  margin: 1rem 0;
+}
+.biscard-out .biscard-img {
+  border: 1px solid #ccc;
+  border-left: 1rem solid #ccc;
+  padding: 1.5rem;
+  float: left;
+}
+.biscard-out .biscard-img h3 {
+  margin-top: 0;
+}
+.biscard-out .biscard-img .phone a {
+  text-decoration: none;
+  color: inherit;
+}
+.biscard-out .biscard-img .email a {
+  text-decoration: none;
+  color: inherit;
+}

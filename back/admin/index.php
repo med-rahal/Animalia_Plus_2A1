@@ -190,14 +190,30 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="chart.html">
-                                <i class="fas fa-chart-bar"></i>Charts</a>
+                        
+                        <li class="active has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-tachometer-alt"></i>Produits</a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list"> 
+                                <li>
+                                    <a href="Views/afficher_plante.php">Gestion des plantes</a>
+                                </li>
+                                <li>
+                                    <a href="Views/afficher_categorie.php">Categories des plantes</a>
+                                </li>
+                            </ul>
                         </li>
+
+                        <li>
+                            <a href="views/qr_generator.php">
+                                <i class="fas fa-chart-bar"></i>Generateur QR</a>
+                        </li>
+
                         <li>
                             <a href="table.html">
-                                <i class="fas fa-table"></i>Tables</a>
+                                <i class="fas fa-chart-bar"></i>Espace Musique</a>
                         </li>
+
                         <li>
                             <a href="form.html">
                                 <i class="far fa-check-square"></i>Forms</a>
