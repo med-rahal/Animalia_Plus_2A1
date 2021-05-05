@@ -358,7 +358,7 @@
                                     <?PHP echo $user['duree_vie']; ?>
                                 </td>
                                 <td>
-                                    <form method="POST" action="supprimer_categorie.php">
+                                    <form method="POST" action="supprimer_categorie_plante.php">
                                         <input type="submit" name="supprimer" value="supprimer">
                                         <input type="hidden" value=<?PHP echo $user['nom_categorie']; ?>
                                         name="nom_categorie">
