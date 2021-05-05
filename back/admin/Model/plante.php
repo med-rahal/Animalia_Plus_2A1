@@ -6,16 +6,16 @@
 		private ?int $prix = null;
 		private ?string $date_plante = null;
 		private ?string $image = null;
-		private ?int $id_client = null;
+		private ?int $id_vendeur = null;
 		
-		function __construct(string $nom_categorie, string $nom_plante, int $prix, string $date_plante, string $image, int $id_client){
+		function __construct(string $nom_categorie, string $nom_plante, int $prix, string $date_plante, string $image, int $id_vendeur){
 			
 			$this->nom_categorie=$nom_categorie;
 			$this->nom_plante=$nom_plante;
 			$this -> prix=$prix;
 			$this -> date_plante=$date_plante;
 			$this -> image=$image;
-			$this -> id_client=$id_client;
+			$this -> id_vendeur=$id_vendeur;
 		}
 		
 		function getref_plante(): int{
@@ -36,8 +36,8 @@
 		function getimage(): string{
 			return $this->image;
 		}
-		function getid_client(): int{
-			return $this->id_client;
+		function getid_vendeur(): int{
+			return $this->id_vendeur;
 		}
 		
 
@@ -59,8 +59,8 @@
 		function setimage(): void{
 			$this->image;
 		}
-		function setid_client(): void{
-			$this->id_client;
+		function setid_vendeur(): void{
+			$this->id_vendeur;
 		}
 	}
 ?>

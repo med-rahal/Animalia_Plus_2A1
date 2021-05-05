@@ -11,7 +11,7 @@
         isset($_POST["prix"]) && 
         isset($_POST["date_plante"]) && 
         isset($_POST["image"]) &&
-        isset($_POST["id_client"])
+        isset($_POST["id_vendeur"])
 	){
 		if (
             !empty($_POST["nom_categorie"]) && 
@@ -19,7 +19,7 @@
             !empty($_POST["prix"]) && 
             !empty($_POST["date_plante"]) && 
             !empty($_POST["image"]) && 
-            !empty($_POST["id_client"])
+            !empty($_POST["id_vendeur"])
         ) {
             $user = new plante(
                 $_POST['nom_categorie'],
@@ -27,7 +27,7 @@
                 $_POST['prix'],
                 $_POST['date_plante'],
                 $_POST['image'],
-                $_POST['id_client']
+                $_POST['id_vendeur']
 			);
 			
             $planteC->modifierplante($user, $_GET['ref_plante']);
@@ -53,12 +53,12 @@
     <title>Page Admin</title>
 
     <!-- Fontfaces CSS-->
-   
+
     <link href="../assets/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <link href="../assets/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
     <link href="../assets/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
 
-  
+
 
     <!-- Vendor CSS-->
     <link href="assets/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
@@ -67,19 +67,19 @@
     <link href="assets/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
     <link href="assets/vendor/slick/slick.css" rel="stylesheet" media="all">
     <link href="assets/vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="../assets/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all"> 
+    <link href="../assets/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
 
 
-	  <!-- Bootstrap CSS-->
-	  <link href="../assets/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+    <!-- Bootstrap CSS-->
+    <link href="../assets/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
 
     <!-- Main CSS-->
-    <link href="../assets/css/theme.css" rel="stylesheet" media="all"> 
-	<link href="../assets/css/font-face.css" rel="stylesheet" media="all">
+    <link href="../assets/css/theme.css" rel="stylesheet" media="all">
+    <link href="../assets/css/font-face.css" rel="stylesheet" media="all">
 
 </head>
 
-<body class="animsition"> 
+<body class="animsition">
 
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
@@ -105,9 +105,9 @@
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                
-                                    <a href="index.html">Dashboard</a>
-                                
+
+                                <a href="index.html">Dashboard</a>
+
                             </ul>
                         </li>
                         <li>
@@ -204,7 +204,7 @@
                         <li class="active has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
-                            <ul class="list-unstyled navbar__sub-list js-sub-list"> 
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
                                     <a href="Views/showadmin.php">Gestion des administrateurs</a>
                                 </li>
@@ -226,7 +226,7 @@
                         <li class="active has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-tachometer-alt"></i>Produits</a>
-                            <ul class="list-unstyled navbar__sub-list js-sub-list"> 
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
                                     <a href="#">Gestion des Animaux</a>
                                 </li>
@@ -242,7 +242,7 @@
                         <li class="active has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-tachometer-alt"></i>Categories</a>
-                            <ul class="list-unstyled navbar__sub-list js-sub-list"> 
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
                                     <a href="#">Categorie Animaux</a>
                                 </li>
@@ -277,72 +277,75 @@
                 </nav>
             </div>
         </aside>
-        
 
-    
-		 <div class="page-container">
-        
+
+
+        <div class="page-container">
+
             <header class="header-desktop">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="header-wrap">
                             <form class="form-header" action="recherche_admin.php" method="POST">
-                                <input class="au-input au-input--xl" type="text" name ="nom_administrateur" placeholder="Search for datas &amp; reports..." />
-								<input  class="au-btn--submit" type = "submit" value = "Recherche" name ="search">
-                                    <i class="zmdi zmdi-search"></i>
+                                <input class="au-input au-input--xl" type="text" name="nom_administrateur"
+                                    placeholder="Search for datas &amp; reports..." />
+                                <input class="au-btn--submit" type="submit" value="Recherche" name="search">
+                                <i class="zmdi zmdi-search"></i>
                                 </button>
-                            </form> 
-	                               
-                                <div class="account-wrap">
-                                    <div class="account-item clearfix js-item-menu">
-                                        <div class="image">
-                                            <img src="../assets/images/icon/avatar-01.jpg" alt="MohamedRahal" />
-                                        </div>
-                                        <div class="content">
-										<h5>Bienvenue <?php echo $_SESSION['nom_administrateur']; ?></h5> 
-										<a href="../admin/Views/logout.php">Déconnexion</a>
-										<a href="../Views/modifierAdmin.php?id_admin=<?PHP echo $_SESSION['id_admin']; ?>" > Modifier </a>
-                       					
-											
-										</div>
-                                        <div class="account-dropdown js-dropdown">
-                                            <div class="info clearfix">
-                                                <div class="image">
-                                                    <a href="#">
-                                                        <img src="../images/icon/avatar-01.jpg" alt="John Doe" />
-                                                    </a>
-                                                </div> 
-                                                <div class="content">
-                                                    <h5 class="name">
-                                                        <a href="#">Animaliaplus</a>
-                                                    </h5>
-                                                    <span class="email">contact@animaliplus.net</span>
-                                                </div>
-                                            </div>
-                                            <div class="account-dropdown__body">
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-account"></i>Account</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-settings"></i>Settings</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-money-box"></i>Billing</a>
-                                                </div>
-                                            </div>
-                                            <div class="account-dropdown__footer">
-                                                <a href="#">
-                                                    <i class="zmdi zmdi-power"></i>Logout</a>
-                                            </div>
-                                        </div>
-               					 </div>
-          			  </header>
+                            </form>
 
-	
-				 <div class="main-content">
+                            <div class="account-wrap">
+                                <div class="account-item clearfix js-item-menu">
+                                    <div class="image">
+                                        <img src="../assets/images/icon/avatar-01.jpg" alt="MohamedRahal" />
+                                    </div>
+                                    <div class="content">
+                                        <h5>Bienvenue <?php echo $_SESSION['nom_administrateur']; ?></h5>
+                                        <a href="../admin/Views/logout.php">Déconnexion</a>
+                                        <a
+                                            href="../Views/modifierAdmin.php?id_admin=<?PHP echo $_SESSION['id_admin']; ?>">
+                                            Modifier </a>
+
+
+                                    </div>
+                                    <div class="account-dropdown js-dropdown">
+                                        <div class="info clearfix">
+                                            <div class="image">
+                                                <a href="#">
+                                                    <img src="../images/icon/avatar-01.jpg" alt="John Doe" />
+                                                </a>
+                                            </div>
+                                            <div class="content">
+                                                <h5 class="name">
+                                                    <a href="#">Animaliaplus</a>
+                                                </h5>
+                                                <span class="email">contact@animaliplus.net</span>
+                                            </div>
+                                        </div>
+                                        <div class="account-dropdown__body">
+                                            <div class="account-dropdown__item">
+                                                <a href="#">
+                                                    <i class="zmdi zmdi-account"></i>Account</a>
+                                            </div>
+                                            <div class="account-dropdown__item">
+                                                <a href="#">
+                                                    <i class="zmdi zmdi-settings"></i>Settings</a>
+                                            </div>
+                                            <div class="account-dropdown__item">
+                                                <a href="#">
+                                                    <i class="zmdi zmdi-money-box"></i>Billing</a>
+                                            </div>
+                                        </div>
+                                        <div class="account-dropdown__footer">
+                                            <a href="#">
+                                                <i class="zmdi zmdi-power"></i>Logout</a>
+                                        </div>
+                                    </div>
+                                </div>
+            </header>
+
+
+            <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="row">
@@ -356,61 +359,65 @@
                         </div>
 
                         <button><a href="../index.php">Retour</a></button>
-		<hr>
+                        <hr>
 
-<!-- integrations -->
+                        <!-- integrations -->
 
-<body>
-		<button><a href="afficher_plante.php">Retour à la liste</a></button>
-        <hr>
-        
-        <div id="error">
-            <?php echo $error; ?>
-        </div>
-		
-		<?php
+                        <body>
+                            <button><a href="afficher_plante.php">Retour à la liste</a></button>
+                            <hr>
+
+                            <div id="error">
+                                <?php echo $error; ?>
+                            </div>
+
+                            <?php
 			if (isset($_GET['ref_plante'])){
 				$user = $planteC->recupererplante($_GET['ref_plante']);
 				
 		?>
-		<form action="" style="border:2px solid #ccc" method="POST">
-            <table align="center">
-            Categorie:<br>
-    <input type="text" name="nom_categorie" id="nom_categorie" value = "<?php echo $user['nom_categorie']; ?>" >
-    <br>
-    Nom plante:<br>
-    <input type="text" name="nom_plante" id="nom_plante" value = "<?php echo $user['nom_plante']; ?>">
-    <br>
-    Prix:<br>
-    <input type="number" name="prix" id="prix" value = "<?php echo $user['prix']; ?>">
-    <br>
-    Date de plante:<br>
-    <input type="date" name="date_plante" id="date_plante" value = "<?php echo $user['date_plante']; ?>">
-    <br>
-    Image:<br>
-    <input type="file" name="image" id="image" value = "<?php echo $user['image']; ?>">
-    <br>
-    ID Client:<br>
-    <input type="number" name="id_client" id="id_client" value = "<?php echo $user['id_vendeur']; ?>">
-    <br>
-                
-    <tr>
-    <td></td>
-    <td>
-    <input type="submit" value="Modifier" name = "modifer"> 
-    </td>
-    <td>
-    <input type="reset" value="Annuler" >
-    </td>
-                </tr>
-            </table>
-        </form>
-		<?php
+                            <form action="" style="border:2px solid #ccc" method="POST">
+                                <table align="center">
+                                    Categorie:<br>
+                                    <input type="text" name="nom_categorie" id="nom_categorie"
+                                        value="<?php echo $user['nom_categorie']; ?>">
+                                    <br>
+                                    Nom plante:<br>
+                                    <input type="text" name="nom_plante" id="nom_plante"
+                                        value="<?php echo $user['nom_plante']; ?>">
+                                    <br>
+                                    Prix:<br>
+                                    <input type="number" name="prix" id="prix" value="<?php echo $user['prix']; ?>">
+                                    <br>
+                                    Date de plante:<br>
+                                    <input type="date" name="date_plante" id="date_plante"
+                                        value="<?php echo $user['date_plante']; ?>">
+                                    <br>
+                                    Image:<br>
+                                    <input type="file" name="image" id="image" value="<?php echo $user['image']; ?>">
+                                    <br>
+                                    ID Vendeur:<br>
+                                    <input type="number" name="id_vendeur" id="id_vendeur"
+                                        value="<?php echo $user['id_vendeur']; ?>">
+                                    <br>
+
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            <input type="submit" value="Modifier" name="modifer">
+                                        </td>
+                                        <td>
+                                            <input type="reset" value="Annuler">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                            <?php
 		}
 		?>
-	</body>
-                        
-                        
+                        </body>
+
+
                     </div>
                 </div>
             </div>
@@ -419,36 +426,30 @@
 
 
 
+            <!-- Jquery JS-->
+            <script src="../assets/vendor/jquery-3.2.1.min.js"></script>
+            <!-- Bootstrap JS-->
+            <script src="../assets/vendor/bootstrap-4.1/popper.min.js"></script>
+            <script src="../assets/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+            <!-- Vendor JS       -->
+            <script src="../assets/vendor/slick/slick.min.js">
+            </script>
+            <script src="../assets/vendor/wow/wow.min.js"></script>
+            <script src="../assets/vendor/animsition/animsition.min.js"></script>
+            <script src="../assets/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+            </script>
+            <script src="../assets/vendor/counter-up/jquery.waypoints.min.js"></script>
+            <script src="../assets/vendor/counter-up/jquery.counterup.min.js">
+            </script>
+            <script src="../assets/vendor/circle-progress/circle-progress.min.js"></script>
+            <script src="../assets/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+            <script src="../assets/vendor/chartjs/Chart.bundle.min.js"></script>
+            <script src="../assets/vendor/select2/select2.min.js">
+            </script>
 
-
-</section>
-          
-
-
-    <!-- Jquery JS-->
-    <script src="../assets/vendor/jquery-3.2.1.min.js"></script>
-    <!-- Bootstrap JS-->
-    <script src="../assets/vendor/bootstrap-4.1/popper.min.js"></script>
-    <script src="../assets/vendor/bootstrap-4.1/bootstrap.min.js"></script>
-    <!-- Vendor JS       -->
-    <script src="../assets/vendor/slick/slick.min.js">
-    </script>
-    <script src="../assets/vendor/wow/wow.min.js"></script>
-    <script src="../assets/vendor/animsition/animsition.min.js"></script>
-    <script src="../assets/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
-    </script>
-    <script src="../assets/vendor/counter-up/jquery.waypoints.min.js"></script>
-    <script src="../assets/vendor/counter-up/jquery.counterup.min.js">
-    </script>
-    <script src="../assets/vendor/circle-progress/circle-progress.min.js"></script>
-    <script src="../assets/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="../assets/vendor/chartjs/Chart.bundle.min.js"></script>
-    <script src="../assets/vendor/select2/select2.min.js">
-    </script>
-
-    <!-- Main JS-->
-    <script src="../assets/js/main.js"></script>
+            <!-- Main JS-->
+            <script src="../assets/js/main.js"></script>
 
 </body>
 
-</html> 
+</html>

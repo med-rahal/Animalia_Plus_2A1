@@ -21,12 +21,12 @@
   
 
     <!-- Vendor CSS-->
-    <link href="assets/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
-    <link href="assets/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
-    <link href="assets/vendor/wow/animate.css" rel="stylesheet" media="all">
-    <link href="assets/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
-    <link href="assets/vendor/slick/slick.css" rel="stylesheet" media="all">
-    <link href="assets/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="../assets/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="../assets/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="../assets/vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="../assets/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="../assets/vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="../assets/vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="../assets/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all"> 
 
 
@@ -191,7 +191,7 @@
                                     <a href="#">Gestion des Animaux</a>
                                 </li>
                                 <li>
-                                    <a href="#">Gestion des Plantes</a>
+                                    <a href="afficher_plante.php">Gestion des Plantes</a>
                                 </li>
                                 <li>
                                     <a href="#">Gestion des alimentation</a>
@@ -207,7 +207,7 @@
                                     <a href="#">Categorie Animaux</a>
                                 </li>
                                 <li>
-                                    <a href="#">Categorie Plantes</a>
+                                    <a href="afficher_categorie_plante.php">Categorie Plantes</a>
                                 </li>
                                 <li>
                                     <a href="#">Categorie alimentation</a>
@@ -305,23 +305,15 @@
 				 <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="overview-wrap">
-                                    <h2 class="title-1">Gestion des administrateurs</h2>
-                                    <button class="au-btn au-btn-icon au-btn--blue">
+                        
 
-                                </div>
-                            </div>
-                        </div>
-
-                        <button><a href="../index.php">Retour</a></button>
+                        
 		<hr>
 
 <!-- integrations -->
 <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'><link rel="stylesheet" href="qr/style.css">
 <div class="container">
-  <h1 class="text-center">Generateur QR</h1>
+  <h1 class="text">Generateur QR</h1><br>
   <form class="form-inline">
     <div class="row">
 

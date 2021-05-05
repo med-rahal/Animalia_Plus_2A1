@@ -58,7 +58,7 @@
 				$query->execute([
 					'nom_administrateur' => $administrateur->getnomclient(),
 					'mot_passe' => $administrateur->getprenomclient(),    
-					'id_client' => $id_client
+					'' => $id_client
 				]);
 				echo $query->rowCount() . " records UPDATED successfully <br>";
 			} catch (PDOException $e) {
