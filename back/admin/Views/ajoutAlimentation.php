@@ -397,7 +397,7 @@
                         </label>
                     </td>
                     <td>
-                        <input type="categorie_alimentation" name="categorie_alimentation" id="categorie_alimentation" >
+                        <input type="text" name="categorie_alimentation" id="categorie_alimentation" >
                     </td>
                 </tr>
                 <tr>
