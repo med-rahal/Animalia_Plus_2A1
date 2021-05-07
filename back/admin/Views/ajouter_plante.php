@@ -377,8 +377,15 @@
                                     <hr>
 
                                     Categorie:<br>
-                                    <input type="text" name="nom_categorie" id="nom_categorie">
+                                    <select name="nom_categorie" id="nom_categorie">
+                                        <option value="">--Please choose an option--</option>
+                                        <option value="Arbre">Arbre</option>
+                                        <option value="Fleure">Fleure</option>
+                                        <option value="Grimpantes">Grimpantes</option>
+                                    </select>
+                                    <!-- <input type="text" name="nom_categorie" id="nom_categorie"> -->
                                     <br>
+
                                     Nom plante:<br>
                                     <input type="text" name="nom_plante" id="nom_plante">
                                     <br>
@@ -390,7 +397,7 @@
                                     <br>
                                     Image:<br>
                                     <input type="file" name="image" id="image" onchange="readURL(this);">
-                                    <img id="blah"  alt="your image" />
+                                    <img id="blah" alt="your image" />
                                     <br>
                                     ID Vendeur:<br>
                                     <input type="number" name="id_vendeur" id="id_vendeur">
@@ -411,30 +418,30 @@
 
 
 
-                        <!-- Jquery JS-->
-                        <script  src="../assets/js/upload_file.js"></script>
-                        <script src="../assets/vendor/jquery-3.2.1.min.js"></script>
-                        <!-- Bootstrap JS-->
-                        <script src="../assets/vendor/bootstrap-4.1/popper.min.js"></script>
-                        <script src="../assets/vendor/bootstrap-4.1/bootstrap.min.js"></script>
-                        <!-- Vendor JS       -->
-                        <script src="../assets/vendor/slick/slick.min.js">
-                        </script>
-                        <script src="../assets/vendor/wow/wow.min.js"></script>
-                        <script src="../assets/vendor/animsition/animsition.min.js"></script>
-                        <script src="../assets/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
-                        </script>
-                        <script src="../assets/vendor/counter-up/jquery.waypoints.min.js"></script>
-                        <script src="../assets/vendor/counter-up/jquery.counterup.min.js">
-                        </script>
-                        <script src="../assets/vendor/circle-progress/circle-progress.min.js"></script>
-                        <script src="../assets/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
-                        <script src="../assets/vendor/chartjs/Chart.bundle.min.js"></script>
-                        <script src="../assets/vendor/select2/select2.min.js">
-                        </script>
+            <!-- Jquery JS-->
+            <script src="../assets/js/upload_file.js"></script>
+            <script src="../assets/vendor/jquery-3.2.1.min.js"></script>
+            <!-- Bootstrap JS-->
+            <script src="../assets/vendor/bootstrap-4.1/popper.min.js"></script>
+            <script src="../assets/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+            <!-- Vendor JS       -->
+            <script src="../assets/vendor/slick/slick.min.js">
+            </script>
+            <script src="../assets/vendor/wow/wow.min.js"></script>
+            <script src="../assets/vendor/animsition/animsition.min.js"></script>
+            <script src="../assets/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+            </script>
+            <script src="../assets/vendor/counter-up/jquery.waypoints.min.js"></script>
+            <script src="../assets/vendor/counter-up/jquery.counterup.min.js">
+            </script>
+            <script src="../assets/vendor/circle-progress/circle-progress.min.js"></script>
+            <script src="../assets/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+            <script src="../assets/vendor/chartjs/Chart.bundle.min.js"></script>
+            <script src="../assets/vendor/select2/select2.min.js">
+            </script>
 
-                        <!-- Main JS-->
-                        <script src="../assets/js/main.js"></script>
+            <!-- Main JS-->
+            <script src="../assets/js/main.js"></script>
 
 </body>
 
