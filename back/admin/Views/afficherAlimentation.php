@@ -197,7 +197,7 @@
                                 <i class="fas fa-tachometer-alt"></i>Produits</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="#">Gestion des Animaux</a>
+                                    <a href="afficherAnimal.php">Gestion des Animaux</a>
                                 </li>
                                 <li>
                                     <a href="afficher_plante.php">Gestion des Plantes</a>
@@ -213,13 +213,13 @@
                                 <i class="fas fa-tachometer-alt"></i>Categories</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="#">Categorie Animaux</a>
+                                    <a href="afficher_categorie.php">Categorie Animaux</a>
                                 </li>
                                 <li>
                                     <a href="afficher_categorie_plante.php">Categorie Plantes</a>
                                 </li>
                                 <li>
-                                    <a href="#">Categorie alimentation</a>
+                                    <a href="af">Categorie alimentation</a>
                                 </li>
                             </ul>
                         </li>
