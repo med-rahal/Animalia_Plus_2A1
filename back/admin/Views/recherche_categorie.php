@@ -1,32 +1,10 @@
 <?php
-    include "../controller/CategorieAlimN.php";
-    include_once '../Model/CategorieAlim.php';
 
-	$CategorieN = new CategorieN();
-	$error = "";
+include "../Controller/categorieanimalC.php";
+$categorieanimalC = new categorieanimalC();
+$categories = $categorieanimalC->affichercategorie();
+session_start();
 
-	if (
-        isset($_POST["nom_categorie"]) && 
-        isset($_POST["description"]) 
-        
-    ){
-		if (
-            !empty($_POST["nom_categorie"]) && 
-            !empty($_POST["description"]) 
-            
-        ) {
-            $id_categorie = new Categorie(
-                $_POST['nom_categorie'],
-                $_POST['description']
-                
-            );
-            
-            $CategorieN->modifierCategorie($id_categorie, $_GET['id_categorie']);
-            //header('Location:afficherUtilisateurs.php');
-        }
-        else
-            $error = "Missing information";
-	}
 
 ?>
 <!DOCTYPE html>
@@ -70,7 +48,12 @@
     <link href="../assets/css/font-face.css" rel="stylesheet" media="all">
 
 </head>
-
+<?php
+if (isset($_POST['nom_categorie']) && isset($_POST['search']))
+{
+$result=$categorieanimalC->getCategorieByname($_POST['nom_categorie']);
+if ($result !== false){
+?>
 <body class="animsition">
 
     <div class="page-wrapper">
@@ -278,8 +261,8 @@
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="header-wrap">
-                            <form class="form-header" action="recherche_admin.php" method="POST">
-                                <input class="au-input au-input--xl" type="text" name="nom_administrateur"
+                            <form class="form-header" action="recherche_categorie.php.php" method="POST">
+                                <input class="au-input au-input--xl" type="text" name="nom_categorie"
                                     placeholder="Search for datas &amp; reports..." />
                                 <input class="au-btn--submit" type="submit" value="Recherche" name="search">
                                 <i class="zmdi zmdi-search"></i>
@@ -343,73 +326,66 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="overview-wrap">
-                                    <h2 class="title-1">Gestion des </h2>
+                                    <h2 class="title-1">Gestion Categories animeaux  </h2>
                                     <button class="au-btn au-btn-icon au-btn--blue">
 
                                 </div>
                             </div>
                         </div>
-                        <button><a href="../index.php">Retour</a></button>
+                        <button><a href="afficher_categorie.php">Retour</a></button>
+                        <hr>
 
-                        <button><a href="afficherCategorieAlim.php">Retour à la liste</a></button>
-        <hr>
-        
-        <div id_categorie="error">
-            <?php echo $error; ?>
-        </div>
-		
-		<?php
-			if (isset($_GET['id_categorie'])){
-				$id_categorie = $CategorieN->recupererCategorie1($_GET['id_categorie']);
-				
-		?>
-		<form action="" method="POST">
-            <table align="center">
-                <tr>
-                    <!--<td rowspan='3' colspan='1'>Fiche Accessoire</td> -->
-                    <td>
-                        <label for="nom_categorie">Nom:
-                        </label>
-                    </td>
-                    <td><input type="text" name="nom_categorie" id_accessoire="nom_categorie" maxlength="20" value = "<?php echo $id_categorie->nom_categorie; ?>"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="description">Desctiption:
-                        </label>
-                    </td>
-                    <td><input type="text" name="description" id_categorie="description" maxlength="20" value = "<?php echo $id_categorie->description; ?>"></td>
-                </tr>
-                
-                
-                    <td></td>
-                    <td>
-                        <input type="submit" value="Modifier" name = "modifer"> 
-                    </td>
-                    <td>
-                        <input type="reset" value="Annuler" >
-                    </td>
-                </tr>
+                        <table border=1 align = 'center'>
+                            <tr>
+
+                                <th>ID</th>
+                                <th>Nom Categorie</th>
+                                <th>Description</th>
+                                <th>duree_vie</th>
+                                <th>supprimer</th>
+                                <th>modifier</th>
+                            </tr>
+
+                            <tr>
+                                <td><?PHP echo $result['id']; ?></td>
+                                <td><?PHP echo $result['nom_categorie']; ?></td>
+                                <td><?PHP echo $result['description']; ?></td>
+                                <td><?PHP echo $result['duree_vie']; ?></td>
+                                <td>
+                                    <form method="POST" action="supprimer_categorie.php">
+                                        <input type="submit" name="supprimer" value="supprimer">
+                                        <input type="hidden" value=<?PHP echo $result['nom_categorie']; ?> name="nom_categorie">
+                                    </form>
+                                </td>
+                                <td>
+                                    <a href="modifier_categorie.php?nom_categorie=<?PHP echo $result['nom_categorie']; ?>"> Modifier </a>
+                                </td>
+
+
+
+
+                            </tr>
+
+                            <?php
+                            }
+                            else {
+                                echo "<div> No results found!!! </div>";
+                            }
+                            }
+                            ?>
+
+
+
+                    </div>
+                </div>
+            </div>
             </table>
-        </form>
-		<?php
-		}
-		?>
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-                        <!-- Jquery JS-->
+            <!-- Jquery JS-->
                         <script src="../assets/vendor/jquery-3.2.1.min.js"></script>
                         <!-- Bootstrap JS-->
                         <script src="../assets/vendor/bootstrap-4.1/popper.min.js"></script>

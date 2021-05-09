@@ -1,32 +1,10 @@
 <?php
-    include "../controller/CategorieAlimN.php";
-    include_once '../Model/CategorieAlim.php';
 
-	$CategorieN = new CategorieN();
-	$error = "";
+include "../Controller/AnimalC.php";
+$AnimalC = new AnimalC();
+$listeAnimals = $AnimalC->afficherAnimals();
+session_start();
 
-	if (
-        isset($_POST["nom_categorie"]) && 
-        isset($_POST["description"]) 
-        
-    ){
-		if (
-            !empty($_POST["nom_categorie"]) && 
-            !empty($_POST["description"]) 
-            
-        ) {
-            $id_categorie = new Categorie(
-                $_POST['nom_categorie'],
-                $_POST['description']
-                
-            );
-            
-            $CategorieN->modifierCategorie($id_categorie, $_GET['id_categorie']);
-            //header('Location:afficherUtilisateurs.php');
-        }
-        else
-            $error = "Missing information";
-	}
 
 ?>
 <!DOCTYPE html>
@@ -70,7 +48,15 @@
     <link href="../assets/css/font-face.css" rel="stylesheet" media="all">
 
 </head>
-
+<?PHP
+//	foreach($listeAnimals as $animal){
+?>
+<?php
+if (isset($_POST['nom']) && isset($_POST['search']))
+{
+$animal=$AnimalC->getAnimalByname($_POST['nom']);
+if ($animal !== false){
+?>
 <body class="animsition">
 
     <div class="page-wrapper">
@@ -278,8 +264,8 @@
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="header-wrap">
-                            <form class="form-header" action="recherche_admin.php" method="POST">
-                                <input class="au-input au-input--xl" type="text" name="nom_administrateur"
+                            <form class="form-header" action="rechercheAnimal.php" method="POST">
+                                <input class="au-input au-input--xl" type="text" name="nom"
                                     placeholder="Search for datas &amp; reports..." />
                                 <input class="au-btn--submit" type="submit" value="Recherche" name="search">
                                 <i class="zmdi zmdi-search"></i>
@@ -343,73 +329,74 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="overview-wrap">
-                                    <h2 class="title-1">Gestion des </h2>
+                                    <h2 class="title-1">Gestion des animeaux </h2>
                                     <button class="au-btn au-btn-icon au-btn--blue">
 
                                 </div>
                             </div>
                         </div>
-                        <button><a href="../index.php">Retour</a></button>
+                        <button><a href="afficherAnimal.php">Retour</a></button>
+                        <hr>
 
-                        <button><a href="afficherCategorieAlim.php">Retour à la liste</a></button>
-        <hr>
-        
-        <div id_categorie="error">
-            <?php echo $error; ?>
-        </div>
-		
-		<?php
-			if (isset($_GET['id_categorie'])){
-				$id_categorie = $CategorieN->recupererCategorie1($_GET['id_categorie']);
-				
-		?>
-		<form action="" method="POST">
-            <table align="center">
-                <tr>
-                    <!--<td rowspan='3' colspan='1'>Fiche Accessoire</td> -->
-                    <td>
-                        <label for="nom_categorie">Nom:
-                        </label>
-                    </td>
-                    <td><input type="text" name="nom_categorie" id_accessoire="nom_categorie" maxlength="20" value = "<?php echo $id_categorie->nom_categorie; ?>"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="description">Desctiption:
-                        </label>
-                    </td>
-                    <td><input type="text" name="description" id_categorie="description" maxlength="20" value = "<?php echo $id_categorie->description; ?>"></td>
-                </tr>
-                
-                
-                    <td></td>
-                    <td>
-                        <input type="submit" value="Modifier" name = "modifer"> 
-                    </td>
-                    <td>
-                        <input type="reset" value="Annuler" >
-                    </td>
-                </tr>
+                        <table border=1 align = 'center'>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nom</th>
+                                <th>Prix</th>
+                                <th>race</th>
+                                <th>ID CLient</th>
+                                <th>Categorie Animal</th>
+                                <th>supprimer</th>
+                                <th>modifier</th>
+
+                            </tr>
+
+
+                            <tr>
+                                <td><?PHP echo $animal['id']; ?></td>
+                                <td><?PHP echo $animal['nom']; ?></td>
+                                <td><?PHP echo $animal['prix']; ?></td>
+                                <td><?PHP echo $animal['race']; ?></td>
+                                <td><?PHP echo $animal['id_client']; ?></td>
+                                <td><?PHP echo $animal['nom_categorie']; ?></td>
+
+                                <td>
+
+                                    <a href="modifierAnimal.php?id=<?PHP echo $animal['id']; ?>"> Modifier </a>
+                                </td>
+                                <td>
+                                    <form method="POST" action="supprimerAnimal.php">
+                                        <input type="submit" name="supprimer" value="supprimer">
+                                        <input type="hidden" value=<?PHP echo $animal['id']; ?> name="id">
+                                    </form>
+                                </td>
+
+
+
+
+                            </tr>
+
+                            <?php
+                            }
+                            else {
+                                echo "<div> No results found!!! </div>";
+                            }
+                            }
+                            ?>
+                            <?PHP
+                            //	}
+                            ?>
+
+                    </div>
+                </div>
+            </div>
             </table>
-        </form>
-		<?php
-		}
-		?>
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-                        <!-- Jquery JS-->
+            <!-- Jquery JS-->
                         <script src="../assets/vendor/jquery-3.2.1.min.js"></script>
                         <!-- Bootstrap JS-->
                         <script src="../assets/vendor/bootstrap-4.1/popper.min.js"></script>

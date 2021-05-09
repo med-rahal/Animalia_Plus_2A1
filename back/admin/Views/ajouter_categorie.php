@@ -1,32 +1,36 @@
 <?php
-    include "../controller/CategorieAlimN.php";
-    include_once '../Model/CategorieAlim.php';
+include_once '../Model/categorieanimal.php';
+include_once '../Controller/categorieanimalC.php';
 
-	$CategorieN = new CategorieN();
-	$error = "";
+$error = "";
 
-	if (
-        isset($_POST["nom_categorie"]) && 
-        isset($_POST["description"]) 
-        
-    ){
-		if (
-            !empty($_POST["nom_categorie"]) && 
-            !empty($_POST["description"]) 
-            
-        ) {
-            $id_categorie = new Categorie(
-                $_POST['nom_categorie'],
-                $_POST['description']
-                
-            );
-            
-            $CategorieN->modifierCategorie($id_categorie, $_GET['id_categorie']);
-            //header('Location:afficherUtilisateurs.php');
-        }
-        else
-            $error = "Missing information";
-	}
+// create user
+$user = null;
+
+// create an instance of the controller
+$userC = new categorieanimalC();
+if (
+    isset($_POST["nom_categorie"]) &&
+    isset($_POST["description"]) &&
+    isset($_POST["duree_vie"])
+) {
+    if (
+        !empty($_POST["nom_categorie"]) &&
+        !empty($_POST["description"]) &&
+        !empty($_POST["duree_vie"])
+    ) {
+        $user = new categorieanimal(
+            $_POST['nom_categorie'],
+            $_POST['description'],
+            $_POST['duree_vie']
+        );
+        $userC->ajoutercategorie($user);
+        header('Location:afficher_categorie.php');
+    }
+    else
+        $error = "Missing information";
+}
+
 
 ?>
 <!DOCTYPE html>
@@ -343,63 +347,45 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="overview-wrap">
-                                    <h2 class="title-1">Gestion des </h2>
+                                    <h2 class="title-1">Gestion Categorie </h2>
                                     <button class="au-btn au-btn-icon au-btn--blue">
 
                                 </div>
                             </div>
                         </div>
-                        <button><a href="../index.php">Retour</a></button>
+                        <body>
+                        <button><a href="afficher_categorie.php">Retour à la liste</a></button>
+                        <hr>
 
-                        <button><a href="afficherCategorieAlim.php">Retour à la liste</a></button>
-        <hr>
-        
-        <div id_categorie="error">
-            <?php echo $error; ?>
-        </div>
-		
-		<?php
-			if (isset($_GET['id_categorie'])){
-				$id_categorie = $CategorieN->recupererCategorie1($_GET['id_categorie']);
-				
-		?>
-		<form action="" method="POST">
-            <table align="center">
-                <tr>
-                    <!--<td rowspan='3' colspan='1'>Fiche Accessoire</td> -->
-                    <td>
-                        <label for="nom_categorie">Nom:
-                        </label>
-                    </td>
-                    <td><input type="text" name="nom_categorie" id_accessoire="nom_categorie" maxlength="20" value = "<?php echo $id_categorie->nom_categorie; ?>"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="description">Desctiption:
-                        </label>
-                    </td>
-                    <td><input type="text" name="description" id_categorie="description" maxlength="20" value = "<?php echo $id_categorie->description; ?>"></td>
-                </tr>
-                
-                
-                    <td></td>
-                    <td>
-                        <input type="submit" value="Modifier" name = "modifer"> 
-                    </td>
-                    <td>
-                        <input type="reset" value="Annuler" >
-                    </td>
-                </tr>
-            </table>
-        </form>
-		<?php
-		}
-		?>
+                        <div id="erreur"></div>
+
+                        <form action="" style="border:2px solid #ccc" method="POST" onsubmit="return verif()">
+                            <div class="container">
+                                <p>Veuillez remplir tous les champs:</p>
+                                <hr>
+
+                                Nom Categorie:<br>
+                                <input type="text" name="nom_categorie" id="nom_categorie">
+                                <br>
+                                description:<br>
+                                <input type="text" name="description" id="description">
+                                <br>
+                                duree_vie:<br>
+                                <input type="number" name="duree_vie" id="duree_vie">
+                                <br>
 
 
 
+                                <input type="submit"  value="Ajouter categorie">
+                                <input type="reset" value="Annuler" >
+                            </div>
+                        </form>
+                        </body>
 
 
+                    </div>
+                </div>
+            </div>
 
 
 

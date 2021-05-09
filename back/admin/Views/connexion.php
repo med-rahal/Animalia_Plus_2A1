@@ -1,32 +1,42 @@
 <?php
-    include "../controller/CategorieAlimN.php";
-    include_once '../Model/CategorieAlim.php';
+include_once '../Model/Animal.php';
+include_once '../Controller/AnimalC.php';
 
-	$CategorieN = new CategorieN();
-	$error = "";
+$error = "";
 
-	if (
-        isset($_POST["nom_categorie"]) && 
-        isset($_POST["description"]) 
-        
-    ){
-		if (
-            !empty($_POST["nom_categorie"]) && 
-            !empty($_POST["description"]) 
-            
-        ) {
-            $id_categorie = new Categorie(
-                $_POST['nom_categorie'],
-                $_POST['description']
-                
-            );
-            
-            $CategorieN->modifierCategorie($id_categorie, $_GET['id_categorie']);
-            //header('Location:afficherUtilisateurs.php');
-        }
-        else
-            $error = "Missing information";
-	}
+// create user
+$user = null;
+
+// create an instance of the controller
+$AnimalC = new AnimalC();
+if (
+    isset($_POST["nom"]) &&
+    isset($_POST["prix"]) &&
+    isset($_POST["race"]) &&
+    isset($_POST["id_client"]) &&
+    isset($_POST["nom_categorie"])
+) {
+    if (
+        !empty($_POST["nom"]) &&
+        !empty($_POST["prix"]) &&
+        !empty($_POST["race"]) &&
+        !empty($_POST["id_client"]) &&
+        !empty($_POST["nom_categorie"])
+    ) {
+        $user = new Animal(
+            $_POST['nom'],
+            $_POST['prix'],
+            $_POST['race'],
+            $_POST['id_client'],
+            $_POST['nom_categorie']
+        );
+        $AnimalC->ajouterAnimal($user);
+        header('Location:afficherAnimal.php');
+    }
+    else
+        $error = "Missing information";
+}
+
 
 ?>
 <!DOCTYPE html>
@@ -349,61 +359,70 @@
                                 </div>
                             </div>
                         </div>
-                        <button><a href="../index.php">Retour</a></button>
+                        <button><a href="afficherAnimal.php">Retour à la liste</a></button>
+                        <hr>
 
-                        <button><a href="afficherCategorieAlim.php">Retour à la liste</a></button>
-        <hr>
-        
-        <div id_categorie="error">
-            <?php echo $error; ?>
-        </div>
-		
-		<?php
-			if (isset($_GET['id_categorie'])){
-				$id_categorie = $CategorieN->recupererCategorie1($_GET['id_categorie']);
-				
-		?>
-		<form action="" method="POST">
-            <table align="center">
-                <tr>
-                    <!--<td rowspan='3' colspan='1'>Fiche Accessoire</td> -->
-                    <td>
-                        <label for="nom_categorie">Nom:
-                        </label>
-                    </td>
-                    <td><input type="text" name="nom_categorie" id_accessoire="nom_categorie" maxlength="20" value = "<?php echo $id_categorie->nom_categorie; ?>"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="description">Desctiption:
-                        </label>
-                    </td>
-                    <td><input type="text" name="description" id_categorie="description" maxlength="20" value = "<?php echo $id_categorie->description; ?>"></td>
-                </tr>
-                
-                
-                    <td></td>
-                    <td>
-                        <input type="submit" value="Modifier" name = "modifer"> 
-                    </td>
-                    <td>
-                        <input type="reset" value="Annuler" >
-                    </td>
-                </tr>
-            </table>
-        </form>
-		<?php
-		}
-		?>
+                        <div id="erreur"></div>
 
+                        <form action="" method="POST" onsubmit="return verif()">
+                            <table border="1" align="center">
 
+                                <tr>
+                                    <td rowspan='3' colspan='1'>Fiche Animal</td>
+                                    <td>
+                                        <label for="nom">Nom:
+                                        </label>
+                                    </td>
+                                    <td><input type="text" name="nom" id="nom" maxlength="20"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="prix">Prix:
+                                        </label>
+                                    </td>
+                                    <td><input type="number" name="prix" id="prix" maxlength="20"></td>
+                                </tr>
 
+                                <tr>
+                                    <td>
+                                        <label for="race">Race:
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="race" id="race" >
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td rowspan='2' colspan='1'>Information de Client</td>
+                                    <td>
+                                        <label for="id_client">ID Client:
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="id_client" id="id_client" >
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="nom_categorie">Categorie Animal:
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="nom_categorie" id="nom_categorie">
+                                    </td>
+                                </tr>
 
-
-
-
-
-
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <input type="submit" value="Envoyer">
+                                    </td>
+                                    <td>
+                                        <input type="reset" value="Annuler" >
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
 
 
 
