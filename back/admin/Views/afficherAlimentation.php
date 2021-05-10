@@ -355,7 +355,7 @@
 					<td><?PHP echo $id_alimentation['prix']; ?></td>
                     <td><img src="../assets/images/<?= $id_alimentation['image'] ?>" width = "200" height = "200" class="shop-item-image"></td>
 					<td>
-						<form method="POST" action="supprimerAccessoire.php">
+						<form method="POST" action="supprimerAlimentation.php">
 						<input type="submit" name="supprimer" value="delete">
 						<input type="hidden" value=<?PHP echo $id_alimentation['id_alimentation']; ?> name="id_alimentation">
 						</form>
