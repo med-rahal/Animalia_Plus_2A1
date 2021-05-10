@@ -210,7 +210,7 @@ elseif(isset($_POST['submit2']))
                                 <a href="afficher_plante.php">Gestion des Plantes</a>
                             </li>
                             <li>
-                                <a href="#">Gestion des alimentation</a>
+                                <a href="afficherAlimentation.php">Gestion des alimentation</a>
                             </li>
                         </ul>
                     </li>

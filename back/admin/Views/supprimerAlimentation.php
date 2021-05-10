@@ -4,8 +4,8 @@
 	$AlimentationC=new AlimentationC();
 	
 	if (isset($_POST["id_alimentation"])){
-		$AlimentationC->supprimerAlimentation($_POST["id_accessoire"]);
-		header('Location:afficherAccessoire.php');
+		$AlimentationC->supprimerAlimentation($_POST["id_alimentation"]);
+		header('Location:afficherAlimentation.php');
 	}
 
 ?>
