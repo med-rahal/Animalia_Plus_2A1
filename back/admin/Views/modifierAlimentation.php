@@ -21,7 +21,7 @@
             !empty($_POST["prix"]) &&
             !empty($_POST["image"])
         ) {
-            $id_Alimentation = new Alimentation(
+            $Alimentation = new Alimentation(
                 $_POST['nom_alimentation'],
                 $_POST['ref_alimentation'], 
                 $_POST['categorie_alimentation'],
@@ -30,7 +30,7 @@
                 $_POST['image']
             );
             
-            $AlimentationC->modifierAlimentation($id_alimentation, $_GET['id_alimentation']);
+            $AlimentationC->modifierAlimentation($Alimentation, $_GET['id_alimentation']);
             //header('Location:afficherUtilisateurs.php');
         }
         else
@@ -369,7 +369,7 @@
 		
 		<?php
 			if (isset($_GET['id_alimentation'])){
-				$id_alimentation = $AccessoireN->recupererAlimentation1($_GET['id_alimentation']);
+				$id_alimentation = $AlimentationC->recupererAlimentation1($_GET['id_alimentation']);
 				
 		?>
 		<form action="" method="POST">
