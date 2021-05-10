@@ -372,7 +372,7 @@
             <?php echo $error; ?>
         </div>
         
-        <form action="" method="POST">
+        <form action="" method="POST" onsubmit="return verif()>
             <table border="1" align="center">
 
                 <tr>
@@ -432,7 +432,7 @@
                 <tr>
                     <td></td>
                     <td>
-                        <input type="submit" name="submit" value="Confirmer" onclick="return verif();"> 
+                        <input type="submit" name="submit" value="Confirmer" > 
                     </td>
                     <td>
                         <input type="reset" value="Annuler" >
@@ -473,6 +473,7 @@
                         <script src="../assets/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
                         <script src="../assets/vendor/chartjs/Chart.bundle.min.js"></script>
                         <script src="../assets/vendor/select2/select2.min.js">
+                        //<script src="./ajout_alimentation.js">
                         </script>
 
                         <!-- Main JS-->
