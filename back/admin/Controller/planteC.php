@@ -5,8 +5,8 @@
 	class planteC {
 		
 		function ajouterplante($plante){
-			$sql="INSERT INTO plante (nom_categorie, nom_plante, prix, date_plante, image, id_vendeur) 
-			VALUES (:nom_categorie,:nom_plante,:prix, :date_plante, :image, :id_vendeur)";
+			$sql="INSERT INTO plante (nom_categorie, nom_plante, prix, date_plante, image, id_client) 
+			VALUES (:nom_categorie,:nom_plante,:prix, :date_plante, :image, :id_client)";
 			$db = config::getConnexion();
 			try{
 				$query = $db->prepare($sql);
@@ -17,7 +17,7 @@
 					'prix' => $plante->getprix(),
 					'date_plante' => $plante->getdate_plante(),
 					'image' => $plante->getimage(),
-					'id_vendeur' => $plante->getid_vendeur(),
+					'id_client' => $plante->getid_client(),
 				]);			
 			}
 			catch (Exception $e){
@@ -60,7 +60,7 @@
 						prix = :prix,
 						date_plante = :date_plante,
 						image = :image,
-						id_vendeur = :id_vendeur
+						id_client = :id_client
 					WHERE ref_plante = :ref_plante'
 				);
 				$query->execute([
@@ -69,7 +69,7 @@
 					'prix' => $plante->getprix(),
 					'date_plante' => $plante->getdate_plante(),
 					'image' => $plante->getimage(),
-					'id_vendeur' => $plante->getid_vendeur(),
+					'id_client' => $plante->getid_client(),
 					'ref_plante' => $ref_plante
 				]);
 				echo $query->rowCount() . " records UPDATED successfully <br>";

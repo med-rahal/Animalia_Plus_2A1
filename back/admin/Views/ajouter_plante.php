@@ -15,7 +15,7 @@
         isset($_POST["prix"]) && 
         isset($_POST["date_plante"]) && 
         isset($_POST["image"]) &&
-        isset($_POST["id_vendeur"])
+        isset($_POST["id_client"])
     ) {
         if (
             !empty($_POST["nom_categorie"]) && 
@@ -23,7 +23,7 @@
             !empty($_POST["prix"]) && 
             !empty($_POST["date_plante"]) && 
             !empty($_POST["image"]) && 
-            !empty($_POST["id_vendeur"])
+            !empty($_POST["id_client"])
         ) {
             $user = new plante(
                 $_POST['nom_categorie'],
@@ -31,7 +31,7 @@
                 $_POST['prix'],
                 $_POST['date_plante'],
                 $_POST['image'],
-                $_POST['id_vendeur']
+                $_POST['id_client']
             );
             $userC->ajouterplante($user);
             header('Location:afficher_plante.php');
@@ -399,8 +399,8 @@
                                     <input type="file" name="image" id="image" onchange="readURL(this);">
                                     <img id="blah" alt="your image" />
                                     <br>
-                                    ID Vendeur:<br>
-                                    <input type="number" name="id_vendeur" id="id_vendeur">
+                                    ID Client:<br>
+                                    <input type="number" name="id_client" id="id_client">
                                     <br>
 
                                     <input type="submit" name="submit" value="Ajouter" onclick="return verif();">
