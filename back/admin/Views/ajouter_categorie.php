@@ -43,6 +43,7 @@ if (
     <meta name="description" content="au theme template">
     <meta name="author" content="Hau Nguyen">
     <meta name="keywords" content="au theme template">
+    <script src="../assets/js/scriptazyz1.js"></script>
 
     <!-- Title Page-->
     <title>Page Admin</title>

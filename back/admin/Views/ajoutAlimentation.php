@@ -53,6 +53,7 @@
     <meta name="description" content="au theme template">
     <meta name="author" content="Hau Nguyen">
     <meta name="keywords" content="au theme template">
+    <script src="../assets/js/scriptemir.js"></script>
 
     <!-- Title Page-->
     <title>Page Admin</title>
@@ -368,11 +369,10 @@
                         <button><a href="afficherAlimentation.php">Retour à la liste</a></button>
         <hr>
         
-        <div id="error">
-            <?php echo $error; ?>
-        </div>
+        <div id="erreur"></div>
+
         
-        <form action="" method="POST" onsubmit="return verif()>
+        <form action="" method="POST" onsubmit="return verif()">
             <table border="1" align="center">
 
                 <tr>
