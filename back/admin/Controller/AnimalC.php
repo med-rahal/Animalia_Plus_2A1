@@ -5,8 +5,8 @@
 	class AnimalC {
 		
 		function ajouterAnimal($Animal){
-			$sql="INSERT INTO animal (nom, prix, race, id_client, nom_categorie) 
-			VALUES (:nom,:prix,:race, :id_client, :nom_categorie)";
+			$sql="INSERT INTO animal (nom, prix, race, id_client, nom_categorie, image) 
+			VALUES (:nom,:prix,:race, :id_client, :nom_categorie, :image)";
 			$db = config::getConnexion();
 			try{
 				$query = $db->prepare($sql);
@@ -16,7 +16,8 @@
 					'prix' => $Animal->getPrix(),
 					'race' => $Animal->getRace(),
 					'id_client' => $Animal->getId_vendeur(),
-					'nom_categorie' => $Animal->getCategorie_animal()
+					'nom_categorie' => $Animal->getCategorie_animal(),
+					'image' => $Animal->getImage()
 				]);			
 			}
 			catch (Exception $e){
@@ -58,7 +59,8 @@
 						prix = :prix,
 						race = :race,
 						id_client = :id_client,
-						nom_categorie = :nom_categorie
+						nom_categorie = :nom_categorie,
+						image = :image
 					WHERE id = :id'
 				);
 				$query->execute([
@@ -67,6 +69,7 @@
 					'race' => $Animal->getRace(),
 					'id_client' => $Animal->getId_vendeur(),
 					'nom_categorie' => $Animal->getCategorie_animal(),
+					'image' => $Animal->getImage(),
 					'id' => $id
 				]);
 				echo $query->rowCount() . " records UPDATED successfully <br>";

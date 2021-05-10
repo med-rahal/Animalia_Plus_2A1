@@ -348,6 +348,7 @@ elseif(isset($_POST['submit2']))
                             <th>race</th>
                             <th>ID Client</th>
                             <th>Categorie Animal</th>
+                            <th>Image</th>
                             <th>supprimer</th>
                             <th>modifier</th>
                         </tr>
@@ -362,6 +363,7 @@ elseif(isset($_POST['submit2']))
                                 <td><?PHP echo $animal['race']; ?></td>
                                 <td><?PHP echo $animal['id_client']; ?></td>
                                 <td><?PHP echo $animal['nom_categorie']; ?></td>
+                                <td><img src="../assets/images/<?= $id['image'] ?>" width = "200" height = "200" class="shop-item-image"></td>
                                 <td>
                                     <form method="POST" action="supprimerAnimal.php">
                                         <input type="submit" name="supprimer" value="supprimer">

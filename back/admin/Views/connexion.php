@@ -14,21 +14,25 @@ if (
     isset($_POST["prix"]) &&
     isset($_POST["race"]) &&
     isset($_POST["id_client"]) &&
-    isset($_POST["nom_categorie"])
+    isset($_POST["nom_categorie"]) &&
+    isset($_POST["image"])
+
 ) {
     if (
         !empty($_POST["nom"]) &&
         !empty($_POST["prix"]) &&
         !empty($_POST["race"]) &&
         !empty($_POST["id_client"]) &&
-        !empty($_POST["nom_categorie"])
+        !empty($_POST["nom_categorie"]) &&
+        !empty($_POST["image"])
     ) {
         $user = new Animal(
             $_POST['nom'],
             $_POST['prix'],
             $_POST['race'],
             $_POST['id_client'],
-            $_POST['nom_categorie']
+            $_POST['nom_categorie'],
+            $_POST['image']
         );
         $AnimalC->ajouterAnimal($user);
         header('Location:afficherAnimal.php');
@@ -411,6 +415,15 @@ if (
                                         <input type="text" name="nom_categorie" id="nom_categorie">
                                     </td>
                                 </tr>
+                                <tr>
+                    <td>
+                        <label for="image">Image:
+                        </label>
+                    </td>
+                    <td>
+                        <input type="file" name="image" id="image">
+                    </td>
+                </tr>
 
                                 <tr>
                                     <td></td>
