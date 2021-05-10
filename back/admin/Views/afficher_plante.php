@@ -342,7 +342,7 @@
 				<th>prix</th>
 				<th>date de plante</th>
 				<th>Image</th>
-				<th>Id Vendeur</th>
+				<th>Id Client</th>
 				<th>supprimer</th>
 				<th>modifier</th>
 			</tr>
@@ -357,7 +357,7 @@
 					<td><?PHP echo $user['prix']; ?></td>
 					<td><?PHP echo $user['date_plante']; ?></td>
                     <td><img src="../assets/images/<?= $user['image'] ?> "width = "200" height = "200"></td>
-					<td><?PHP echo $user['id_vendeur']; ?></td>
+					<td><?PHP echo $user['id_client']; ?></td>
 					<td>
 						<form method="POST" action="supprimer_plante.php">
 						<input type="submit" name="supprimer" value="supprimer">

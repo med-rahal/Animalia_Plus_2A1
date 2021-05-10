@@ -11,7 +11,7 @@
         isset($_POST["prix"]) && 
         isset($_POST["date_plante"]) && 
         isset($_POST["image"]) &&
-        isset($_POST["id_vendeur"])
+        isset($_POST["id_client"])
 	){
 		if (
             !empty($_POST["nom_categorie"]) && 
@@ -19,7 +19,7 @@
             !empty($_POST["prix"]) && 
             !empty($_POST["date_plante"]) && 
             !empty($_POST["image"]) && 
-            !empty($_POST["id_vendeur"])
+            !empty($_POST["id_client"])
         ) {
             $user = new plante(
                 $_POST['nom_categorie'],
@@ -27,7 +27,7 @@
                 $_POST['prix'],
                 $_POST['date_plante'],
                 $_POST['image'],
-                $_POST['id_vendeur']
+                $_POST['id_client']
 			);
 			
             $planteC->modifierplante($user, $_GET['ref_plante']);
@@ -396,9 +396,9 @@
                                     Image:<br>
                                     <input type="file" name="image" id="image" value="<?php echo $user['image']; ?>">
                                     <br>
-                                    ID Vendeur:<br>
-                                    <input type="number" name="id_vendeur" id="id_vendeur"
-                                        value="<?php echo $user['id_vendeur']; ?>">
+                                    ID client:<br>
+                                    <input type="number" name="id_client" id="id_client"
+                                        value="<?php echo $user['id_client']; ?>">
                                     <br>
 
                                     <tr>
