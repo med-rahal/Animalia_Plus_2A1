@@ -30,7 +30,7 @@ function verif() {
     }
     if (errors !== "<ul>") {
         document.querySelector('#erreur').style.color = 'red';
-        errors += "</ul>"
+        errors += "</ul>";
         document.getElementById('erreur').innerHTML = errors;
         return false;
     }

@@ -53,6 +53,7 @@ if (
     <meta name="description" content="au theme template">
     <meta name="author" content="Hau Nguyen">
     <meta name="keywords" content="au theme template">
+    <script src="../assets/js/scriptazyz.js"></script>
 
     <!-- Title Page-->
     <title>Page Admin</title>
@@ -357,7 +358,7 @@ if (
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="overview-wrap">
-                                    <h2 class="title-1">Gestion des </h2>
+                                    <h2 class="title-1">Gestion des animeaux </h2>
                                     <button class="au-btn au-btn-icon au-btn--blue">
 
                                 </div>
