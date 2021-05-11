@@ -503,7 +503,31 @@ t"></script>
                                         MAINTENANT</a></div>
 
 
-                                        <table border=1 align = 'center'>
+                                        
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--====== End - Primary Slider ======-->
+
+
+        <!--====== Section 1 ======-->
+        <div class="u-s-p-y-60">
+
+            <!--====== Section Intro ======-->
+            <div class="section__intro u-s-m-b-46">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section__text-wrap">
+                                <h1 class="section__heading u-c-secondary u-s-m-b-12">MAGASINEZ PAR OFFRES</h1>
+
+                                <table border=1 align = 'center'>
 			<tr>
 				<th>id</th>
 				<th>Nom</th>
@@ -539,28 +563,6 @@ t"></script>
 				}
 			?>
 		</table>
-
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <!--====== End - Primary Slider ======-->
-
-
-        <!--====== Section 1 ======-->
-        <div class="u-s-p-y-60">
-
-            <!--====== Section Intro ======-->
-            <div class="section__intro u-s-m-b-46">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="section__text-wrap">
-                                <h1 class="section__heading u-c-secondary u-s-m-b-12">MAGASINEZ PAR OFFRES</h1>
                             </div>
                         </div>
                     </div>
