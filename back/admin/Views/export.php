@@ -1,10 +1,10 @@
 <?php  
 //export.php  
-$connect = mysqli_connect("localhost", "root", "", "test123");
+$connect = mysqli_connect("localhost", "root", "", "animalia");
 $output = '';
 if(isset($_POST["export"]))
 {
- $query = "SELECT * FROM accessoire";
+ $query = "SELECT * FROM alimentation";
  $result = mysqli_query($connect, $query);
  if(mysqli_num_rows($result) > 0)
  {
@@ -23,9 +23,9 @@ if(isset($_POST["export"]))
   {
    $output .= '
     <tr>  
-                         <td>'.$row["nom_accessoire"].'</td>  
-                         <td>'.$row["ref_accessoire"].'</td>  
-                         <td>'.$row["categorie_accessoire"].'</td>  
+                         <td>'.$row["nom_alimentation"].'</td>  
+                         <td>'.$row["ref_alimentation"].'</td>  
+                         <td>'.$row["categorie_alimentation"].'</td>  
        <td>'.$row["type"].'</td>  
        <td>'.$row["prix"].'</td>
                     </tr>
