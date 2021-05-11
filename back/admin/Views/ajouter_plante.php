@@ -376,7 +376,7 @@
                                 <div class="container">
                                     <p>Veuillez remplir tous les champs:</p>
                                     <hr>
-
+                                    
                                     Categorie:<br>
                                     <select name="nom_categorie" id="nom_categorie">
                                         <option value="">--Please choose an option--</option>

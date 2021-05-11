@@ -30,7 +30,8 @@
 
     <!-- Vendor CSS-->
     <link href="../assets/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
-    <link href="../assets/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="../assets/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet"
+        media="all">
     <link href="../assets/vendor/wow/animate.css" rel="stylesheet" media="all">
     <link href="../assets/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
     <link href="../assets/vendor/slick/slick.css" rel="stylesheet" media="all">
@@ -327,9 +328,6 @@
                             </div>
                         </div>
 
-                        <button><a href="../index.php">Retour</a></button>
-                        <button><a href="ajouter_categorie_plante.php">Ajouter une categorie</a></button>
-                        <hr>
 
                         <!-- integrations -->
 
@@ -345,7 +343,7 @@
                                 <th>duree_vie</th>
                             </tr>
 
-            <?PHP
+                            <?PHP
 			foreach($listeUsers as $user){
 			?>
                             <tr>
@@ -360,16 +358,15 @@
                                 </td>
                                 <td>
                                     <form method="POST" action="supprimer_categorie_plante.php">
-                                        <input type="submit" class="action-button shadow animate red"
-                                        name="supprimer" value="supprimer">
+                                        <input type="submit" class="action-button shadow animate red" name="supprimer"
+                                            value="supprimer">
                                         <input type="hidden" value=<?PHP echo $user['nom_categorie']; ?>
                                         name="nom_categorie">
                                     </form>
                                 </td>
                                 <td>
-                                    <a
-                                        href="modifier_categorie_plante.php?nom_categorie=<?PHP echo $user['nom_categorie']; ?>" 
-                                        class="action-button shadow animate yellow" >
+                                    <a href="modifier_categorie_plante.php?nom_categorie=<?PHP echo $user['nom_categorie']; ?>"
+                                        class="action-button shadow animate yellow">
                                         Modifier </a>
                                 </td>
                             </tr>
@@ -377,6 +374,9 @@
 				}
 			?>
                         </table>
+                        <button><a class="action-button shadow animate green"
+                                href="ajouter_categorie_plante.php">Ajouter une categorie</a>
+                        </button>
 
                     </div>
                 </div>
