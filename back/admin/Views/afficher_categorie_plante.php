@@ -44,6 +44,7 @@
     <!-- Main CSS-->
     <link href="../assets/css/theme.css" rel="stylesheet" media="all">
     <link href="../assets/css/font-face.css" rel="stylesheet" media="all">
+    <link href="../assets/css/table.css" rel="stylesheet" media="all">
 
 </head>
 
@@ -337,7 +338,7 @@
 
 
                         <hr>
-                        <table border=1 align='center'>
+                        <table border=1 align='center' class="fixed_headers">
                             <tr>
                                 <th>Nom Categorie</th>
                                 <th>Description</th>
@@ -359,14 +360,16 @@
                                 </td>
                                 <td>
                                     <form method="POST" action="supprimer_categorie_plante.php">
-                                        <input type="submit" name="supprimer" value="supprimer">
+                                        <input type="submit" class="action-button shadow animate red"
+                                        name="supprimer" value="supprimer">
                                         <input type="hidden" value=<?PHP echo $user['nom_categorie']; ?>
                                         name="nom_categorie">
                                     </form>
                                 </td>
                                 <td>
                                     <a
-                                        href="modifier_categorie_plante.php?nom_categorie=<?PHP echo $user['nom_categorie']; ?>">
+                                        href="modifier_categorie_plante.php?nom_categorie=<?PHP echo $user['nom_categorie']; ?>" 
+                                        class="action-button shadow animate yellow" >
                                         Modifier </a>
                                 </td>
                             </tr>

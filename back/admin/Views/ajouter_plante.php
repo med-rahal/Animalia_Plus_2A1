@@ -81,6 +81,7 @@
     <!-- Main CSS-->
     <link href="../assets/css/theme.css" rel="stylesheet" media="all">
     <link href="../assets/css/font-face.css" rel="stylesheet" media="all">
+    <link href="../assets/css/table.css" rel="stylesheet" media="all">
 
 </head>
 
@@ -403,7 +404,7 @@
                                     <input type="number" name="id_client" id="id_client">
                                     <br>
 
-                                    <input type="submit" name="submit" value="Ajouter" onclick="return verif();">
+                                    <input type="submit" class="action-button shadow animate green" name="submit" value="Ajouter" onclick="return verif();">
                                 </div>
                             </form>
 
