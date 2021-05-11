@@ -395,6 +395,7 @@
                                     <br>
                                     Image:<br>
                                     <input type="file" name="image" id="image" value="<?php echo $user['image']; ?>">
+                                    <img id="blah" alt="your image" />
                                     <br>
                                     ID client:<br>
                                     <input type="number" name="id_client" id="id_client"
@@ -427,6 +428,7 @@
 
 
             <!-- Jquery JS-->
+            <script src="../assets/js/upload_file.js"></script>
             <script src="../assets/vendor/jquery-3.2.1.min.js"></script>
             <!-- Bootstrap JS-->
             <script src="../assets/vendor/bootstrap-4.1/popper.min.js"></script>

@@ -1,12 +1,12 @@
-<?php
-    
-    session_start();
-    if(!isset($_SESSION["id_client"])){
-        var_dump($_SESSION);
-		header("Location:Views/login_client.php");
-		exit(); 
-    }
+
+<?PHP
+
+include "../config.php";
+
+$db = config::getConnexion();
+
 ?>
+
 <!DOCTYPE html>
 <html class="no-js" lang="fr">
 <head>
@@ -16,33 +16,45 @@
     <meta name="author" content="">
     <title>Animalia plus e-commerce site</title>
 
-   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet"> 
 
-    <link rel="stylesheet" href="assets/css/vendor.css">
+    <link rel="stylesheet" href="../assets/css/vendor.css">
 
-    <link rel="stylesheet" href="assets/css/utility.css">
+    <link rel="stylesheet" href="../assets/css/utility.css">
 
-    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="../assets/css/app.css">
+	
 </head>
 <body class="config">
- 
-    <div id="application">
-
-        <header class="header--style-1">
-<div class="container d-flex align-items-center">
-<h5>Bienvenue <?php echo $_SESSION['login_client']; ?></h5>
-  <a href="../front/views/modifierClient.php?id_client=<?PHP echo $_SESSION['id_client']; ?>" > Modifier </a>
-    <a href="../front/Views/logout.php">Déconnexion</a>
-</div>
+<div id="google_translate_element"></div> 
+      
+    <script type="text/javascript"> 
+    function googleTranslateElementInit() { 
+      new google.translate.TranslateElement({pageLanguage: 'en'},
+ 'google_translate_element'); 
+    } 
+    </script> 
+      
+    <script type="text/javascript"
+ src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementIni
+t"></script> 
+      
+   
+<script src=
+"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js">
+    </script>
+      
+   
     
             <nav class="primary-nav primary-nav-wrapper--border">
                 <div class="container">
 
                     <div class="primary-nav">
 
-                        <a class="main-logo" href="index.php">
 
-                            <img src="assets/images/logo/logo.png" alt="logo animliaplus"></a>
+                        <a class="main-logo" href="index.html">
+
+                            <img src="../assets/images/logo/logo.png" alt="logo animliaplus"></a>
 
                         <form class="main-form">
 
@@ -73,7 +85,11 @@
                                                 <a href="Views/login_client.php"><i class="fas fa-user-friends"></i></i>
 
                                                     <span>Espace client</span></a></li>
-                                         
+                                            <li>
+
+                                                <a href="index.html"><i class="fas fa-store"></i>
+
+                                                    <span>Espace vendeur</span></a></li>
                                         </ul>
                         
                                     </li>
@@ -119,308 +135,295 @@
         
                 </div>
             </nav>
+
+
+            <!--====== Nav 2 ======-->
+            <nav class="secondary-nav-wrapper">
+                <div class="container">
+
+                    <!--====== Secondary Nav ======-->
+                    <div class="secondary-nav">
+
+                        <!--====== Dropdown Main plugin ======-->
+                       
+                     
+
+                        <div class="menu-init" id="navigation2">
+
+                            <button class="btn btn--icon toggle-button toggle-button--secondary fas fa-cog" type="button"></button>
+
+               
+                            <div class="ah-lg-mode">
+
+                                <span class="ah-close">✕ Close</span>
+                                   
+       
+                                <ul class="ah-list ah-list--design2 ah-list--link-color-secondary">
+                                <li class="has-dropdown">
+
+<a href="reclamation.php">produits<i class="fas fa-angle-down u-s-m-l-6"></i></a>
+
+
+
+<span ></span>
+<ul >
+    <li >
+
+        <a href="reclamation.php">produit 1</a>
+
+        <span class="js-menu-toggle"></span>
+        
+       
+    </li>
+    <li >
+
+        <a href= "reclamationAffichage.php">produit 2</a>
+
+        <span class="js-menu-toggle"></span>
+        
+
+    </li>
     
-           <!--====== Nav 2 ======-->
-    <nav class="secondary-nav-wrapper">
-        <div class="container">
+    <li >
 
-            <!--====== Secondary Nav ======-->
-            <div class="secondary-nav">
+<a href= "reclamationAffichage.php">produit 3</a>
 
-                <!--====== Dropdown Main plugin ======-->
+<span class="js-menu-toggle"></span>
 
 
-
-                <div class="menu-init" id="navigation2">
-
-                    <button class="btn btn--icon toggle-button toggle-button--secondary fas fa-cog"
-                        type="button"></button>
-
-
-                    <div class="ah-lg-mode">
-
-                        <span class="ah-close">✕ Close</span>
+</li>
+    
+    
+</ul> 
 
 
-                        <ul class="ah-list ah-list--design2 ah-list--link-color-secondary">
-                            <li class="has-dropdown">
-                                <br>
-                                <a href="reclamation.php">produits<i class="fas fa-angle-down u-s-m-l-6"></i></a>
-
-
-
-                                <span></span>
-                                <ul>
+</li>  
                                     <li>
+<span></span>
+                                        
+                                        <a href="../index.php">Acceuil</a>
+                                        <a href="login_client.php">Connexion</a>
+                                        <a href="connexion.php">Inscription</a>
+                                        <a href="#panier">Panier</a>       
+                                        <a href="#aboutus">find us</a>
+                                        
+                                   
+                                   
+                                    
+                                    <li class="has-dropdown">
 
-                                        <a href="reclamation.php">Plantes</a>
+                                        <a href="reclamation.php">Réclamations<i class="fas fa-angle-down u-s-m-l-6"></i></a>
 
-                                        <span class="js-menu-toggle"></span>
+                                 
 
+                                        <span ></span>
+                                        <ul >
+                                            <li >
 
-                                    </li>
-                                    <li>
+                                                <a href="reclamation.php">Faire une réclamation</a>
 
-                                        <a href="reclamationAffichage.php">Animaux</a>
+                                                <span class="js-menu-toggle"></span>
+                                                
+                                               
+                                            </li>
+                                            <li >
 
-                                        <span class="js-menu-toggle"></span>
+                                                <a href= "reclamationAffichage.php">Consulter réclamations</a>
 
-
-                                    </li>
-
-                                    <li>
-
-                                        <a href="reclamationAffichage.php">Alimentation</a>
-
-                                        <span class="js-menu-toggle"></span>
-
-
-                                    </li>
-
-
+                                                <span class="js-menu-toggle"></span>
+                                                
+                            
+                                            </li>
+                                            
+                   
+                                            
+                                            
+                                        </ul> 
+                                        
+                                     
+                                    </li> 
                                 </ul>
+                              
+                            </div>
+                         
+                        </div>
+                     
 
+                      
+                        <div class="menu-init" id="navigation3">
 
-                            </li>
-                            <li>
-                                <span></span>
+                            <button class="btn btn--icon toggle-button toggle-button--secondary fas fa-shopping-bag toggle-button-shop" type="button"></button>
 
-                                <a href="../index.php">Acceuil</a>
-                                <a href="login_client.php">Connexion</a>
-                                <a href="connexion.php">Inscription</a>
-                                <a href="#panier">Panier</a>
-                                <a href="#aboutus">find us</a>
+                            <span class="total-item-round">2</span>
 
+                
+                            <div class="ah-lg-mode">
 
+                                <span class="ah-close">✕ Close</span>
 
-
-                            <li class="has-dropdown">
-
-                                <a href="reclamation.php">Réclamations<i class="fas fa-angle-down u-s-m-l-6"></i></a>
-
-
-
-                                <span></span>
-                                <ul>
+                                <!--====== List ======-->
+                                <ul class="ah-list ah-list--design1 ah-list--link-color-secondary">
                                     <li>
 
-                                        <a href="reclamation.php">Faire une réclamation</a>
-
-                                        <span class="js-menu-toggle"></span>
-
-
-                                    </li>
+                                        <a href="index.html"><i class="fas fa-home u-c-brand"></i></a></li>
                                     <li>
 
-                                        <a href="reclamationAffichage.php">Consulter réclamations</a>
+                                        <a href="wishlist.html"><i class="far fa-heart"></i></a></li>
+                                    <li class="has-dropdown">
+
+                                        <a class="mini-cart-shop-link"><i class="fas fa-shopping-bag"></i>
+
+                                            <span class="total-item-round">2</span></a>
+
+                                        <!--====== Dropdown ======-->
 
                                         <span class="js-menu-toggle"></span>
+                                        <div class="mini-cart">
+
+                                            <!--====== Mini Product Container ======-->
+                                            <div class="mini-product-container gl-scroll u-s-m-b-15">
+
+                                                <!--====== Card for mini cart ======-->
+                                                <div class="card-mini-product">
+                                                    <div class="mini-product">
+                                                        <div class="mini-product__image-wrapper">
+
+                                                            <a class="mini-product__link" href="product-detail.html">
+
+                                                                <img class="u-img-fluid" src="images/product/electronic/product3.jpg" alt=""></a></div>
+                                                        <div class="mini-product__info-wrapper">
+
+                                                            <span class="mini-product__category">
+
+                                                                <a href="shop-side-version-2.html">Electronics</a></span>
+
+                                                            <span class="mini-product__name">
+
+                                                                <a href="product-detail.html">Yellow Wireless Headphone</a></span>
+
+                                                            <span class="mini-product__quantity">1 x</span>
+
+                                                            <span class="mini-product__price">$8</span></div>
+                                                    </div>
+
+                                                    <a class="mini-product__delete-link far fa-trash-alt"></a>
+                                                </div>
+                                                <!--====== End - Card for mini cart ======-->
 
 
+                                                <!--====== Card for mini cart ======-->
+                                                <div class="card-mini-product">
+                                                    <div class="mini-product">
+                                                        <div class="mini-product__image-wrapper">
+
+                                                            <a class="mini-product__link" href="product-detail.html">
+
+                                                                <img class="u-img-fluid" src="images/product/electronic/product18.jpg" alt=""></a></div>
+                                                        <div class="mini-product__info-wrapper">
+
+                                                            <span class="mini-product__category">
+
+                                                                <a href="shop-side-version-2.html">Electronics</a></span>
+
+                                                            <span class="mini-product__name">
+
+                                                                <a href="product-detail.html">Nikon DSLR Camera 4k</a></span>
+
+                                                            <span class="mini-product__quantity">1 x</span>
+
+                                                            <span class="mini-product__price">$8</span></div>
+                                                    </div>
+
+                                                    <a class="mini-product__delete-link far fa-trash-alt"></a>
+                                                </div>
+                                                <!--====== End - Card for mini cart ======-->
+
+
+                                                <!--====== Card for mini cart ======-->
+                                                <div class="card-mini-product">
+                                                    <div class="mini-product">
+                                                        <div class="mini-product__image-wrapper">
+
+                                                            <a class="mini-product__link" href="product-detail.html">
+
+                                                                <img class="u-img-fluid" src="images/product/women/product8.jpg" alt=""></a></div>
+                                                        <div class="mini-product__info-wrapper">
+
+                                                            <span class="mini-product__category">
+
+                                                                <a href="shop-side-version-2.html">Women Clothing</a></span>
+
+                                                            <span class="mini-product__name">
+
+                                                                <a href="product-detail.html">New Dress D Nice Elegant</a></span>
+
+                                                            <span class="mini-product__quantity">1 x</span>
+
+                                                            <span class="mini-product__price">$8</span></div>
+                                                    </div>
+
+                                                    <a class="mini-product__delete-link far fa-trash-alt"></a>
+                                                </div>
+                                                <!--====== End - Card for mini cart ======-->
+
+
+                                                <!--====== Card for mini cart ======-->
+                                                <div class="card-mini-product">
+                                                    <div class="mini-product">
+                                                        <div class="mini-product__image-wrapper">
+
+                                                            <a class="mini-product__link" href="product-detail.html">
+
+                                                                <img class="u-img-fluid" src="images/product/men/product8.jpg" alt=""></a></div>
+                                                        <div class="mini-product__info-wrapper">
+
+                                                            <span class="mini-product__category">
+
+                                                                <a href="shop-side-version-2.html">Men Clothing</a></span>
+
+                                                            <span class="mini-product__name">
+
+                                                                <a href="product-detail.html">New Fashion D Nice Elegant</a></span>
+
+                                                            <span class="mini-product__quantity">1 x</span>
+
+                                                            <span class="mini-product__price">$8</span></div>
+                                                    </div>
+
+                                                    <a class="mini-product__delete-link far fa-trash-alt"></a>
+                                                </div>
+                                                <!--====== End - Card for mini cart ======-->
+                                            </div>
+                                            <!--====== End - Mini Product Container ======-->
+
+
+                                            <!--====== Mini Product Statistics ======-->
+                                            <div class="mini-product-stat">
+                                                <div class="mini-total">
+
+                                                    <span class="subtotal-text">SUBTOTAL</span>
+
+                                                    <span class="subtotal-value">$16</span></div>
+                                                <div class="mini-action">
+
+                                                    <a class="mini-link btn--e-brand-b-2" href="checkout.html">PROCEED TO CHECKOUT</a>
+
+                                                    <a class="mini-link btn--e-transparent-secondary-b-2" href="cart.html">VIEW CART</a></div>
+                                            </div>
+                                            <!--====== End - Mini Product Statistics ======-->
+                                        </div>
+                                        <!--====== End - Dropdown ======-->
                                     </li>
-
-
-
-
                                 </ul>
-
-
-                            </li>
-                        </ul>
-
+                                <!--====== End - List ======-->
+                            </div>
+                            <!--====== End - Menu ======-->
+                        </div>
+                        <!--====== End - Dropdown Main plugin ======-->
                     </div>
-
+                    <!--====== End - Secondary Nav ======-->
                 </div>
-
-
-
-                <div class="menu-init" id="navigation3">
-
-                    <button
-                        class="btn btn--icon toggle-button toggle-button--secondary fas fa-shopping-bag toggle-button-shop"
-                        type="button"></button>
-
-                    <span class="total-item-round">2</span>
-
-
-                    <div class="ah-lg-mode">
-
-                        <span class="ah-close">✕ Close</span>
-
-                        <!--====== List ======-->
-                        <ul class="ah-list ah-list--design1 ah-list--link-color-secondary">
-                            <li>
-
-                                <a href="index.html"><i class="fas fa-home u-c-brand"></i></a></li>
-                            <li>
-
-                                <a href="wishlist.html"><i class="far fa-heart"></i></a></li>
-                            <li class="has-dropdown">
-
-                                <a class="mini-cart-shop-link"><i class="fas fa-shopping-bag"></i>
-
-                                    <span class="total-item-round">2</span></a>
-
-                                <!--====== Dropdown ======-->
-
-                                <span class="js-menu-toggle"></span>
-                                <div class="mini-cart">
-
-                                    <!--====== Mini Product Container ======-->
-                                    <div class="mini-product-container gl-scroll u-s-m-b-15">
-
-                                        <!--====== Card for mini cart ======-->
-                                        <div class="card-mini-product">
-                                            <div class="mini-product">
-                                                <div class="mini-product__image-wrapper">
-
-                                                    <a class="mini-product__link" href="product-detail.html">
-
-                                                        <img class="u-img-fluid"
-                                                            src="images/product/electronic/product3.jpg" alt=""></a>
-                                                </div>
-                                                <div class="mini-product__info-wrapper">
-
-                                                    <span class="mini-product__category">
-
-                                                        <a href="shop-side-version-2.html">Electronics</a></span>
-
-                                                    <span class="mini-product__name">
-
-                                                        <a href="product-detail.html">Yellow Wireless
-                                                            Headphone</a></span>
-
-                                                    <span class="mini-product__quantity">1 x</span>
-
-                                                    <span class="mini-product__price">$8</span></div>
-                                            </div>
-
-                                            <a class="mini-product__delete-link far fa-trash-alt"></a>
-                                        </div>
-                                        <!--====== End - Card for mini cart ======-->
-
-
-                                        <!--====== Card for mini cart ======-->
-                                        <div class="card-mini-product">
-                                            <div class="mini-product">
-                                                <div class="mini-product__image-wrapper">
-
-                                                    <a class="mini-product__link" href="product-detail.html">
-
-                                                        <img class="u-img-fluid"
-                                                            src="images/product/electronic/product18.jpg" alt=""></a>
-                                                </div>
-                                                <div class="mini-product__info-wrapper">
-
-                                                    <span class="mini-product__category">
-
-                                                        <a href="shop-side-version-2.html">Electronics</a></span>
-
-                                                    <span class="mini-product__name">
-
-                                                        <a href="product-detail.html">Nikon DSLR Camera 4k</a></span>
-
-                                                    <span class="mini-product__quantity">1 x</span>
-
-                                                    <span class="mini-product__price">$8</span></div>
-                                            </div>
-
-                                            <a class="mini-product__delete-link far fa-trash-alt"></a>
-                                        </div>
-                                        <!--====== End - Card for mini cart ======-->
-
-
-                                        <!--====== Card for mini cart ======-->
-                                        <div class="card-mini-product">
-                                            <div class="mini-product">
-                                                <div class="mini-product__image-wrapper">
-
-                                                    <a class="mini-product__link" href="product-detail.html">
-
-                                                        <img class="u-img-fluid" src="images/product/women/product8.jpg"
-                                                            alt=""></a></div>
-                                                <div class="mini-product__info-wrapper">
-
-                                                    <span class="mini-product__category">
-
-                                                        <a href="shop-side-version-2.html">Women Clothing</a></span>
-
-                                                    <span class="mini-product__name">
-
-                                                        <a href="product-detail.html">New Dress D Nice
-                                                            Elegant</a></span>
-
-                                                    <span class="mini-product__quantity">1 x</span>
-
-                                                    <span class="mini-product__price">$8</span></div>
-                                            </div>
-
-                                            <a class="mini-product__delete-link far fa-trash-alt"></a>
-                                        </div>
-                                        <!--====== End - Card for mini cart ======-->
-
-
-                                        <!--====== Card for mini cart ======-->
-                                        <div class="card-mini-product">
-                                            <div class="mini-product">
-                                                <div class="mini-product__image-wrapper">
-
-                                                    <a class="mini-product__link" href="product-detail.html">
-
-                                                        <img class="u-img-fluid" src="images/product/men/product8.jpg"
-                                                            alt=""></a></div>
-                                                <div class="mini-product__info-wrapper">
-
-                                                    <span class="mini-product__category">
-
-                                                        <a href="shop-side-version-2.html">Men Clothing</a></span>
-
-                                                    <span class="mini-product__name">
-
-                                                        <a href="product-detail.html">New Fashion D Nice
-                                                            Elegant</a></span>
-
-                                                    <span class="mini-product__quantity">1 x</span>
-
-                                                    <span class="mini-product__price">$8</span></div>
-                                            </div>
-
-                                            <a class="mini-product__delete-link far fa-trash-alt"></a>
-                                        </div>
-                                        <!--====== End - Card for mini cart ======-->
-                                    </div>
-                                    <!--====== End - Mini Product Container ======-->
-
-
-                                    <!--====== Mini Product Statistics ======-->
-                                    <div class="mini-product-stat">
-                                        <div class="mini-total">
-
-                                            <span class="subtotal-text">SUBTOTAL</span>
-
-                                            <span class="subtotal-value">$16</span></div>
-                                        <div class="mini-action">
-
-                                            <a class="mini-link btn--e-brand-b-2" href="checkout.html">PROCEED TO
-                                                CHECKOUT</a>
-
-                                            <a class="mini-link btn--e-transparent-secondary-b-2" href="cart.html">VIEW
-                                                CART</a></div>
-                                    </div>
-                                    <!--====== End - Mini Product Statistics ======-->
-                                </div>
-                                <!--====== End - Dropdown ======-->
-                            </li>
-                        </ul>
-                        <!--====== End - List ======-->
-                    </div>
-                    <!--====== End - Menu ======-->
-                </div>
-                <!--====== End - Dropdown Main plugin ======-->
-            </div>
-            <!--====== End - Secondary Nav ======-->
-        </div>
-    </nav>
+            </nav>
             <!--====== End - Nav 2 ======-->
         </header>
         <!--====== End - Main Header ======-->
@@ -521,47 +524,142 @@
 
 
                 <!--====== Section Content ======-->
-                <div class="section__content">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-5 col-md-5 u-s-m-b-30">
-
-                                <a class="collection" href="shop-side-version-2.html">
-                                    <div class="aspect aspect--bg-grey aspect--square">
-
-                                        <img class="aspect__img collection__img" src="images/collection/coll-1.jpg" alt=""></div>
-                                </a></div>
-                            <div class="col-lg-7 col-md-7 u-s-m-b-30">
-
-                                <a class="collection" href="shop-side-version-2.html">
-                                    <div class="aspect aspect--bg-grey aspect--1286-890">
-
-                                        <img class="aspect__img collection__img" src="images/collection/coll-2.jpg" alt=""></div>
-                                </a></div>
-                            <div class="col-lg-7 col-md-7 u-s-m-b-30">
-
-                                <a class="collection" href="shop-side-version-2.html">
-                                    <div class="aspect aspect--bg-grey aspect--1286-890">
-
-                                        <img class="aspect__img collection__img" src="images/collection/coll-3.jpg" alt=""></div>
-                                </a></div>
-                            <div class="col-lg-5 col-md-5 u-s-m-b-30">
-
-                                <a class="collection" href="shop-side-version-2.html">
-                                    <div class="aspect aspect--bg-grey aspect--square">
-
-                                        <img class="aspect__img collection__img" src="images/collection/coll-4.jpg" alt=""></div>
-                                </a></div>
-                        </div>
-                    </div>
-                </div>
-
+           
                 <!--====== Section Content ======-->
             </div>
             <!--====== End - Section 1 ======-->
 
 
+            <!--====== Section 2 ======-->
+            
+                <!--====== End - Section Intro ======-->
 
+
+                <!--====== Section Content ======-->
+               
+
+
+            <!--====== Section 3 ======-->
+           
+                                      
+
+
+            <!--====== Section 12 ======-->
+            
+<!---->
+
+<div background>
+	<h2>Réclamation</h2>
+    <br></br>
+</div>
+		<!---->
+		<div class="container">
+			<div class="contact">
+				<form method="POST" action="reclamation1.php" enctype="multipart/form-data">
+				<div class=" contact-top">
+						<!--<div>
+							<span>Votre E-mail </span>		
+							<input type="email" name="email" id="inputEmail" class="form-control" placeholder="Adresse Email" required autofocus>
+							
+						</div>-->
+						<div>		
+							<div class="available">
+
+								<h7>Votre Problème </h7>	
+								<ul>
+									<li>
+										
+										<?php
+			
+ 
+				$reponse = $db -> query('select type from type_reclamation');
+				$donnees = $reponse->fetchAll();
+				//var_dump($donnees);
+ 
+ 
+				$reponse = $db -> query('select type from type_reclamation');
+			echo '<select name="type">';
+			while ($donnees = $reponse->fetch()){
+ 
+ 
+ 
+   echo '<option value="'.htmlspecialchars($donnees['type']).'">' . htmlspecialchars($donnees['type']) . '</option>';
+}
+echo '</select>';	
+ 
+ 
+?>
+									</li>
+									<div class="clearfix"> </div>
+								</ul>
+							</div>						
+						</div>
+						<div>
+						
+						<input type="text" id="mail" name="mail"  maxlength="50" size="50" onchange="ValidateEmail(mail)" >  </div>
+	                    <br></br>
+						<div>
+							<script language="javascript" type="text/javascript">
+									function calculeLongueur(){
+   										var iLongueur, iLongueurRestante;
+   										iLongueur = document.getElementById('description').value.length;
+   										if (iLongueur>30) {
+     							    	document.getElementById('description').value = document.getElementById('description').value.substring(0,300);
+      									iLongueurRestante = 0;
+   										}
+   										else {
+     							 		iLongueurRestante = 300 - iLongueur;
+   									}
+   									if (iLongueurRestante <= 1)
+      								document.getElementById('indic').innerHTML = iLongueurRestante + "&nbsp;caract&egrave;re&nbsp;disponible";
+   									else
+      								document.getElementById('indic').innerHTML = iLongueurRestante + "&nbsp;caract&egrave;res&nbsp;disponibles";
+									}
+                                    function ValidateEmail(inputText)
+{
+var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+if(inputText.value.match(mailformat))
+{
+
+document.form1.text1.focus();
+return true;
+}
+else
+{
+alert("You have entered an invalid email address!");
+document.form1.text1.focus();
+return false;
+}
+}
+							</script>
+
+									
+							<textarea onblur="calculeLongueur();" onfocus="calculeLongueur();" onkeydown="calculeLongueur();" onkeyup="calculeLongueur();" name="description" id="description" value="" class="form-control"  placeholder="300 Lettres au maximum" ></textarea>
+							
+		
+						</div>
+						<!--<div>
+							<span>Vous pouvez uploader l'image du produit</span>
+							<input type="file" name="image">
+						</div>-->
+
+
+						<input type="submit" value="Envoyer" >	
+                        
+                     
+				</div>
+               
+			</form>
+          <br></br>
+           <form action="chatsupp.php" method="POST" TARGET="_BLANK">
+    
+        <button type="submit">🔥 live chat !</button>
+      </form>
+		</div>
+        
+	</div>
+
+        <!--====== End - App Content ======-->
 
 
         <!--====== Main Footer ======-->
@@ -1020,13 +1118,13 @@
     <script src="https://www.google-analytics.com/analytics.js" async defer></script>
 
     <!--====== Vendor Js ======-->
-    <script src="assets/js/vendor.js"></script>
+    <script src="../assets/js/vendor.js"></script>
 
     <!--====== jQuery Shopnav plugin ======-->
-    <script src="assets/js/jquery.shopnav.js"></script>
+    <script src="../assets/js/jquery.shopnav.js"></script>
 
     <!--====== App ======-->
-    <script src="assets/js/app.js"></script>
+    <script src="../assets/js/app.js"></script>
 
     <!--====== Noscript ======-->
     <noscript>

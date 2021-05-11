@@ -36,6 +36,7 @@
     <!-- Main CSS-->
     <link href="../assets/css/theme.css" rel="stylesheet" media="all">
     <link href="../assets/css/font-face.css" rel="stylesheet" media="all">
+    <link href="../assets/css/table.css" rel="stylesheet" media="all">
 
 </head>
 
@@ -334,17 +335,17 @@
 
 
 
-		<table id="ejemplo" border=1 align = 'center'>
+		<table id="ejemplo" border=1 align = 'center' class="fixed_headers">
 			<tr>
-				<th>Reference plante</th>
-				<th>Nom Categorie</th>
-				<th>Nom plante</th>
-				<th>prix</th>
-				<th>date de plante</th>
-				<th>Image</th>
-				<th>Id Client</th>
-				<th>supprimer</th>
-				<th>modifier</th>
+				<th><span style="color: #ff0000;">Reference plante</span></th>
+				<th><span style="color: #ff0000;">Nom Categorie</span></th>
+				<th><span style="color: #ff0000;">Nom plante</span></th>
+				<th><span style="color: #ff0000;">prix</span></th>
+				<th><span style="color: #ff0000;">date de plante</span></th>
+				<th><span style="color: #ff0000;">image</span></th>
+				<th><span style="color: #ff0000;">Id Client</span></th>
+				<th><span style="color: #ff0000;">supprimer</span></th>
+				<th><span style="color: #ff0000;">modifier</span></th>
 			</tr>
 
 			<?PHP
@@ -354,18 +355,19 @@
 					<td><strong><?PHP echo $user['ref_plante']; ?></strong></td>
 					<td><?PHP echo $user['nom_categorie']; ?></td>
 					<td><?PHP echo $user['nom_plante']; ?></td>
-					<td><?PHP echo $user['prix']; ?></td>
+					<td><?PHP echo $user['prix']; ?>Dt</td>
 					<td><?PHP echo $user['date_plante']; ?></td>
                     <td><img src="../assets/images/<?= $user['image'] ?> "width = "200" height = "200"></td>
 					<td><?PHP echo $user['id_client']; ?></td>
 					<td>
 						<form method="POST" action="supprimer_plante.php">
-						<input type="submit" name="supprimer" value="supprimer">
+						<input class="action-button shadow animate red" type="submit" name="supprimer" value="supprimer">
 						<input type="hidden" value=<?PHP echo $user['ref_plante']; ?> name="ref_plante">
 						</form>
 					</td>
 					<td>
-						<a href="modifier_plante.php?ref_plante=<?PHP echo $user['ref_plante']; ?>"> Modifier </a>
+						<a href="modifier_plante.php?ref_plante=<?PHP echo $user['ref_plante']; ?>"
+                        class="action-button shadow animate yellow"> Modifier </a>
 					</td>
 				</tr>
 			<?PHP
