@@ -440,7 +440,7 @@ try{
                     <?php
                 }
             ?>   
-            <form  method="POST" >
+            <form  method= "POST" >
                     <label>
                       <textarea onblur="calculeLongueur();" onfocus="calculeLongueur();" onkeydown="calculeLongueur();" onkeyup="calculeLongueur();" name="repons" id="repons" ></textarea>
                     </label>

@@ -84,8 +84,14 @@ h1 {
   line-height: 50px; }
 
 h2 {
-  font-size: 32px;
-  line-height: 46px; }
+  font-size: 62px;
+  line-height: 56px;
+  text-align: center;
+  text-shadow: 2px 2px 5px #333333;
+  color: black;
+  position: relative;
+  top: -150px;
+}
 
 h3 {
   font-size: 18px;
@@ -610,7 +616,7 @@ body {
   color: #ff4500 !important; }
 
 .u-c-secondary {
-  color: #333333 !important; }
+  color:transparent; }
 
 .u-c-white {
   color: #ffffff !important; }
@@ -622,7 +628,7 @@ body {
   color: #7f7f7f !important; }
 
 .u-c-silver {
-  color: #a0a0a0 !important; }
+  color: transparent; }
 
 /*
   * Display Utility
@@ -1970,7 +1976,10 @@ input::-ms-clear {
   display: inline-block;
   vertical-align: top; }
   .main-logo img {
-    display: block; }
+    display: block;
+    position: relative;
+    left: -5px;
+    top: -15px; }
 
 .main-form {
   position: relative;
