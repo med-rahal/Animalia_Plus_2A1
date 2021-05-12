@@ -529,31 +529,34 @@ t"></script>
 
                                 <table border=1 align = 'center'>
 			<tr>
-				<th>id</th>
-				<th>Nom</th>
-				<th>Reference</th>
-				<th>Categorie</th>
-				<th>Type</th>
-				<th>Prix</th>
-                <th>Image</th>
+            
+            <th><span style="color: #ff0000;"><strong>Nom</span></strong></th>
+            
+			<th><span style="color: #ff0000;"><strong>Categorie</span></strong></th>
+           
+            <th><span style="color: #ff0000;"><strong>Prix </span></strong></th>
+            <th><span style="color: #ff0000;"><strong>Image</span></strong></th>
+            <th><span style="color: #ff0000;"><strong>Ajouter</span></strong></th>
 				
-			</tr>
+            </tr>
+            
+            
 
 			<?PHP
 				foreach($listeAlimentation as $id_alimentation){
 			?>
 				<tr>
-					<td><?PHP echo $id_alimentation['id_alimentation']; ?></td>
-					<td><?PHP echo $id_alimentation['nom_alimentation']; ?></td>
-					<td><?PHP echo $id_alimentation['ref_alimentation']; ?></td>
-					<td><?PHP echo $id_alimentation['categorie_alimentation']; ?></td>
-					<td><?PHP echo $id_alimentation['type']; ?></td>
-					<td><?PHP echo $id_alimentation['prix']; ?></td>
-                    <td><img src="../assets/images/<?= $id_alimentation['image'] ?>" width = "200" height = "200" class="shop-item-image"></td>
 					
-					<td>
-						
-					</td>
+					<td><h3><span style="color: #000000;"><strong><?PHP echo $id_alimentation['nom_alimentation']; ?></strong></span></h3></td>
+					
+					<td><h3><span style="color: #000000;"><strong><?PHP echo $id_alimentation['categorie_alimentation']; ?></strong></span></h3></td>
+					
+					<td><h3><span style="color: #000000;"><strong><?PHP echo $id_alimentation['prix']; ?> DT </strong></span></h3></td>
+                    <td><img src="../assets/images/products/<?= $id_alimentation['image'] ?>" width = "200" height = "200" class="shop-item-image"></td>
+                    <td><a href="#=<?PHP echo $id_alimentation['id_alimentation']; ?>"
+                    class="action-button shadow animate green"> ajouter au panier </a></td>
+					
+					
 				</tr>
 
 
@@ -772,6 +775,8 @@ t"></script>
 
     <!--====== App ======-->
     <script src="../assets/js/app.js"></script>
+    <link rel="stylesheet" href="../assets/css/tableau.css">
+
 
     <!--====== Noscript ======-->
     <noscript>
