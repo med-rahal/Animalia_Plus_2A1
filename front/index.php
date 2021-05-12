@@ -509,9 +509,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="section__text-wrap">
-                                    <h1 class="section__heading u-c-secondary u-s-m-b-12">MAGASINEZ PAR OFFRES</h1>
-
-                                    <span class="section__span u-c-silver">BROWSE FAVOURITE DEALS</span>
+                                    <h1 class="section__heading u-c-secondary u-s-m-b-12">NOS PRODUITS</h1>
                                 </div>
                             </div>
                         </div>
@@ -529,29 +527,23 @@
                                 <a class="collection" href="shop-side-version-2.html">
                                     <div class="aspect aspect--bg-grey aspect--square">
 
-                                        <img class="aspect__img collection__img" src="images/collection/coll-1.jpg" alt=""></div>
+                                        <img class="aspect__img collection__img" src="assets/images/animaux.jpg" alt=""></div>
                                 </a></div>
                             <div class="col-lg-7 col-md-7 u-s-m-b-30">
 
-                                <a class="collection" href="shop-side-version-2.html">
+                                <a class="collection" href="Views/afficher_plante.php">
                                     <div class="aspect aspect--bg-grey aspect--1286-890">
 
-                                        <img class="aspect__img collection__img" src="images/collection/coll-2.jpg" alt=""></div>
+                                        <img class="aspect__img collection__img" src="assets/images/plante.jpg" alt=""></div>
                                 </a></div>
                             <div class="col-lg-7 col-md-7 u-s-m-b-30">
 
-                                <a class="collection" href="shop-side-version-2.html">
+                                <a class="collection" href="Views/gestion_alimentation.php">
                                     <div class="aspect aspect--bg-grey aspect--1286-890">
 
-                                        <img class="aspect__img collection__img" src="images/collection/coll-3.jpg" alt=""></div>
+                                        <img class="aspect__img collection__img" src="assets/images/alimentation.jpg" alt=""></div>
                                 </a></div>
-                            <div class="col-lg-5 col-md-5 u-s-m-b-30">
-
-                                <a class="collection" href="shop-side-version-2.html">
-                                    <div class="aspect aspect--bg-grey aspect--square">
-
-                                        <img class="aspect__img collection__img" src="images/collection/coll-4.jpg" alt=""></div>
-                                </a></div>
+                            </div>
                         </div>
                     </div>
                 </div>
