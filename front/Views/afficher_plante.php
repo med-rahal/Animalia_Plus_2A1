@@ -22,20 +22,20 @@
 
     <link rel="stylesheet" href="../assets/css/app.css">
 
- <!--====== dark mode -->
- <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--====== dark mode -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-    body {
-      padding: 10px;
-      background-color: white;
-      color: black;
-      font-size: 10px;
-    }
-    
-    .dark-mode {
-      background-color: black;
-      color: white;
-    }
+        body {
+            padding: 10px;
+            background-color: white;
+            color: black;
+            font-size: 10px;
+        }
+
+        .dark-mode {
+            background-color: black;
+            color: white;
+        }
     </style>
 
 
@@ -61,10 +61,10 @@ t"></script>
 
     <button onclick="myFunction()">Toggle dark mode</button>
     <script>
-    function myFunction() {
-       var element = document.body;
-       element.classList.toggle("dark-mode");
-    }
+        function myFunction() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+        }
     </script>
 
 
@@ -517,7 +517,7 @@ t"></script>
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="section__text-wrap">
-                                <h1 class="section__heading u-c-secondary u-s-m-b-12">MAGASINEZ PAR OFFRES</h1>
+                                <h1 class="section__heading u-c-secondary u-s-m-b-12">RAYON DES PLANTES :</h1>
                             </div>
                         </div>
                     </div>
@@ -525,43 +525,48 @@ t"></script>
             </div>
         </div>
 
-        <form action="" method="post">
-<input type="text" name="search">
-<input type="submit" name="submit" value="Search">
-</form>
+<!--====== tab plante ======-->
 
+    <link rel="stylesheet" href="../assets/css/tableau.css">
 
+        <table id="ejemplo" border=1 align='center'>
+            <tr>
+                <th><span style="color: #000000;">Reference</span></th>
+                <th><span style="color: #000000;">CATEGORIE</span></th>
+                <th><span style="color: #000000;">NOM PLANTE</span></th>
+                <th><span style="color: #000000;">PRIX</span></th>
+                <th><span style="color: #000000;">DATE DE PLANTE</span></th>
+                <th><span style="color: #000000;">IMAGE</span></th>
+                <th><span style="color: #000000;">AJOUTER</span></th>
+            </tr>
 
-
-		<table id="ejemplo" border=1 align = 'center'>
-			<tr>
-				<th>Reference plante</th>
-				<th>Nom Categorie</th>
-				<th>Nom plante</th>
-				<th>prix</th>
-				<th>date de plante</th>
-				<th>Image</th>
-				<th>ajouter</th>
-			</tr>
-
-			<?PHP
+            <?PHP
 				foreach($listeUsers as $user){
 			?>
-				<tr>
-					<td><strong><?PHP echo $user['ref_plante']; ?></strong></td>
-					<td><?PHP echo $user['nom_categorie']; ?></td>
-					<td><?PHP echo $user['nom_plante']; ?></td>
-					<td><?PHP echo $user['prix']; ?> DT</td>
-					<td><?PHP echo $user['date_plante']; ?></td>
-                    <td><img src="images/<?= $user['image'] ?> "width = "200" height = "200"></td>
-					<td>
-						<a href="#"=<?PHP echo $user['ref_plante']; ?>"> ajouter au panier </a>
-					</td>
-				</tr>
-			<?PHP
+            <tr>
+                <td><strong>
+                    <?PHP echo $user['ref_plante']; ?></strong></td>
+                <td>
+                    <?PHP echo $user['nom_categorie']; ?>
+                </td>
+                <td>
+                    <?PHP echo $user['nom_plante']; ?>
+                </td>
+                <td>
+                    <?PHP echo $user['prix']; ?> DT</td>
+                <td>
+                    <?PHP echo $user['date_plante']; ?>
+                </td>
+                <td><img src="../assets/images/products/<?= $user['image'] ?> " width="200" height="200"></td>
+                <td>
+                    <a href="#=<?PHP echo $user['ref_plante']; ?>"
+                    class="action-button shadow animate green"> ajouter au panier </a>
+                </td>
+            </tr>
+            <?PHP
 				}
 			?>
-		</table>
+        </table>
 
 
 
