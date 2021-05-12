@@ -431,72 +431,35 @@
 
             <!--====== Primary Slider ======-->
             <div class="s-skeleton s-skeleton--h-600 s-skeleton--bg-grey">
-                <div class="owl-carousel primary-style-1" id="hero-slider">
-                    <div class="hero-slide hero-slide--1">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="slider-content slider-content--animation">
+            <div class="owl-carousel primary-style-1" id="hero-slider">
+                <div class="hero-slide hero-slide--1">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="slider-content slider-content--animation">
 
-                                        <span class="content-span-1 u-c-secondary">Dernière mise à jour Stock</span>
+                                    <span class="content-span-1 u-c-secondary">Dernière mise à jour Stock</span>
 
-                                        <span class="content-span-2 u-c-secondary">20% Off Pour Tous Nos Clients Fidéles !</span>
+                                    <span class="content-span-2 u-c-secondary">20% Off Pour Tous Nos Clients Fidéles
+                                        !</span>
 
-                                        <span class="content-span-3 u-c-secondary">Trouver des animaux de compagnie sur les meilleurs prix, Découvrez également les produits les plus vendus de plantes</span>
+                                    <span class="content-span-3 u-c-secondary">Trouver des animaux de compagnie sur les
+                                        meilleurs prix, Découvrez également les produits les plus vendus de
+                                        plantes</span>
 
-                                        <span class="content-span-4 u-c-secondary">À partir de
+                                    <span class="content-span-4 u-c-secondary">À partir de
 
-                                            <span class="u-c-brand">20 DT</span></span>
+                                        <span class="u-c-brand">20 DT</span></span>
 
-                                        <a class="shop-now-link btn--e-brand" href="shop-side-version-2.html">MAGASINEZ MAINTENANT</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hero-slide hero-slide--2">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="slider-content slider-content--animation">
-
-                                        <span class="content-span-1 u-c-white">Bonjour</span>
-
-                                        <span class="content-span-2 u-c-white">10% remise sur les accessories de votre chien</span>
-
-                                        <span class="content-span-3 u-c-white">Animalia Plus.. Votre Store Préférer</span>
-
-                                        <span class="content-span-4 u-c-white">A partir de
-
-                                            <span class="u-c-brand">10 DT</span></span>
-
-                                        <a class="shop-now-link btn--e-brand" href="shop-side-version-2.html">SHOP NOW</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hero-slide hero-slide--3">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="slider-content slider-content--animation">
-
-                                        <span class="content-span-1 u-c-secondary">Find Top Brands</span>
-
-                                        <span class="content-span-2 u-c-secondary">10% Off On Electronics</span>
-
-                                        <span class="content-span-3 u-c-secondary">Find electronics on best prices, Also Discover most selling products of electronics</span>
-
-                                        <span class="content-span-4 u-c-secondary">Starting At
-
-                                            <span class="u-c-brand">$550.00</span></span>
-
-                                        <a class="shop-now-link btn--e-brand" href="shop-side-version-2.html">SHOP NOW</a></div>
-                                </div>
+                                    <a class="shop-now-link btn--e-brand" href="shop-side-version-2.html">MAGASINEZ
+                                        MAINTENANT</a></div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
+        </div>
             <!--====== End - Primary Slider ======-->
 
 
@@ -509,7 +472,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="section__text-wrap">
-                                    <h1 class="section__heading u-c-secondary u-s-m-b-12">NOS PRODUITS</h1>
+                                    <h1 class="">NOS PRODUITS</h1>
                                 </div>
                             </div>
                         </div>
@@ -527,7 +490,7 @@
                                 <a class="collection" href="shop-side-version-2.html">
                                     <div class="aspect aspect--bg-grey aspect--square">
 
-                                        <img class="aspect__img collection__img" src="assets/images/animaux.jpg" alt=""></div>
+                                        <img class="aspect__img collection__img" src="assets/images/animau.jpg" alt=""></div>
                                 </a></div>
                             <div class="col-lg-7 col-md-7 u-s-m-b-30">
 
@@ -541,7 +504,7 @@
                                 <a class="collection" href="Views/gestion_alimentation.php">
                                     <div class="aspect aspect--bg-grey aspect--1286-890">
 
-                                        <img class="aspect__img collection__img" src="assets/images/alimentation.jpg" alt=""></div>
+                                        <img class="aspect__img collection__img" src="assets/images/alimentationn.jpg" alt=""></div>
                                 </a></div>
                             </div>
                         </div>

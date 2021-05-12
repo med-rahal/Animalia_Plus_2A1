@@ -23,53 +23,7 @@
     <link rel="stylesheet" href="../assets/css/app.css">
 
     <!--====== dark mode -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body {
-            padding: 10px;
-            background-color: white;
-            color: black;
-            font-size: 10px;
-        }
 
-        .dark-mode {
-            background-color: black;
-            color: white;
-        }
-    </style>
-
-
-</head>
-
-<body class="config">
-    <div id="google_translate_element"></div>
-
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                    pageLanguage: 'en'
-                },
-                'google_translate_element');
-        }
-    </script>
-
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementIni
-t"></script>
-
-
-
-
-    <button onclick="myFunction()">Toggle dark mode</button>
-    <script>
-        function myFunction() {
-            var element = document.body;
-            element.classList.toggle("dark-mode");
-        }
-    </script>
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js">
-    </script>
 
 
 
@@ -79,7 +33,7 @@ t"></script>
             <div class="primary-nav">
 
 
-                <a class="main-logo" href="index.html">
+                <a class="main-logo" href="../index.php">
 
                     <img src="../assets/images/logo/logo.png" alt="logo animliaplus"></a>
 
@@ -115,7 +69,7 @@ t"></script>
                                         <span>Espace client</span></a></li>
                                 <li>
 
-                                    <a href="index.html"><i class="fas fa-store"></i>
+                                    <a href="../index.php"><i class="fas fa-store"></i>
 
                                         <span>Espace vendeur</span></a></li>
                             </ul>
@@ -215,7 +169,7 @@ t"></script>
 
                                     <li>
 
-                                        <a href="reclamationAffichage.php">Alimentation</a>
+                                        <a href="gestion_alimentation.php">Alimentation</a>
 
                                         <span class="js-menu-toggle"></span>
 
@@ -296,7 +250,7 @@ t"></script>
                         <ul class="ah-list ah-list--design1 ah-list--link-color-secondary">
                             <li>
 
-                                <a href="index.html"><i class="fas fa-home u-c-brand"></i></a></li>
+                                <a href="../index.php"><i class="fas fa-home u-c-brand"></i></a></li>
                             <li>
 
                                 <a href="wishlist.html"><i class="far fa-heart"></i></a></li>
@@ -311,39 +265,8 @@ t"></script>
                                 <span class="js-menu-toggle"></span>
                                 <div class="mini-cart">
 
-                                    <!--====== Mini Product Container ======-->
+                                    <!--====== PANIER ======-->
                                     <div class="mini-product-container gl-scroll u-s-m-b-15">
-
-                                        <!--====== Card for mini cart ======-->
-                                        <div class="card-mini-product">
-                                            <div class="mini-product">
-                                                <div class="mini-product__image-wrapper">
-
-                                                    <a class="mini-product__link" href="product-detail.html">
-
-                                                        <img class="u-img-fluid"
-                                                            src="images/product/electronic/product3.jpg" alt=""></a>
-                                                </div>
-                                                <div class="mini-product__info-wrapper">
-
-                                                    <span class="mini-product__category">
-
-                                                        <a href="shop-side-version-2.html">Electronics</a></span>
-
-                                                    <span class="mini-product__name">
-
-                                                        <a href="product-detail.html">Yellow Wireless
-                                                            Headphone</a></span>
-
-                                                    <span class="mini-product__quantity">1 x</span>
-
-                                                    <span class="mini-product__price">$8</span></div>
-                                            </div>
-
-                                            <a class="mini-product__delete-link far fa-trash-alt"></a>
-                                        </div>
-                                        <!--====== End - Card for mini cart ======-->
-
 
                                         <!--====== Card for mini cart ======-->
                                         <div class="card-mini-product">
@@ -364,36 +287,6 @@ t"></script>
                                                     <span class="mini-product__name">
 
                                                         <a href="product-detail.html">Nikon DSLR Camera 4k</a></span>
-
-                                                    <span class="mini-product__quantity">1 x</span>
-
-                                                    <span class="mini-product__price">$8</span></div>
-                                            </div>
-
-                                            <a class="mini-product__delete-link far fa-trash-alt"></a>
-                                        </div>
-                                        <!--====== End - Card for mini cart ======-->
-
-
-                                        <!--====== Card for mini cart ======-->
-                                        <div class="card-mini-product">
-                                            <div class="mini-product">
-                                                <div class="mini-product__image-wrapper">
-
-                                                    <a class="mini-product__link" href="product-detail.html">
-
-                                                        <img class="u-img-fluid" src="images/product/women/product8.jpg"
-                                                            alt=""></a></div>
-                                                <div class="mini-product__info-wrapper">
-
-                                                    <span class="mini-product__category">
-
-                                                        <a href="shop-side-version-2.html">Women Clothing</a></span>
-
-                                                    <span class="mini-product__name">
-
-                                                        <a href="product-detail.html">New Dress D Nice
-                                                            Elegant</a></span>
 
                                                     <span class="mini-product__quantity">1 x</span>
 
@@ -433,8 +326,9 @@ t"></script>
                                             <a class="mini-product__delete-link far fa-trash-alt"></a>
                                         </div>
                                         <!--====== End - Card for mini cart ======-->
+                                        
                                     </div>
-                                    <!--====== End - Mini Product Container ======-->
+                                    <!--====== End - PANIER ======-->
 
 
                                     <!--====== Mini Product Statistics ======-->
@@ -494,7 +388,7 @@ t"></script>
 
                                     <span class="content-span-4 u-c-secondary">À partir de
 
-                                        <span class="u-c-brand">20 DT</span></span>
+                                        <span class="u-c-brand">Bienvenue</span></span>
 
                                     <a class="shop-now-link btn--e-brand" href="shop-side-version-2.html">MAGASINEZ
                                         MAINTENANT</a></div>
@@ -517,7 +411,7 @@ t"></script>
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="section__text-wrap">
-                                <h1 class="section__heading u-c-secondary u-s-m-b-12">RAYON DES PLANTES :</h1>
+                                <h1 class="">RAYON DES PLANTES :</h1>
                             </div>
                         </div>
                     </div>
@@ -531,31 +425,31 @@ t"></script>
 
         <table id="ejemplo" border=1 align='center'>
             <tr>
-                <th><span style="color: #000000;">Reference</span></th>
-                <th><span style="color: #000000;">CATEGORIE</span></th>
-                <th><span style="color: #000000;">NOM PLANTE</span></th>
-                <th><span style="color: #000000;">PRIX</span></th>
-                <th><span style="color: #000000;">DATE DE PLANTE</span></th>
-                <th><span style="color: #000000;">IMAGE</span></th>
-                <th><span style="color: #000000;">AJOUTER</span></th>
+                <th><span style="color: #ff0000;">Reference</span></th>
+                <th><span style="color: #ff0000;">CATEGORIE</span></th>
+                <th><span style="color: #ff0000;">NOM PLANTE</span></th>
+                <th><span style="color: #ff0000;">PRIX</span></th>
+                <th><span style="color: #ff0000;">DATE DE PLANTE</span></th>
+                <th><span style="color: #ff0000;">IMAGE</span></th>
+                <th><span style="color: #ff0000;">AJOUTER</span></th>
             </tr>
 
             <?PHP
 				foreach($listeUsers as $user){
 			?>
-            <tr>
+            <tr>  <!-- <h1><span style="color: #000000;"><strong>test</strong></span></h1>  -->
                 <td><strong>
-                    <?PHP echo $user['ref_plante']; ?></strong></td>
+                <h3><span style="color: #000000;"><strong> <?PHP echo $user['ref_plante']; ?></strong></span></h3></td>
                 <td>
-                    <?PHP echo $user['nom_categorie']; ?>
+                <h3><span style="color: #000000;"><strong><?PHP echo $user['nom_categorie']; ?></strong></span></h3>
                 </td>
                 <td>
-                    <?PHP echo $user['nom_plante']; ?>
+                <h3><span style="color: #000000;"><strong><?PHP echo $user['nom_plante']; ?></strong></span></h3>
                 </td>
                 <td>
-                    <?PHP echo $user['prix']; ?> DT</td>
+                <h3><span style="color: #000000;"><strong><?PHP echo $user['prix']; ?> DT</td></strong></span></h3>
                 <td>
-                    <?PHP echo $user['date_plante']; ?>
+                <h3><span style="color: #000000;"><strong><?PHP echo $user['date_plante']; ?></strong></span></h3>
                 </td>
                 <td><img src="../assets/images/products/<?= $user['image'] ?> " width="200" height="200"></td>
                 <td>
@@ -567,7 +461,7 @@ t"></script>
 				}
 			?>
         </table>
-
+<br><br><br><br><br>
 
 
         <!--====== Main Footer ======-->
@@ -587,27 +481,22 @@ t"></script>
                                     <span>(+0) 900 901 904</span></div>
                                 <div class="outer-footer__text-wrap"><i class="far fa-envelope"></i>
 
-                                    <span>contact@domain.com</span></div>
+                                    <span>AnimaliaPlus@gmail.com</span></div>
                                 <div class="outer-footer__social">
                                     <ul>
                                         <li>
-
                                             <a class="s-fb--color-hover" href="#"><i class="fab fa-facebook-f"></i></a>
                                         </li>
                                         <li>
-
                                             <a class="s-tw--color-hover" href="#"><i class="fab fa-twitter"></i></a>
                                         </li>
                                         <li>
-
                                             <a class="s-youtube--color-hover" href="#"><i
                                                     class="fab fa-youtube"></i></a></li>
                                         <li>
-
                                             <a class="s-insta--color-hover" href="#"><i
                                                     class="fab fa-instagram"></i></a></li>
                                         <li>
-
                                             <a class="s-gplus--color-hover" href="#"><i
                                                     class="fab fa-google-plus-g"></i></a></li>
                                     </ul>
@@ -655,7 +544,7 @@ t"></script>
                                                     <a href="contact.html">Contact Us</a></li>
                                                 <li>
 
-                                                    <a href="index.html">Sitemap</a></li>
+                                                    <a href="../index.php">Sitemap</a></li>
                                                 <li>
 
                                                     <a href="dash-my-order.html">Delivery</a></li>
@@ -713,12 +602,7 @@ t"></script>
                         <div class="col-lg-12">
                             <div class="lower-footer__content">
                                 <div class="lower-footer__copyright">
-
-                                    <span>Copyright © 2018</span>
-
-                                    <a href="index.html">Reshop</a>
-
-                                    <span>All Right Reserved</span></div>
+                                    <span>AnimaliaPlus © 2021 All Right Reserved</span></div>
                                 <div class="lower-footer__payment">
                                     <ul>
                                         <li><i class="fab fa-cc-stripe"></i></li>
