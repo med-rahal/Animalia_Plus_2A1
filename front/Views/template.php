@@ -236,7 +236,7 @@ t"></script>
                                 <a href="login_client.php">Connexion</a>
                                 <a href="connexion.php">Inscription</a>
                                 <a href="#panier">Panier</a>
-                                <a href="#aboutus">find us</a>
+                                <a href="map.php">Find us</a>
 
 
 
