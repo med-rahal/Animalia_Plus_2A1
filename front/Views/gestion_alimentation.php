@@ -538,7 +538,7 @@ t"></script>
             <th><span style="color: #ff0000;"><strong>Image</span></strong></th>
             <th><span style="color: #ff0000;"><strong>Ajouter</span></strong></th>
 				
-            </tr>
+             </tr>
             
             
 
