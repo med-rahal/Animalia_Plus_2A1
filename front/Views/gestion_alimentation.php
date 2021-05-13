@@ -193,7 +193,7 @@ t"></script>
                         <ul class="ah-list ah-list--design2 ah-list--link-color-secondary">
                             <li class="has-dropdown">
                                 <br>
-                                <a href="reclamation.php">produits<i class="fas fa-angle-down u-s-m-l-6"></i></a>
+                                <a href="#">produits<i class="fas fa-angle-down u-s-m-l-6"></i></a>
 
 
 
@@ -201,7 +201,7 @@ t"></script>
                                 <ul>
                                     <li>
 
-                                        <a href="reclamation.php">Plantes</a>
+                                        <a href="afficher_plante.php">Plantes</a>
 
                                         <span class="js-menu-toggle"></span>
 
@@ -209,7 +209,7 @@ t"></script>
                                     </li>
                                     <li>
 
-                                        <a href="reclamationAffichage.php">Animaux</a>
+                                        <a href="afficher_animal.php">Animaux</a>
 
                                         <span class="js-menu-toggle"></span>
 
@@ -218,7 +218,7 @@ t"></script>
 
                                     <li>
 
-                                        <a href="reclamationAffichage.php">Alimentation</a>
+                                        <a href="#">Alimentation</a>
 
                                         <span class="js-menu-toggle"></span>
 
@@ -237,7 +237,7 @@ t"></script>
                                 <a href="login_client.php">Connexion</a>
                                 <a href="connexion.php">Inscription</a>
                                 <a href="#panier">Panier</a>
-                                <a href="#aboutus">find us</a>
+                                <a href="map.php">find us</a>
 
 
 

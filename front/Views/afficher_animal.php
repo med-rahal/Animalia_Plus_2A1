@@ -1,7 +1,8 @@
 <?PHP
-	include "../controller/planteC.php";
-	$planteC=new planteC();
-	$listeUsers=$planteC->afficherplante();
+include "../controller/AnimalC.php";
+
+$AnimalC=new AnimalC();
+$listeAnimals=$AnimalC->afficherAnimals();
 ?>
 
 <!DOCTYPE html>
@@ -152,7 +153,7 @@
                                 <ul>
                                     <li>
 
-                                        <a href="#">Plantes</a>
+                                        <a href="afficher_plante.php">Plantes</a>
 
                                         <span class="js-menu-toggle"></span>
 
@@ -160,7 +161,7 @@
                                     </li>
                                     <li>
 
-                                        <a href="afficher_animal.php">Animaux</a>
+                                        <a href="#">Animaux</a>
 
                                         <span class="js-menu-toggle"></span>
 
@@ -411,7 +412,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="section__text-wrap">
-                                <h1 class="">RAYON DES PLANTES :</h1>
+                                <h1 class="">RAYON DES ANIMEAUX :</h1>
                             </div>
                         </div>
                     </div>
@@ -425,252 +426,249 @@
 
         <table id="ejemplo" border=1 align='center'>
             <tr>
-                <th><span style="color: #ff0000;">Reference</span></th>
-                <th><span style="color: #ff0000;">CATEGORIE</span></th>
-                <th><span style="color: #ff0000;">NOM PLANTE</span></th>
-                <th><span style="color: #ff0000;">PRIX</span></th>
-                <th><span style="color: #ff0000;">DATE DE PLANTE</span></th>
-                <th><span style="color: #ff0000;">IMAGE</span></th>
-                <th><span style="color: #ff0000;">AJOUTER</span></th>
+                             <th><span style="color: #ff0000;">Nom</span></th>
+                            <th><span style="color: #ff0000;">PRIX</span></th>
+                            <th><span style="color: #ff0000;">RACE</span></th>
+                            <th><span style="color: #ff0000;">Categorie Animal</span></th>
+                            <th><span style="color: #ff0000;">Image</span></th>
+                            <th><span style="color: #ff0000;">AJOUTER</span></th>
             </tr>
 
-            <?PHP
-				foreach($listeUsers as $user){
-			?>
-            <tr>  <!-- <h1><span style="color: #000000;"><strong>test</strong></span></h1>  -->
-                <td><strong>
-                <h3><span style="color: #000000;"><strong> <?PHP echo $user['ref_plante']; ?></strong></span></h3></td>
-                <td>
-                <h3><span style="color: #000000;"><strong><?PHP echo $user['nom_categorie']; ?></strong></span></h3>
-                </td>
-                <td>
-                <h3><span style="color: #000000;"><strong><?PHP echo $user['nom_plante']; ?></strong></span></h3>
-                </td>
-                <td>
-                <h3><span style="color: #000000;"><strong><?PHP echo $user['prix']; ?> DT</td></strong></span></h3>
-                <td>
-                <h3><span style="color: #000000;"><strong><?PHP echo $user['date_plante']; ?></strong></span></h3>
-                </td>
-                <td><img src="../assets/images/products/<?= $user['image'] ?> " width="200" height="200"></td>
-                <td>
-                    <a href="#=<?PHP echo $user['ref_plante']; ?>"
-                    class="action-button shadow animate green"> ajouter au panier </a>
-                </td>
-            </tr>
-            <?PHP
-				}
-			?>
-        </table>
+<?PHP
+    foreach($listeAnimals as $animal){
+?>
+<tr>  <!-- <h1><span style="color: #000000;"><strong>test</strong></span></h1>  -->
+    <td><strong>
+    <h3><span style="color: #000000;"><strong> <?PHP echo $animal['nom']; ?></strong></span></h3></td>
+    <td>
+    <h3><span style="color: #000000;"><strong><?PHP echo $animal['prix']; ?> DT</strong></span></h3>
+    </td>
+    <td>
+    <h3><span style="color: #000000;"><strong><?PHP echo $animal['race']; ?></strong></span></h3>
+    </td>
+    <td>
+    <h3><span style="color: #000000;"><strong><?PHP echo $animal['nom_categorie']; ?></td></strong></span></h3>
+
+    <td><img src="../assets/images/products/<?= $animal['image'] ?> " width="200" height="200"></td>
+    <td>
+        <a href="#=<?PHP echo $animal['id']; ?>"
+        class="action-button shadow animate green"> ajouter au panier </a>
+    </td>
+</tr>
+<?PHP
+    }
+?>
+</table>
 <br><br><br><br><br>
 
 
-        <!--====== Main Footer ======-->
-        <footer>
-            <div class="outer-footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6">
-                            <div class="outer-footer__content u-s-m-b-40">
+<!--====== Main Footer ======-->
+<footer>
+<div class="outer-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="outer-footer__content u-s-m-b-40">
 
-                                <span class="outer-footer__content-title">Contact Us</span>
-                                <div class="outer-footer__text-wrap"><i class="fas fa-home"></i>
+                    <span class="outer-footer__content-title">Contact Us</span>
+                    <div class="outer-footer__text-wrap"><i class="fas fa-home"></i>
 
-                                    <span>4247 Ashford Drive Virginia VA-20006 USA</span></div>
-                                <div class="outer-footer__text-wrap"><i class="fas fa-phone-volume"></i>
+                        <span>4247 Ashford Drive Virginia VA-20006 USA</span></div>
+                    <div class="outer-footer__text-wrap"><i class="fas fa-phone-volume"></i>
 
-                                    <span>(+0) 900 901 904</span></div>
-                                <div class="outer-footer__text-wrap"><i class="far fa-envelope"></i>
+                        <span>(+0) 900 901 904</span></div>
+                    <div class="outer-footer__text-wrap"><i class="far fa-envelope"></i>
 
-                                    <span>AnimaliaPlus@gmail.com</span></div>
-                                <div class="outer-footer__social">
-                                    <ul>
-                                        <li>
-                                            <a class="s-fb--color-hover" href="#"><i class="fab fa-facebook-f"></i></a>
-                                        </li>
-                                        <li>
-                                            <a class="s-tw--color-hover" href="#"><i class="fab fa-twitter"></i></a>
-                                        </li>
-                                        <li>
-                                            <a class="s-youtube--color-hover" href="#"><i
-                                                    class="fab fa-youtube"></i></a></li>
-                                        <li>
-                                            <a class="s-insta--color-hover" href="#"><i
-                                                    class="fab fa-instagram"></i></a></li>
-                                        <li>
-                                            <a class="s-gplus--color-hover" href="#"><i
-                                                    class="fab fa-google-plus-g"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="outer-footer__content u-s-m-b-40">
-
-                                        <span class="outer-footer__content-title">Information</span>
-                                        <div class="outer-footer__list-wrap">
-                                            <ul>
-                                                <li>
-
-                                                    <a href="cart.html">Cart</a></li>
-                                                <li>
-
-                                                    <a href="dashboard.html">Account</a></li>
-                                                <li>
-
-                                                    <a href="shop-side-version-2.html">Manufacturer</a></li>
-                                                <li>
-
-                                                    <a href="dash-payment-option.html">Finance</a></li>
-                                                <li>
-
-                                                    <a href="shop-side-version-2.html">Shop</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="outer-footer__content u-s-m-b-40">
-                                        <div class="outer-footer__list-wrap">
-
-                                            <span class="outer-footer__content-title">Our Company</span>
-                                            <ul>
-                                                <li>
-
-                                                    <a href="about.html">About us</a></li>
-                                                <li>
-
-                                                    <a href="contact.html">Contact Us</a></li>
-                                                <li>
-
-                                                    <a href="../index.php">Sitemap</a></li>
-                                                <li>
-
-                                                    <a href="dash-my-order.html">Delivery</a></li>
-                                                <li>
-
-                                                    <a href="shop-side-version-2.html">Store</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-12">
-                            <div class="outer-footer__content">
-
-                                <span class="outer-footer__content-title">Join our Newsletter</span>
-                                <form class="newsletter">
-                                    <div class="u-s-m-b-15">
-                                        <div class="radio-box newsletter__radio">
-
-                                            <input type="radio" id="male" name="gender">
-                                            <div class="radio-box__state radio-box__state--primary">
-
-                                                <label class="radio-box__label" for="male">Male</label></div>
-                                        </div>
-                                        <div class="radio-box newsletter__radio">
-
-                                            <input type="radio" id="female" name="gender">
-                                            <div class="radio-box__state radio-box__state--primary">
-
-                                                <label class="radio-box__label" for="female">Female</label></div>
-                                        </div>
-                                    </div>
-                                    <div class="newsletter__group">
-
-                                        <label for="newsletter"></label>
-
-                                        <input class="input-text input-text--only-white" type="text" id="newsletter"
-                                            placeholder="Enter your Email">
-
-                                        <button class="btn btn--e-brand newsletter__btn"
-                                            type="submit">SUBSCRIBE</button></div>
-
-                                    <span class="newsletter__text">Subscribe to the mailing list to receive updates on
-                                        promotions, new arrivals, discount and coupons.</span>
-                                </form>
-                            </div>
-                        </div>
+                        <span>AnimaliaPlus@gmail.com</span></div>
+                    <div class="outer-footer__social">
+                        <ul>
+                            <li>
+                                <a class="s-fb--color-hover" href="#"><i class="fab fa-facebook-f"></i></a>
+                            </li>
+                            <li>
+                                <a class="s-tw--color-hover" href="#"><i class="fab fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a class="s-youtube--color-hover" href="#"><i
+                                        class="fab fa-youtube"></i></a></li>
+                            <li>
+                                <a class="s-insta--color-hover" href="#"><i
+                                        class="fab fa-instagram"></i></a></li>
+                            <li>
+                                <a class="s-gplus--color-hover" href="#"><i
+                                        class="fab fa-google-plus-g"></i></a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <div class="lower-footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="lower-footer__content">
-                                <div class="lower-footer__copyright">
-                                    <span>AnimaliaPlus © 2021 All Right Reserved</span></div>
-                                <div class="lower-footer__payment">
-                                    <ul>
-                                        <li><i class="fab fa-cc-stripe"></i></li>
-                                        <li><i class="fab fa-cc-paypal"></i></li>
-                                        <li><i class="fab fa-cc-mastercard"></i></li>
-                                        <li><i class="fab fa-cc-visa"></i></li>
-                                        <li><i class="fab fa-cc-discover"></i></li>
-                                        <li><i class="fab fa-cc-amex"></i></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-        <!--====== Modal Section ======-->
-
-
-
-
-
-
-
-        <!--====== End - Modal Section ======-->
-    </div>
-    <!--====== End - Main App ======-->
-
-
-    <!--====== Google Analytics: change UA-XXXXX-Y to be your site's ID ======-->
-    <script>
-        window.ga = function () {
-            ga.q.push(arguments)
-        };
-        ga.q = [];
-        ga.l = +new Date;
-        ga('create', 'UA-XXXXX-Y', 'auto');
-        ga('send', 'pageview')
-    </script>
-    <script src="https://www.google-analytics.com/analytics.js" async defer></script>
-
-    <!--====== Vendor Js ======-->
-    <script src="../assets/js/vendor.js"></script>
-
-    <!--====== jQuery Shopnav plugin ======-->
-    <script src="../assets/js/jquery.shopnav.js"></script>
-
-    <!--====== App ======-->
-    <script src="../assets/js/app.js"></script>
-
-    <!--====== Noscript ======-->
-    <noscript>
-        <div class="app-setting">
-            <div class="container">
+            <div class="col-lg-4 col-md-6">
                 <div class="row">
-                    <div class="col-12">
-                        <div class="app-setting__wrap">
-                            <h1 class="app-setting__h1">JavaScript is disabled in your browser.</h1>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="outer-footer__content u-s-m-b-40">
 
-                            <span class="app-setting__text">Please enable JavaScript in your browser or upgrade to a
-                                JavaScript-capable browser.</span>
+                            <span class="outer-footer__content-title">Information</span>
+                            <div class="outer-footer__list-wrap">
+                                <ul>
+                                    <li>
+
+                                        <a href="cart.html">Cart</a></li>
+                                    <li>
+
+                                        <a href="dashboard.html">Account</a></li>
+                                    <li>
+
+                                        <a href="shop-side-version-2.html">Manufacturer</a></li>
+                                    <li>
+
+                                        <a href="dash-payment-option.html">Finance</a></li>
+                                    <li>
+
+                                        <a href="shop-side-version-2.html">Shop</a></li>
+                                </ul>
+                            </div>
                         </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="outer-footer__content u-s-m-b-40">
+                            <div class="outer-footer__list-wrap">
+
+                                <span class="outer-footer__content-title">Our Company</span>
+                                <ul>
+                                    <li>
+
+                                        <a href="about.html">About us</a></li>
+                                    <li>
+
+                                        <a href="contact.html">Contact Us</a></li>
+                                    <li>
+
+                                        <a href="../index.php">Sitemap</a></li>
+                                    <li>
+
+                                        <a href="dash-my-order.html">Delivery</a></li>
+                                    <li>
+
+                                        <a href="shop-side-version-2.html">Store</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div class="outer-footer__content">
+
+                    <span class="outer-footer__content-title">Join our Newsletter</span>
+                    <form class="newsletter">
+                        <div class="u-s-m-b-15">
+                            <div class="radio-box newsletter__radio">
+
+                                <input type="radio" id="male" name="gender">
+                                <div class="radio-box__state radio-box__state--primary">
+
+                                    <label class="radio-box__label" for="male">Male</label></div>
+                            </div>
+                            <div class="radio-box newsletter__radio">
+
+                                <input type="radio" id="female" name="gender">
+                                <div class="radio-box__state radio-box__state--primary">
+
+                                    <label class="radio-box__label" for="female">Female</label></div>
+                            </div>
+                        </div>
+                        <div class="newsletter__group">
+
+                            <label for="newsletter"></label>
+
+                            <input class="input-text input-text--only-white" type="text" id="newsletter"
+                                placeholder="Enter your Email">
+
+                            <button class="btn btn--e-brand newsletter__btn"
+                                type="submit">SUBSCRIBE</button></div>
+
+                        <span class="newsletter__text">Subscribe to the mailing list to receive updates on
+                            promotions, new arrivals, discount and coupons.</span>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="lower-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="lower-footer__content">
+                    <div class="lower-footer__copyright">
+                        <span>AnimaliaPlus © 2021 All Right Reserved</span></div>
+                    <div class="lower-footer__payment">
+                        <ul>
+                            <li><i class="fab fa-cc-stripe"></i></li>
+                            <li><i class="fab fa-cc-paypal"></i></li>
+                            <li><i class="fab fa-cc-mastercard"></i></li>
+                            <li><i class="fab fa-cc-visa"></i></li>
+                            <li><i class="fab fa-cc-discover"></i></li>
+                            <li><i class="fab fa-cc-amex"></i></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </noscript>
+    </div>
+</div>
+</footer>
+
+<!--====== Modal Section ======-->
+
+
+
+
+
+
+
+<!--====== End - Modal Section ======-->
+</div>
+<!--====== End - Main App ======-->
+
+
+<!--====== Google Analytics: change UA-XXXXX-Y to be your site's ID ======-->
+<script>
+window.ga = function () {
+ga.q.push(arguments)
+};
+ga.q = [];
+ga.l = +new Date;
+ga('create', 'UA-XXXXX-Y', 'auto');
+ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+<!--====== Vendor Js ======-->
+<script src="../assets/js/vendor.js"></script>
+
+<!--====== jQuery Shopnav plugin ======-->
+<script src="../assets/js/jquery.shopnav.js"></script>
+
+<!--====== App ======-->
+<script src="../assets/js/app.js"></script>
+
+<!--====== Noscript ======-->
+<noscript>
+<div class="app-setting">
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="app-setting__wrap">
+                <h1 class="app-setting__h1">JavaScript is disabled in your browser.</h1>
+
+                <span class="app-setting__text">Please enable JavaScript in your browser or upgrade to a
+                    JavaScript-capable browser.</span>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</noscript>
 </body>
 
-</html>
+</html>            
