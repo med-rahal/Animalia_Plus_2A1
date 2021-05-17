@@ -1,11 +1,15 @@
 <?PHP
-	include "../controller/AlimentationC.php";
+	include "../controller/AlimentationC.php";  
 
 	$AlimentationC=new AlimentationC();
 	$listeAlimentation=$AlimentationC->afficherAlimentation();
 
 
 ?>
+
+
+
+
 
 <!DOCTYPE html>
 <html class="no-js" lang="fr">
@@ -553,8 +557,13 @@ t"></script>
 					
 					<td><h3><span style="color: #000000;"><strong><?PHP echo $id_alimentation['prix']; ?> DT </strong></span></h3></td>
                     <td><img src="../assets/images/products/<?= $id_alimentation['image'] ?>" width = "200" height = "200" class="shop-item-image"></td>
-                    <td><a href="#=<?PHP echo $id_alimentation['id_alimentation']; ?>"
-                    class="action-button shadow animate green"> ajouter au panier </a></td>
+                    <td>
+                    <form method="post" action="panier.php?action=addcart">
+                    <button type="submit" class="action-button shadow animate green">Ajouter au panier</button>
+                    <input type="hidden" name="ref_alimentation" value="<?php print $id_alimentation['ref_alimentation']?>"> 
+                   
+                    </form>
+                    </td>
 					
 					
 				</tr>
@@ -563,7 +572,8 @@ t"></script>
 
 
 			<?PHP
-				}
+               
+            }
 			?>
 		</table>
                             </div>

@@ -98,7 +98,23 @@
 			} catch (PDOException $e) {
 				$e->getMessage();
 			}
+		} 
+
+		function getIDClientByEmail($email_client) {
+			try {
+				$db = config::getConnexion();
+				$query = $db->prepare(
+					'SELECT id_client FROM client WHERE email_client = :email_client'
+				);
+				$query->execute([
+					'email_client' => $email_client
+				]);
+				return $query->fetch();
+			} catch (PDOException $e) {
+				$e->getMessage();
+			}
 		}
+
 		function recupererClient($id_client){
 			$sql="SELECT * from client where id_client=$id_client";
 			$db = config::getConnexion();
