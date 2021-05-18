@@ -1,5 +1,32 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html class="no-js" lang="fr">
+=======
+<?PHP
+
+include "../Controller/reclamationC.php";
+include "../Model/reclamationE.php";
+$reclamation1C=new ReclamationC();
+$result=$reclamation1C->recupererReclamation($_GET['date_creation']);
+
+    foreach($result as $row){
+        $type=$row['descri'];
+        $description=$row['description'];
+        $date_creation=$row['date_creation'];
+        $etat=$row['etat'];
+        $reponse=$row['reponse'];
+
+
+
+$db = config::getConnexion();
+
+?>
+
+
+<!DOCTYPE html>
+<html class="no-js" lang="fr">
+
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -7,6 +34,7 @@
     <meta name="author" content="">
     <title>Animalia plus e-commerce site</title>
 
+<<<<<<< HEAD
    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
 
     <link rel="stylesheet" href="assets/css/vendor.css">
@@ -795,10 +823,503 @@
 
                                         <a class="shop-now-link btn--e-brand" href="shop-side-version-2.html">SHOP NOW</a></div>
                                 </div>
+=======
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/vendor.css">
+
+    <link rel="stylesheet" href="../assets/css/utility.css">
+
+    <link rel="stylesheet" href="../assets/css/app.css">
+   
+	<link href="../assets/css/lib2/css/style.css" rel="stylesheet" type="text/css" media="all" />	
+	<link href="../assets/css/lib2/css/memenu.css" rel="stylesheet" type="text/css" media="all" />
+	
+	<script src="js/simpleCart.min.js"> </script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js"></script>
+ <!--====== dark mode -->
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    body {
+      padding: 10px;
+      background-color: white;
+      color: black;
+      font-size: 10px;
+    }
+    
+    .dark-mode {
+      background-color: black;
+      color: white;
+    }
+    </style>
+
+
+</head>
+
+<body class="config">
+    <div id="google_translate_element"></div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                    pageLanguage: 'en'
+                },
+                'google_translate_element');
+        }
+    </script>
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementIni
+t"></script>
+
+
+
+
+    <button onclick="myFunction()">Toggle dark mode</button>
+    <script>
+    function myFunction() {
+       var element = document.body;
+       element.classList.toggle("dark-mode");
+    }
+    </script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js">
+    </script>
+
+
+
+    <nav class="primary-nav primary-nav-wrapper--border">
+        <div class="container">
+
+            <div class="primary-nav">
+
+
+                <a class="main-logo" href="index.html">
+
+                    <img src="../assets/images/logo/logo.png" alt="logo animliaplus"></a>
+
+                <form class="main-form">
+
+                    <label for="main-search"></label>
+
+                    <input class="input-text input-text--border-radius input-text--style-1" type="text" id="main-search"
+                        placeholder="rechercher">
+
+                    <button class="btn btn--icon fas fa-search main-search-button" type="submit"></button></form>
+
+                <div class="ah-lg-mode">
+
+                    <span class="ah-close">✕ Close</span>
+
+                    <ul class="ah-list ah-list--design1 ah-list--link-color-secondary">
+                        <li class="has-dropdown" data-tooltip="tooltip" data-placement="left" title="Account">
+
+                            <a><i class="far fa-user-circle"></i></a>
+
+                            <span class="js-menu-toggle"></span>
+                            <ul style="width:200px">
+                                <li>
+
+                                    <a href="Views/login.php"><i class="fas fa-user-circle u-s-m-r-6"></i>
+
+                                        <span>Espace administrateur</span></a></li>
+                                <li>
+
+                                    <a href="Views/login_client.php"><i class="fas fa-user-friends"></i></i>
+
+                                        <span>Espace client</span></a></li>
+                                <li>
+
+                                    <a href="index.html"><i class="fas fa-store"></i>
+
+                                        <span>Espace vendeur</span></a></li>
+                            </ul>
+
+                        </li>
+                        <li class="has-dropdown" data-tooltip="tooltip" data-placement="left" title="Settings">
+
+                            <a><i class="fas fa-user-cog"></i></a>
+
+                            <span class="js-menu-toggle"></span>
+                            <ul style="width:120px">
+                                <li class="has-dropdown has-dropdown--ul-right-100">
+
+                                    <a>Language<i class="fas fa-angle-down u-s-m-l-6"></i></a>
+
+
+
+                                    <span class="js-menu-toggle"></span>
+                                    <ul style="width:100px">
+                                        <li>
+
+                                            <a class="u-c-brand">ENGLISH</a></li>
+                                        <li>
+
+                                            <a>ESPANOL</a></li>
+                                    </ul>
+
+                                </li>
+                            </ul>
+
+                        </li>
+                        <li data-tooltip="tooltip" data-placement="left" title="Contact">
+
+                            <a href="tel:+21628824527"><i class="fas fa-phone-volume"></i></a></li>
+                        <li data-tooltip="tooltip" data-placement="left" title="Mail">
+
+                            <a href="mailto:AnimaliaPlus@gmail.com"><i class="far fa-envelope"></i></a></li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        </div>
+    </nav>
+
+
+    <!--====== Nav 2 ======-->
+    <nav class="secondary-nav-wrapper">
+        <div class="container">
+
+            <!--====== Secondary Nav ======-->
+            <div class="secondary-nav">
+
+                <!--====== Dropdown Main plugin ======-->
+
+
+
+                <div class="menu-init" id="navigation2">
+
+                    <button class="btn btn--icon toggle-button toggle-button--secondary fas fa-cog"
+                        type="button"></button>
+
+
+                    <div class="ah-lg-mode">
+
+                        <span class="ah-close">✕ Close</span>
+
+
+                        <ul class="ah-list ah-list--design2 ah-list--link-color-secondary">
+                            <li class="has-dropdown">
+                                <br>
+                                <a href="reclamation.php">produits<i class="fas fa-angle-down u-s-m-l-6"></i></a>
+
+
+
+                                <span></span>
+                                <ul>
+                                    <li>
+
+                                        <a href="reclamation.php">Plantes</a>
+
+                                        <span class="js-menu-toggle"></span>
+
+
+                                    </li>
+                                    <li>
+
+                                        <a href="reclamationAffichage.php">Animaux</a>
+
+                                        <span class="js-menu-toggle"></span>
+
+
+                                    </li>
+
+                                    <li>
+
+                                        <a href="reclamationAffichage.php">Alimentation</a>
+
+                                        <span class="js-menu-toggle"></span>
+
+
+                                    </li>
+
+
+                                </ul>
+
+
+                            </li>
+                            <li>
+                                <span></span>
+
+                                <a href="../index.php">Acceuil</a>
+                                <a href="login_client.php">Connexion</a>
+                                <a href="connexion.php">Inscription</a>
+                                <a href="#panier">Panier</a>
+                                <a href="map.php">Find us</a>
+
+
+
+
+                            <li class="has-dropdown">
+
+                                <a href="reclamation.php">Réclamations<i class="fas fa-angle-down u-s-m-l-6"></i></a>
+
+
+
+                                <span></span>
+                                <ul>
+                                    <li>
+
+                                        <a href="reclamation.php">Faire une réclamation</a>
+
+                                        <span class="js-menu-toggle"></span>
+
+
+                                    </li>
+                                    <li>
+
+                                        <a href="reclamationAffichage.php">Consulter réclamations</a>
+
+                                        <span class="js-menu-toggle"></span>
+
+
+                                    </li>
+
+
+
+
+                                </ul>
+
+
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="menu-init" id="navigation3">
+
+                    <button
+                        class="btn btn--icon toggle-button toggle-button--secondary fas fa-shopping-bag toggle-button-shop"
+                        type="button"></button>
+
+                    <span class="total-item-round">2</span>
+
+
+                    <div class="ah-lg-mode">
+
+                        <span class="ah-close">✕ Close</span>
+
+                        <!--====== List ======-->
+                        <ul class="ah-list ah-list--design1 ah-list--link-color-secondary">
+                            <li>
+
+                                <a href="index.html"><i class="fas fa-home u-c-brand"></i></a></li>
+                            <li>
+
+                                <a href="wishlist.html"><i class="far fa-heart"></i></a></li>
+                            <li class="has-dropdown">
+
+                                <a class="mini-cart-shop-link"><i class="fas fa-shopping-bag"></i>
+
+                                    <span class="total-item-round">2</span></a>
+
+                                <!--====== Dropdown ======-->
+
+                                <span class="js-menu-toggle"></span>
+                                <div class="mini-cart">
+
+                                    <!--====== Mini Product Container ======-->
+                                    <div class="mini-product-container gl-scroll u-s-m-b-15">
+
+                                        <!--====== Card for mini cart ======-->
+                                        <div class="card-mini-product">
+                                            <div class="mini-product">
+                                                <div class="mini-product__image-wrapper">
+
+                                                    <a class="mini-product__link" href="product-detail.html">
+
+                                                        <img class="u-img-fluid"
+                                                            src="images/product/electronic/product3.jpg" alt=""></a>
+                                                </div>
+                                                <div class="mini-product__info-wrapper">
+
+                                                    <span class="mini-product__category">
+
+                                                        <a href="shop-side-version-2.html">Electronics</a></span>
+
+                                                    <span class="mini-product__name">
+
+                                                        <a href="product-detail.html">Yellow Wireless
+                                                            Headphone</a></span>
+
+                                                    <span class="mini-product__quantity">1 x</span>
+
+                                                    <span class="mini-product__price">$8</span></div>
+                                            </div>
+
+                                            <a class="mini-product__delete-link far fa-trash-alt"></a>
+                                        </div>
+                                        <!--====== End - Card for mini cart ======-->
+
+
+                                        <!--====== Card for mini cart ======-->
+                                        <div class="card-mini-product">
+                                            <div class="mini-product">
+                                                <div class="mini-product__image-wrapper">
+
+                                                    <a class="mini-product__link" href="product-detail.html">
+
+                                                        <img class="u-img-fluid"
+                                                            src="images/product/electronic/product18.jpg" alt=""></a>
+                                                </div>
+                                                <div class="mini-product__info-wrapper">
+
+                                                    <span class="mini-product__category">
+
+                                                        <a href="shop-side-version-2.html">Electronics</a></span>
+
+                                                    <span class="mini-product__name">
+
+                                                        <a href="product-detail.html">Nikon DSLR Camera 4k</a></span>
+
+                                                    <span class="mini-product__quantity">1 x</span>
+
+                                                    <span class="mini-product__price">$8</span></div>
+                                            </div>
+
+                                            <a class="mini-product__delete-link far fa-trash-alt"></a>
+                                        </div>
+                                        <!--====== End - Card for mini cart ======-->
+
+
+                                        <!--====== Card for mini cart ======-->
+                                        <div class="card-mini-product">
+                                            <div class="mini-product">
+                                                <div class="mini-product__image-wrapper">
+
+                                                    <a class="mini-product__link" href="product-detail.html">
+
+                                                        <img class="u-img-fluid" src="images/product/women/product8.jpg"
+                                                            alt=""></a></div>
+                                                <div class="mini-product__info-wrapper">
+
+                                                    <span class="mini-product__category">
+
+                                                        <a href="shop-side-version-2.html">Women Clothing</a></span>
+
+                                                    <span class="mini-product__name">
+
+                                                        <a href="product-detail.html">New Dress D Nice
+                                                            Elegant</a></span>
+
+                                                    <span class="mini-product__quantity">1 x</span>
+
+                                                    <span class="mini-product__price">$8</span></div>
+                                            </div>
+
+                                            <a class="mini-product__delete-link far fa-trash-alt"></a>
+                                        </div>
+                                        <!--====== End - Card for mini cart ======-->
+
+
+                                        <!--====== Card for mini cart ======-->
+                                        <div class="card-mini-product">
+                                            <div class="mini-product">
+                                                <div class="mini-product__image-wrapper">
+
+                                                    <a class="mini-product__link" href="product-detail.html">
+
+                                                        <img class="u-img-fluid" src="images/product/men/product8.jpg"
+                                                            alt=""></a></div>
+                                                <div class="mini-product__info-wrapper">
+
+                                                    <span class="mini-product__category">
+
+                                                        <a href="shop-side-version-2.html">Men Clothing</a></span>
+
+                                                    <span class="mini-product__name">
+
+                                                        <a href="product-detail.html">New Fashion D Nice
+                                                            Elegant</a></span>
+
+                                                    <span class="mini-product__quantity">1 x</span>
+
+                                                    <span class="mini-product__price">$8</span></div>
+                                            </div>
+
+                                            <a class="mini-product__delete-link far fa-trash-alt"></a>
+                                        </div>
+                                        <!--====== End - Card for mini cart ======-->
+                                    </div>
+                                    <!--====== End - Mini Product Container ======-->
+
+
+                                    <!--====== Mini Product Statistics ======-->
+                                    <div class="mini-product-stat">
+                                        <div class="mini-total">
+
+                                            <span class="subtotal-text">SUBTOTAL</span>
+
+                                            <span class="subtotal-value">$16</span></div>
+                                        <div class="mini-action">
+
+                                            <a class="mini-link btn--e-brand-b-2" href="checkout.html">PROCEED TO
+                                                CHECKOUT</a>
+
+                                            <a class="mini-link btn--e-transparent-secondary-b-2" href="cart.html">VIEW
+                                                CART</a></div>
+                                    </div>
+                                    <!--====== End - Mini Product Statistics ======-->
+                                </div>
+                                <!--====== End - Dropdown ======-->
+                            </li>
+                        </ul>
+                        <!--====== End - List ======-->
+                    </div>
+                    <!--====== End - Menu ======-->
+                </div>
+                <!--====== End - Dropdown Main plugin ======-->
+            </div>
+            <!--====== End - Secondary Nav ======-->
+        </div>
+    </nav>
+    <!--====== End - Nav 2 ======-->
+    </header>
+    <!--====== End - Main Header ======-->
+
+
+    <!--====== App Content ======-->
+    <div class="app-content">
+
+        <!--====== Primary Slider ======-->
+        <div class="s-skeleton s-skeleton--h-600 s-skeleton--bg-grey">
+            <div class="owl-carousel primary-style-1" id="hero-slider">
+                <div class="hero-slide hero-slide--1">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="slider-content slider-content--animation">
+
+                                    <span class="content-span-1 u-c-secondary">Dernière mise à jour Stock</span>
+
+                                    <span class="content-span-2 u-c-secondary">20% Off Pour Tous Nos Clients Fidéles
+                                        !</span>
+
+                                    <span class="content-span-3 u-c-secondary">Trouver des animaux de compagnie sur les
+                                        meilleurs prix, Découvrez également les produits les plus vendus de
+                                        plantes</span>
+
+                                    <span class="content-span-4 u-c-secondary">À partir de
+
+                                        <span class="u-c-brand">20 DT</span></span>
+
+                                    <a class="shop-now-link btn--e-brand" href="shop-side-version-2.html">MAGASINEZ
+                                        MAINTENANT</a></div>
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
                             </div>
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
             </div>
             <!--====== End - Primary Slider ======-->
 
@@ -816,10 +1337,29 @@
 
                                     <span class="section__span u-c-silver">BROWSE FAVOURITE DEALS</span>
                                 </div>
+=======
+
+            </div>
+        </div>
+        <!--====== End - Primary Slider ======-->
+
+
+        <!--====== Section 1 ======-->
+        <div class="u-s-p-y-60">
+
+            <!--====== Section Intro ======-->
+            <div class="section__intro u-s-m-b-46">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section__text-wrap">
+                                <h1 class="section__heading u-c-secondary u-s-m-b-12">MAGASINEZ PAR OFFRES</h1>
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
                             </div>
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
                 <!--====== End - Section Intro ======-->
 
 
@@ -886,6 +1426,15 @@
                     
                 <!---->
                 <div >
+=======
+            </div>
+
+        </div>
+
+        <div class="u-s-p-b-60">
+
+        <div >
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
                     <h2>Réclamation</h2>
                 </div>
                         <!---->
@@ -922,7 +1471,11 @@
                             if($etat=="non traitée")
                                 {
                                     ?>
+<<<<<<< HEAD
                                     <a href="reclamationModification.php?date_creation=<?PHP echo $date_creation; ?>" class="add-cart cart-check">Modifier</a>
+=======
+                                    <a href="reclamationModification.php?date_creation=<?PHP echo $date_creation; ?>" class="add-cart cart-check" id ="modif">Modifier</a>
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
                                     <?php
                                 }
                             ?>
@@ -937,6 +1490,7 @@
                                 }
                             ?>
                         </div>
+<<<<<<< HEAD
                         </div>
                 <div >
                                     
@@ -1051,6 +1605,10 @@
         </div>
         <!--====== End - App Content ======-->
 
+=======
+<!--====== End - Section 12 ======-->
+</div>
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
 
         <!--====== Main Footer ======-->
         <footer>
@@ -1074,6 +1632,7 @@
                                     <ul>
                                         <li>
 
+<<<<<<< HEAD
                                             <a class="s-fb--color-hover" href="#"><i class="fab fa-facebook-f"></i></a></li>
                                         <li>
 
@@ -1087,6 +1646,26 @@
                                         <li>
 
                                             <a class="s-gplus--color-hover" href="#"><i class="fab fa-google-plus-g"></i></a></li>
+=======
+                                            <a class="s-fb--color-hover" href="#"><i class="fab fa-facebook-f"></i></a>
+                                        </li>
+                                        <li>
+
+                                            <a class="s-tw--color-hover" href="#"><i class="fab fa-twitter"></i></a>
+                                        </li>
+                                        <li>
+
+                                            <a class="s-youtube--color-hover" href="#"><i
+                                                    class="fab fa-youtube"></i></a></li>
+                                        <li>
+
+                                            <a class="s-insta--color-hover" href="#"><i
+                                                    class="fab fa-instagram"></i></a></li>
+                                        <li>
+
+                                            <a class="s-gplus--color-hover" href="#"><i
+                                                    class="fab fa-google-plus-g"></i></a></li>
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
                                     </ul>
                                 </div>
                             </div>
@@ -1170,11 +1749,22 @@
 
                                         <label for="newsletter"></label>
 
+<<<<<<< HEAD
                                         <input class="input-text input-text--only-white" type="text" id="newsletter" placeholder="Enter your Email">
 
                                         <button class="btn btn--e-brand newsletter__btn" type="submit">SUBSCRIBE</button></div>
 
                                     <span class="newsletter__text">Subscribe to the mailing list to receive updates on promotions, new arrivals, discount and coupons.</span>
+=======
+                                        <input class="input-text input-text--only-white" type="text" id="newsletter"
+                                            placeholder="Enter your Email">
+
+                                        <button class="btn btn--e-brand newsletter__btn"
+                                            type="submit">SUBSCRIBE</button></div>
+
+                                    <span class="newsletter__text">Subscribe to the mailing list to receive updates on
+                                        promotions, new arrivals, discount and coupons.</span>
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
                                 </form>
                             </div>
                         </div>
@@ -1213,6 +1803,7 @@
         <!--====== Modal Section ======-->
 
 
+<<<<<<< HEAD
         <!--====== Quick Look Modal ======-->
         <div class="modal fade" id="quick-look">
             <div class="modal-dialog modal-dialog-centered">
@@ -1490,6 +2081,13 @@
             </div>
         </div>
         <!--====== End - Newsletter Subscribe Modal ======-->
+=======
+
+
+
+
+
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
         <!--====== End - Modal Section ======-->
     </div>
     <!--====== End - Main App ======-->
@@ -1497,7 +2095,11 @@
 
     <!--====== Google Analytics: change UA-XXXXX-Y to be your site's ID ======-->
     <script>
+<<<<<<< HEAD
         window.ga = function() {
+=======
+        window.ga = function () {
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
             ga.q.push(arguments)
         };
         ga.q = [];
@@ -1508,6 +2110,7 @@
     <script src="https://www.google-analytics.com/analytics.js" async defer></script>
 
     <!--====== Vendor Js ======-->
+<<<<<<< HEAD
     <script src="assets/js/vendor.js"></script>
 
     <!--====== jQuery Shopnav plugin ======-->
@@ -1515,6 +2118,15 @@
 
     <!--====== App ======-->
     <script src="assets/js/app.js"></script>
+=======
+    <script src="../assets/css/lib2/assets/js/vendor.js"></script>
+
+    <!--====== jQuery Shopnav plugin ======-->
+    <script src="../assets/css/lib2/assets/js/jquery.shopnav.js"></script>
+
+    <!--====== App ======-->
+    <script src="../assets/css/lib2/assets/js/app.js"></script>
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
 
     <!--====== Noscript ======-->
     <noscript>
@@ -1525,7 +2137,12 @@
                         <div class="app-setting__wrap">
                             <h1 class="app-setting__h1">JavaScript is disabled in your browser.</h1>
 
+<<<<<<< HEAD
                             <span class="app-setting__text">Please enable JavaScript in your browser or upgrade to a JavaScript-capable browser.</span>
+=======
+                            <span class="app-setting__text">Please enable JavaScript in your browser or upgrade to a
+                                JavaScript-capable browser.</span>
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
                         </div>
                     </div>
                 </div>
@@ -1533,4 +2150,8 @@
         </div>
     </noscript>
 </body>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
 </html>

@@ -451,10 +451,15 @@ $listeAnimals=$AnimalC->afficherAnimals();
 
     <td><img src="../assets/images/products/<?= $animal['image'] ?> " width="200" height="200"></td>
     <td>
+<<<<<<< HEAD
 
                     <button type="submit" class="action-button shadow animate green">Ajouter au panier</button>
                     <input type="hidden" name="id" value="<?php print $animal['id']?>">
     
+=======
+        <a href="#=<?PHP echo $animal['id']; ?>"
+        class="action-button shadow animate green"> ajouter au panier </a>
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
     </td>
 </tr>
 <?PHP

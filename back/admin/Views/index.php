@@ -334,7 +334,11 @@
     </div>
     <div class="user-inputs">
       <form action="handler.php?task=write" method="POST">
+<<<<<<< HEAD
         <input type="text" name="author" id="author" placeholder="entrez votre pseudo">
+=======
+       
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
         <input type="text" id="content" name="content" placeholder="entrez votre message">
         <button type="submit" action ="index.php">🔥 Send !</button>
       </form>

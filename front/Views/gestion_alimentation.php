@@ -1,5 +1,9 @@
 <?PHP
+<<<<<<< HEAD
 	include "../controller/AlimentationC.php";  
+=======
+	include "../controller/AlimentationC.php";
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
 
 	$AlimentationC=new AlimentationC();
 	$listeAlimentation=$AlimentationC->afficherAlimentation();
@@ -7,10 +11,13 @@
 
 ?>
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
 <!DOCTYPE html>
 <html class="no-js" lang="fr">
 
@@ -557,6 +564,7 @@ t"></script>
 					
 					<td><h3><span style="color: #000000;"><strong><?PHP echo $id_alimentation['prix']; ?> DT </strong></span></h3></td>
                     <td><img src="../assets/images/products/<?= $id_alimentation['image'] ?>" width = "200" height = "200" class="shop-item-image"></td>
+<<<<<<< HEAD
                     <td>
                     <form method="post" action="panier.php?action=addcart">
                     <button type="submit" class="action-button shadow animate green">Ajouter au panier</button>
@@ -564,6 +572,10 @@ t"></script>
                    
                     </form>
                     </td>
+=======
+                    <td><a href="#=<?PHP echo $id_alimentation['id_alimentation']; ?>"
+                    class="action-button shadow animate green"> ajouter au panier </a></td>
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
 					
 					
 				</tr>
@@ -572,8 +584,12 @@ t"></script>
 
 
 			<?PHP
+<<<<<<< HEAD
                
             }
+=======
+				}
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
 			?>
 		</table>
                             </div>

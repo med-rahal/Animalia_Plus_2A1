@@ -98,12 +98,23 @@ h3 {
   line-height: 32px; }
 
 h4 {
+<<<<<<< HEAD
   font-size: 16px;
   line-height: 30px; }
 
 h5 {
   font-size: 15px;
   line-height: 30px; }
+=======
+  font-size: 30px;
+  line-height: 30px;
+color: gray; }
+
+h5 {
+  font-size: 30px;
+  line-height: 30px;
+color: orange; }
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
 
 p {
   margin: 0;
@@ -240,6 +251,10 @@ Box Module
     padding-left: 40px;
     padding-right: 40px; } }
 
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
 /*--------------------------------------------------------------
 2.0 Typography
 --------------------------------------------------------------*/
@@ -249,6 +264,17 @@ Box Module
 body {
   color: #7f7f7f;
   font-family: "Open Sans", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+<<<<<<< HEAD
+=======
+  ul li select {
+    font-size: 18px !important;
+    height: 70px;
+    width: 500px;
+    position: relative; 
+    margin-bottom: 2em;
+   
+}
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
 
 /*--------------------------------------------------------------
 3.0 Pre-configured styles
@@ -256,6 +282,36 @@ body {
 /**
 * JavaScript Disabled Page
 */
+<<<<<<< HEAD
+=======
+span {
+  font-size: 30px;
+}
+h7 {
+  font-size: 40px;
+  position: relative;
+    top: -70px;
+}
+
+h8{
+  font-size: 35px;
+  margin-bottom: 2em;
+}
+h9{
+  font-size: 35px;
+}
+h10{
+ 
+  font-size: 62px;
+  line-height: 56px;
+  text-align: center;
+  text-shadow: 2px 2px 5px #333333;
+  color: black;
+  position: relative;
+  top: -10px;
+}
+}
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
 .no-js #app {
   display: none; }
 

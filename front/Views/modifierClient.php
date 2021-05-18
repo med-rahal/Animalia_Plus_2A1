@@ -10,7 +10,11 @@
          
             $user = new Client($_POST['nom_client'],$_POST['prenom_client'],$_POST['date_naissance'],$_POST['type_client'],$_POST['email_client'],$_POST['login_client'],$_POST['mot_passe']);
             $ClientC->modifierClient($user, $_GET['id_client']);
+<<<<<<< HEAD
            // header('Location:../index.php');
+=======
+            header('Location:../index.php');
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
       }
      
 	}
@@ -43,7 +47,11 @@
     <body>   
          <header id="header" class="fixed-top">
                 <div class="container d-flex align-items-center">
+<<<<<<< HEAD
                     <h5>Bienvenue <?php echo $_SESSION['nom_client'];echo $_SESSION['prenom_client'] ?></h5> 
+=======
+                    <h5>Bienvenue <?php echo $_SESSION['login_client']; ?></h5> 
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
                    <a href="logout.php" class="connexion-btn scr ollto">Déconnexion</a>
             </div>
 
@@ -52,7 +60,11 @@
 			if (isset($_GET['id_client'])){
 				$user = $ClientC->recupererClient1($_GET['id_client']);	
 ?> 
+<<<<<<< HEAD
 <br>
+=======
+
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
         <nav class="primary-nav primary-nav-wrapper">
                 <div class="container">
                     <div class="primary-nav">
@@ -245,7 +257,11 @@
                                     <div class="l-f-o__pad-box">
                                         <h1 class="gl-h1">Modification du profil</h1>
                                         <div id="erreur"></div>
+<<<<<<< HEAD
                                         <form class="l-f-o__form" action="" onsubmit="return verif()" method="POST" >
+=======
+                                        <form class="l-f-o__form" action="" method="POST" >
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
                                             <div class="gl-s-api">
                                             <div class="u-s-m-b-30">
                                             
@@ -276,7 +292,11 @@
 
                                                 <label class="gl-label" for="email_client">E-MAIL*</label>
 
+<<<<<<< HEAD
                                                 <input class="input-text input-text--primary-style" type="email" id="email_client" name="email_client" value = "<?php echo $user->email_client; ?>"></div>
+=======
+                                                <input class="input-text input-text--primary-style" type="email" id="email_client" name="email_client" pattern=".+@gmail.com|.+@esprit.tn|.+@yahoo.com|.+@yahoo.fr|.+@outlook.fr"  value = "<?php echo $user->email_client; ?>"></div>
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
                                             
                                                 <div class="u-s-m-b-30">
 
@@ -293,7 +313,11 @@
 
                                             <div class="u-s-m-b-15">
 
+<<<<<<< HEAD
                                                 <button class="btn btn--e-transparent-brand-b-2" type="submit">Envoyer</button></div>
+=======
+                                                <button class="btn btn--e-transparent-brand-b-2" type="submit" onclick="verif();">Envoyer</button></div>
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
 
                                         </form>
                                     </div>
@@ -493,4 +517,8 @@
     <!--====== App ======-->
     <script src="../assets/js/app.js"></script> 
     
+<<<<<<< HEAD
     <script src="../assets/js/script2.js"></script>
+=======
+    <script src="../assets/js/script.js"></script>
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627

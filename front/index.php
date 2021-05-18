@@ -30,7 +30,11 @@
 
         <header class="header--style-1">
 <div class="container d-flex align-items-center">
+<<<<<<< HEAD
 <h5>Bienvenue <?php echo $_SESSION['nom_client']; echo $_SESSION['prenom_client'] ?></h5>
+=======
+<h5>Bienvenue <?php echo $_SESSION['login_client']; ?></h5>
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
   <a href="../front/views/modifierClient.php?id_client=<?PHP echo $_SESSION['id_client']; ?>" > Modifier </a>
     <a href="../front/Views/logout.php">Déconnexion</a>
 </div>

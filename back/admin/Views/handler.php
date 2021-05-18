@@ -42,14 +42,22 @@ function postMessage(){
   global $db;
   // 1. Analyser les paramètres passés en POST (author, content)
   
+<<<<<<< HEAD
   if(!array_key_exists('author', $_POST) || !array_key_exists('content', $_POST)){
+=======
+  if( !array_key_exists('content', $_POST)){
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
 
     echo json_encode(["status" => "error", "message" => "One field or many have not been sent"]);
     return;
 
   }
 
+<<<<<<< HEAD
   $author = $_POST['author'];
+=======
+  $author = "Admin : ";
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
   $content = $_POST['content'];
 
   // 2. Créer une requête qui permettra d'insérer ces données

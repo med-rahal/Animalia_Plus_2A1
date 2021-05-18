@@ -257,7 +257,11 @@
                             <div class="col-lg-6 col-md-8 u-s-m-b-30">
                                 <div class="l-f-o">
 
+<<<<<<< HEAD
                                
+=======
+                                <div id="erreur"></div>
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
                                     <div class="l-f-o__pad-box"> 
                                         <h1 class="gl-h1">Nouveau Client</h1>
                                         <span class="gl-text u-s-m-b-30">En créant un compte dans notre boutique, vous serez en mesure de parcourir le processus de commande plus rapidement, de stocker les adresses de livraison, de consulter et de suivre vos commandes dans votre compte et plus encore..</span>
@@ -279,16 +283,25 @@
 
                                         <h1 class="gl-h1">Connexion</h1>
 
+<<<<<<< HEAD
                                         <span class="gl-text u-s-m-b-30">Si vous avez un compte chez nous, veuillez vous connecter.</span> 
                                         <div id="erreur"></div>
                                         <form class="l-f-o__form" onsubmit="return verif()" method ="POST">
+=======
+                                        <span class="gl-text u-s-m-b-30">Si vous avez un compte chez nous, veuillez vous connecter.</span>
+                                        <form class="l-f-o__form"   onsubmit="return verif()" method ="POST">
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
                                           
                                          
                                             <div class="u-s-m-b-30">
                                                 <br>
                                                 <label class="gl-label" for="email_client">E-mail</label><br>
 
+<<<<<<< HEAD
                                                 <input class="input-text input-text--primary-style" type="text" name="email_client" id="email_client"  placeholder="Entrer E-mail"  value="<?php if(isset($_COOKIE["email_client"])) { echo $_COOKIE["email_client"]; } ?>" ></div>
+=======
+                                                <input class="input-text input-text--primary-style" type="text" name="email_client" id="email_client" pattern=".+@gmail.com|.+@esprit.tn|.+@yahoo.com|.+@yahoo.fr" placeholder="Entrer E-mail"  value="<?php if(isset($_COOKIE["email_client"])) { echo $_COOKIE["email_client"]; } ?>" ></div>
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
                                             <div class="u-s-m-b-30">
                                                 <br>
                                                 <label class="gl-label" for="mot_passe">Mot de passe</label><br>

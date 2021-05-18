@@ -98,6 +98,7 @@
 			} catch (PDOException $e) {
 				$e->getMessage();
 			}
+<<<<<<< HEAD
 		} 
 
 		function getIDClientByEmail($email_client) {
@@ -115,6 +116,9 @@
 			}
 		}
 
+=======
+		}
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
 		function recupererClient($id_client){
 			$sql="SELECT * from client where id_client=$id_client";
 			$db = config::getConnexion();

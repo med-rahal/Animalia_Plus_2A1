@@ -13,6 +13,19 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 }
 input#mail {
     width: 700px;
+<<<<<<< HEAD
+=======
+    height: 50px;
+    margin-bottom: 2em;
+}
+button#chat {
+    height: 50px;
+    width: 120px;
+    font-size: 15px;
+    position: relative;
+    left: 35em;
+    top: -5em;
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
 }
 input[type="submit"] {
     background-color: #ff4500;
@@ -22,7 +35,12 @@ input[type="submit"] {
     text-align: center;
     text-decoration: none;
     display: inline-block;
+<<<<<<< HEAD
     font-size: 16px;}input{overflow:visible}button,select{text-transform:none;background-color: #ff4500;
+=======
+    margin-bottom: 5em;
+    font-size: 20px;}input{overflow:visible}button,select{text-transform:none;background-color: #ff4500;
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
   color: #fff;
   font-size: inherit;
   padding: .5em;
@@ -38,12 +56,29 @@ input[type="submit"] {
 }[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{    overflow: auto;
     border: 2px solid #765942;
     border-radius: 10px;
+<<<<<<< HEAD
     height: 200px;
     width: 1000px;
     background-image: url(images/rec.jpg);
     background-repeat: repeat-x;}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}[hidden],template{display:none}
 
 
+=======
+    height: 300px;
+    width: 1000px;
+    margin-bottom: 1em;
+    background-image: url(images/rec.jpg);
+    font-size: 30px;
+    background-repeat: repeat-x;}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}[hidden],template{display:none}
+
+
+
+
+    input#modif {
+        position: relative;
+        left: 43em;
+    }
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
 /*!
  * Font Awesome Free 5.6.3 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)

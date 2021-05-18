@@ -3,11 +3,15 @@
 require_once '../Model/Client.php';
 require '../Controller/ClientC.php';
 
+<<<<<<< HEAD
 $userC = new ClientC();
+=======
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
 
 if(!empty($_POST['nom_client']) && !empty($_POST['prenom_client']) && !empty($_POST['date_naissance']) && !empty($_POST['type_client']) && !empty($_POST['email_client']) && !empty($_POST['login_client']) && !empty($_POST['mot_passe']) && !empty($_POST['mdp_verif']))
 {
 
+<<<<<<< HEAD
     $sql="SELECT * FROM client WHERE email_client='" . $_POST['email_client'] . "'";
     $db = config::getConnexion();
     
@@ -20,11 +24,22 @@ $user=new Client($_POST['nom_client'], $_POST['prenom_client'], $_POST['date_nai
 try{
     $userC->ajouterclient($user);
     header('Location:../Views/login_client.php');
+=======
+$userC = new ClientC();
+$user=new Client($_POST['nom_client'], $_POST['prenom_client'], $_POST['date_naissance'],$_POST['type_client'],$_POST['email_client'],$_POST['login_client'],$_POST['mot_passe']);
+try{
+    $userC->ajouterclient($user);
+    header('Location:../index.php');
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
 }catch(Exception $e){
     echo "ERREUR connexion.php : ".$e->getMessage();
     exit;
 }
+<<<<<<< HEAD
 }
+=======
+
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
 
 }
 
@@ -256,7 +271,11 @@ try{
                                 <div class="l-f-o">
                                     <div class="l-f-o__pad-box">
                                         <h1 class="gl-h1">Inscription</h1>   
+<<<<<<< HEAD
                                             <div id="erreur" name="erreur"></div>
+=======
+                                            <div id="erreur"></div>
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
                                         <form class="l-f-o__form" action="" id="captcha_form" onsubmit="return verif()" method="POST" >
                                             <div class="gl-s-api">
                                             <div class="u-s-m-b-30">
@@ -293,7 +312,11 @@ try{
                                                 <label class="gl-label" for="email_client">E-MAIL*</label>
 
                                                 <input class="input-text input-text--primary-style" type="email" id="email_client" name="email_client"  placeholder="Enter votre adresse e-mail " ></div>
+<<<<<<< HEAD
                                                
+=======
+                                                <span id="email_error" class="text-danger"></span>
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
                                             
                                                 <div class="u-s-m-b-30">
 
@@ -322,7 +345,11 @@ try{
 
                                             <div class="u-s-m-b-15">
 
+<<<<<<< HEAD
                                                 <button class="btn btn--e-transparent-brand-b-2" name="envoyer" id="envoyer" type="submit">Envoyer</button></div>
+=======
+                                                <button class="btn btn--e-transparent-brand-b-2" name="envoyer" id="envoyer" type="submit"  >Envoyer</button></div>
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
 
                                         </form>
                                     </div>

@@ -1,6 +1,11 @@
 <?PHP
+<<<<<<< HEAD
 include "../model/reclamationE.php";
 include "../controller/reclamationC.php";
+=======
+include "../Model/reclamationE.php";
+include "../Controller/reclamationC.php";
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
 if (isset($_POST['type']) )
 {
 	

@@ -18,7 +18,11 @@ function getMessages(){
       return `
         <div class="message">
           <span class="date">${message.created_at.substring(11, 16)}</span>
+<<<<<<< HEAD
           <span class="author">${message.author}</span> : 
+=======
+          <span class="author">${message.author}</span> 
+>>>>>>> 144683f7e8657a761bc3322917553d57ce103627
           <span class="content">${message.content}</span>
         </div>
       `
